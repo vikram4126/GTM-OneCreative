@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&family=Bebas+Neue&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-blue-dark:   #00338D;
+  --color-blue-medium: #1E49E2;
+  --color-blue-navy:   #0C233C;
+  --color-blue-sky:    #00B8F5;
+  --color-purple:      #7213EA;
+  --color-pink:        #FD349C;
+  --color-blue-light:  #ACEAFF;
+  --color-bg-light:    #F5F7FA;
+  --color-white:       #FFFFFF;
+
+  --font-inter:  "Inter",      sans-serif;
+  --font-outfit: "Outfit",     sans-serif;
+  --font-bebas:  "Bebas Neue", sans-serif;
+}
+
+/* ─── Reset — no border-radius anywhere globally ─── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  border-radius: 0 !important;
+}
+
+/* ─── Hero section exceptions ────────────────────── */
+/* Cards get rounded corners as per design */
+.hero-card {
+  border-radius: 20px !important;
+}
+/* Card title must be blue (overrides global white !important) */
+.hero-card-title,
+.hero-card-title span {
+  color: #1E49E2 !important;
+}
+/* Hero section icons */
+.hero-card svg {
+  color: #1E49E2 !important;
+}
+
+html, body {
+  margin: 0; padding: 0;
+  background: #00B8F5;
+  color: #fff;
+  font-family: var(--font-inter);
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* Global white text */
+h1, h2, h3, h4, p, span, div { color: #FFFFFF !important; }
+h1, h2, h3, h4 { font-family: var(--font-outfit); font-weight: 700; }
+
+/* ─── Typography ─────────────────────────────────── */
+.content-creation-title {
+  font-family: 'Bebas Neue', cursive;
+  letter-spacing: -0.01em;
+}
+
+.section-heading { color: rgba(255, 255, 255, 0.55) !important; }
+
+/* ─── Scrollbar ──────────────────────────────────── */
+::-webkit-scrollbar       { width: 5px; }
+::-webkit-scrollbar-track { background: #0C233C; }
+::-webkit-scrollbar-thumb { background: #fff; }   /* no border-radius — covered by * rule */
+
+/* ─── Sections ───────────────────────────────────── */
+section {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ─── Swiper fill ────────────────────────────────── */
+.swiper          { width: 100% !important; height: 100% !important; }
+.swiper-wrapper  { height: 100% !important; }
+.swiper-slide    { height: 100% !important; }
+
+/* ─── Drawer menu ────────────────────────────────── */
+.drawer-menu {
+  position: fixed;
+  top: 0; right: -100%;
+  width: 100%; max-width: 460px;
+  height: 100vh;
+  background: #00B8F5;
+  z-index: 100;
+  transition: right 0.45s cubic-bezier(0.77, 0, 0.175, 1);
+  box-shadow: -20px 0 50px rgba(0,0,0,0.2);
+}
+.drawer-menu.open { right: 0; }
+
+.menu-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(4px);
+  z-index: 90;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.45s ease;
+}
+.menu-overlay.show { opacity: 1; pointer-events: auto; }
+
+/* ─── Menu links (2.8rem, no border-radius) ──────── */
+.menu-item {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2.8rem;
+  line-height: 1.1;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding: 0.85rem 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.menu-item:hover        { padding-left: 1.25rem; color: #ACEAFF !important; }
+.menu-item.get-in-touch { color: #00338D !important; }
+
+/* ─── Responsive ─────────────────────────────────── */
+@media (max-width: 768px) {
+  .menu-item   { font-size: 2rem; }
+  .drawer-menu { max-width: 100%; }
+}
