@@ -12,43 +12,62 @@ import SectionAttention from './sections/SectionAttention';
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isNavbarDark, setIsNavbarDark] = useState(false);
+  const scrollerRef = React.useRef(null);
   
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
+  React.useEffect(() => {
+    const handleScroll = () => {
+      if (scrollerRef.current) {
+        setIsNavbarDark(scrollerRef.current.scrollTop > 64);
+      }
+    };
+    
+    const scroller = scrollerRef.current;
+    if (scroller) {
+      scroller.addEventListener('scroll', handleScroll);
+    }
+    return () => {
+      if (scroller) {
+        scroller.removeEventListener('scroll', handleScroll);
+      }
+    };
+  }, []);
+
   return (
     <div className="relative overflow-x-hidden">
-      <Navbar onMenuToggle={toggleMenu} isDark={isNavbarDark} />
+      <Navbar onMenuToggle={toggleMenu} isScrolled={isNavbarDark} />
       <SidebarMenu isOpen={isMenuOpen} onToggle={toggleMenu} />
 
-      <main className="snap-y snap-mandatory snap-always h-screen overflow-y-auto overflow-x-hidden scroll-smooth">
+      <main className="h-screen overflow-y-auto overflow-x-hidden scroll-smooth">
 
         {/* 1. Hero — GSAP animation */}
-        <div id="home" className="snap-start snap-always">
+        <div id="home">
           <SectionHero onVisible={() => setIsNavbarDark(true)} onHidden={() => setIsNavbarDark(false)} />
         </div>
 
         {/* 2. Design Strategy */}
-        <div id="pillars" className="snap-start snap-always">
+        <div id="pillars">
           <SectionDesignStrategy />
         </div>
 
         {/* 3. Exploring New Possibilities */}
-        <div className="snap-start snap-always">
+        <div>
           <SectionExploring />
         </div>
 
         {/* 4. Attention Section (New) */}
-        <div id="attention" className="snap-start snap-always">
+        <div id="attention">
           <SectionAttention />
         </div>
 
         {/* 5. Inspiration Meets Technology */}
-        <div id="services" className="snap-start snap-always">
+        <div id="services">
           <SectionInspiration />
         </div>
 
         {/* 5. Creative Showcase */}
-        <div id="creative-showcase" className="snap-start snap-always bg-[#00B8F5] h-screen flex items-center justify-center px-8 py-16">
+        <div id="creative-showcase" className="bg-[#00B8F5] h-screen flex items-center justify-center px-8 py-16">
           <h1
             className="content-creation-title text-white text-center uppercase"
             style={{ fontSize: 'clamp(2.5rem, 7vw, 6rem)', fontWeight: 900, lineHeight: 1 }}
