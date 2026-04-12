@@ -39,11 +39,11 @@ function App() {
       <Navbar onMenuToggle={toggleMenu} isScrolled={isNavbarDark} />
       <SidebarMenu isOpen={isMenuOpen} onToggle={toggleMenu} />
 
-      <main className="h-screen overflow-y-auto overflow-x-hidden scroll-smooth">
+      <main ref={scrollerRef} className="h-screen overflow-y-auto overflow-x-hidden scroll-smooth">
 
         {/* 1. Hero — GSAP animation */}
         <div id="home">
-          <SectionHero onVisible={() => setIsNavbarDark(true)} onHidden={() => setIsNavbarDark(false)} />
+          <SectionHero />
         </div>
 
         {/* 2. Design Strategy */}
@@ -52,11 +52,11 @@ function App() {
         </div>
 
         {/* 3. Exploring New Possibilities */}
-        <div>
+        <div id="exploring">
           <SectionExploring />
         </div>
 
-        {/* 4. Attention Section (New) */}
+        {/* 4. Attention Section */}
         <div id="attention">
           <SectionAttention />
         </div>
@@ -66,14 +66,16 @@ function App() {
           <SectionInspiration />
         </div>
 
-        {/* 5. Creative Showcase */}
-        <div id="creative-showcase" className="bg-[#00B8F5] h-screen flex items-center justify-center px-8 py-16">
-          <h1
-            className="content-creation-title text-white text-center uppercase"
-            style={{ fontSize: 'clamp(2.5rem, 7vw, 6rem)', fontWeight: 900, lineHeight: 1 }}
-          >
-            Creative Showcase
-          </h1>
+        {/* 6. Creative Showcase */}
+        <div id="creative-showcase" className="bg-[#00B8F5] h-screen flex items-center justify-center py-16">
+          <div className="container mx-auto">
+            <h1
+              className="content-creation-title text-white text-center uppercase"
+              style={{ fontSize: 'clamp(2.5rem, 7vw, 6rem)', fontWeight: 900, lineHeight: 1 }}
+            >
+              Creative Showcase
+            </h1>
+          </div>
         </div>
 
       </main>

@@ -71,7 +71,7 @@ export const SectionDesignStrategy = () => {
       >
         {slides.map((slide, i) => (
           <SwiperSlide key={i} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
-            <div style={{ width: '100%', maxWidth: 1152, margin: '0 auto', padding: '80px 24px 80px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <div className="container mx-auto" style={{ width: '100%', padding: '80px 0', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
 
               {/* Heading overlapping image top */}
               <h1 className="content-creation-title section-heading" style={{
@@ -140,7 +140,7 @@ export const SectionExploring = () => {
       >
         {slides.map((slide, i) => (
           <SwiperSlide key={i} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
-            <div style={{ width: '100%', maxWidth: 1152, margin: '0 auto', padding: '80px 24px 80px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 24 }}>
+            <div className="container mx-auto" style={{ width: '100%', padding: '80px 0', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 24 }}>
 
               {/* LEFT — title */}
               <div style={{ flexShrink: 0, width: '26%', display: 'flex', alignItems: 'flex-end', paddingBottom: '1.5rem' }}>
@@ -200,7 +200,7 @@ export const SectionInspiration = () => {
       >
         {slides.map((slide, si) => (
           <SwiperSlide key={si} style={{ height: '100%', display: 'flex', alignItems: 'stretch' }}>
-            <div style={{ width: '100%', maxWidth: 1152, margin: '0 auto', padding: '72px 24px 80px', display: 'flex', flexDirection: 'column' }}>
+            <div className="container mx-auto" style={{ width: '100%', padding: '72px 0 80px', display: 'flex', flexDirection: 'column' }}>
 
               {/* Heading */}
               <h1 className="content-creation-title section-heading" style={{

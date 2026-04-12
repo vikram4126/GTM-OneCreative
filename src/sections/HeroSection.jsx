@@ -35,7 +35,7 @@ const CARDS = [
   { title: ['UK Learning', '& Design'], Icon: IconStar     },
 ];
 
-export const SectionHero = ({ onVisible, onHidden }) => {
+export const SectionHero = () => {
   const sectionRef  = useRef(null);
   const cardRefs    = useRef([]);
   const contentRefs = useRef([]);
@@ -50,16 +50,6 @@ export const SectionHero = ({ onVisible, onHidden }) => {
     const SY = 0.34;
 
     const ctx = gsap.context(() => {
-      // Navbar Color Toggle
-      ScrollTrigger.create({
-        trigger: sectionRef.current,
-        start: "top 10% ",
-        end: "bottom 10%",
-        onEnter: () => onVisible && onVisible(),
-        onEnterBack: () => onVisible && onVisible(),
-        onLeave: () => onHidden && onHidden(),
-        onLeaveBack: () => onHidden && onHidden(),
-      });
 
       /* force every card to tiny outlined-rect state */
       gsap.set(cards, {
@@ -100,7 +90,7 @@ export const SectionHero = ({ onVisible, onHidden }) => {
     }, sectionRef);
 
     return () => ctx.revert();
-  }, [onVisible, onHidden]);
+  }, []);
 
   return (
     <section
@@ -124,14 +114,16 @@ export const SectionHero = ({ onVisible, onHidden }) => {
         pointerEvents: 'none',
       }} />
 
-      {/* ── 4 Cards ─────────────────────────────────────────── */}
       <div
+        className="container mx-auto"
         style={{
-          display: 'flex',
-          gap: 18,
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+          gap: 24,
+          width: '100%',
           position: 'relative',
           zIndex: 1,
-          padding: '0 24px',
+          padding: '0',
         }}
       >
         {CARDS.map((card, i) => {
@@ -142,7 +134,9 @@ export const SectionHero = ({ onVisible, onHidden }) => {
               ref={el => (cardRefs.current[i] = el)}
               className="hero-card"
               style={{
-                width: 240,
+                width: '100%',
+                maxWidth: 320,
+                justifySelf: 'center',
                 height: 380,
                 border: '1.5px solid #1E49E2',
                 display: 'flex',

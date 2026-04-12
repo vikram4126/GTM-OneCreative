@@ -57,7 +57,7 @@ h1, h2, h3, h4 { font-family: var(--font-outfit); font-weight: 700; }
   letter-spacing: -0.01em;
 }
 
-.section-heading { color: rgba(255, 255, 255, 0.55) !important; }
+.section-heading { color: #FFFFFF !important; }
 
 /* ─── Scrollbar ──────────────────────────────────── */
 ::-webkit-scrollbar       { width: 5px; }
