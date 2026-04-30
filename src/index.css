@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&family=Bebas+Neue&display=swap');
+@import "tailwindcss";
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+@font-face {
+  font-family: 'kpmg-font';
+  src: url('/fonts/OpenSans_Condensed-Bold-normal.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'kpmg-font';
+  src: url('/fonts/OpenSans-SemiBold-normal.woff2') format('woff2');
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'kpmg-font';
+  src: url('/fonts/OpenSans-Regular-normal.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@theme {
+  --color-blue-dark:   #00338D;
+  --color-blue-medium: #1E49E2;
+  --color-blue-navy:   #0C233C;
+  --color-blue-sky:    #00B8F5;
+  --color-purple:      #7213EA;
+  --color-pink:        #FD349C;
+  --color-blue-light:  #ACEAFF;
+  --color-bg-light:    #F5F7FA;
+  --color-white:       #FFFFFF;
+
+  --font-inter:  "Inter",      sans-serif;
+  --font-outfit: "Outfit",     sans-serif;
+  --font-bebas:  "Bebas Neue", sans-serif;
+  --font-heading: "kpmg-font", sans-serif;
+  --font-subheading: "kpmg-font", sans-serif;
+  --font-body: "kpmg-font", sans-serif;
+}
+
+/* ─── Reset — no border-radius anywhere globally ─── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  border-radius: 0;
+}
+
+.force-round {
+  border-radius: 50% !important;
+}
+
+/* Hero section exceptions ────────────────────── */
+/* Cards keep square as per design */
+.hero-card {
+  border-radius: 0 !important;
+}
+/* Card title must be blue (overrides global white !important) */
+.hero-card-title,
+.hero-card-title span {
+  color: #1E49E2 !important;
+}
+/* Hero section icons */
+.hero-card svg {
+  color: #1E49E2 !important;
+}
+
+html, body {
+  margin: 0; padding: 0;
+  background: #FFFFFF;
+  color: #000;
+  font-family: var(--font-content);
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* Global text defaults */
+h1, h2, h3, h4, h5, h6, p, span { 
+  margin: 0; 
+}
+h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; }
+h5, h6, .subheading { font-family: var(--font-subheading); font-weight: 600; }
+
+
+/* ─── Global Section Styles ──────────── */
+.section-standard {
+  padding: 80px 0;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ─── Typography ─────────────────────────────────── */
+.content-creation-title {
+  font-family: var(--font-heading);
+  letter-spacing: -0.01em;
+}
+
+.section-heading { color: #FFFFFF !important; }
+
+/* ─── Scrollbar ──────────────────────────────────── */
+::-webkit-scrollbar       { width: 5px; }
+::-webkit-scrollbar-track { background: #0C233C; }
+::-webkit-scrollbar-thumb { background: #fff; }   /* no border-radius — covered by * rule */
+
+/* ─── Sections ───────────────────────────────────── */
+section {
+  min-height: 100vh;
+  height: auto;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  scroll-margin-top: 80px; /* Exactly matches navbar height to prevent previous section bleed-through */
+}
+
+/* ─── Swiper fill ────────────────────────────────── */
+.swiper          { width: 100% !important; height: 100% !important; }
+.swiper-wrapper  { height: 100% !important; }
+.swiper-slide    { height: 100% !important; }
+
+/* ─── Drawer menu ────────────────────────────────── */
+.drawer-menu {
+  position: fixed;
+  top: 0; right: -100%;
+  width: 100%; max-width: 580px;
+  height: 100vh;
+  background: #00B8F5;
+  z-index: 200;
+  transition: right 0.45s cubic-bezier(0.77, 0, 0.175, 1);
+  box-shadow: -20px 0 50px rgba(0,0,0,0.2);
+}
+.drawer-menu.open { right: 0; }
+
+.menu-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(4px);
+  z-index: 90;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.45s ease;
+}
+.menu-overlay.show { opacity: 1; pointer-events: auto; }
+
+/* ─── Menu links (2.8rem, no border-radius) ──────── */
+.menu-item {
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 3.5vw, 1.8rem);
+  line-height: 1.1;
+  text-transform: none;
+  border-bottom: 1px solid rgba(255,255,255,0.4);
+  padding: 1rem 0;
+  cursor: pointer;
+  color: #FFFFFF;
+  transition: all 0.3s ease;
+}
+.menu-item:hover        { padding-left: 1.25rem; color: #00338D; }
+.menu-item.active       { 
+  padding-left: 1.25rem; 
+  color: #00338D; 
+  border-left: 4px solid #00338D;
+  font-weight: 700;
+}
+.menu-item.get-in-touch { 
+  color: #FFFFFF !important; 
+  border-bottom: none;
+  margin-top: 10px;
+}
+.menu-item.home-link {
+  border-bottom: none;
+  border-top: 1px solid rgba(255,255,255,0.4);
+  margin-top: auto;
+  margin-bottom: 2rem;
+}
+
+/* ─── Responsive ─────────────────────────────────── */
+@media (max-width: 768px) {
+  .menu-item   { font-size: 2rem; }
+  .drawer-menu { max-width: 100%; }
+}
+
+/* ─── Custom Swiper Controls ─────────────────────── */
+.custom-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: #00338d;
+  opacity: 0.4;
+  border-radius: 50% !important;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.custom-pagination .swiper-pagination-bullet-active {
+  background: transparent !important;
+  border: 2px solid #00338d !important;
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.custom-prev.swiper-button-disabled,
+.custom-next.swiper-button-disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* ── Scroll Snap (Disabled) ──────────────────────────────── */
+.snap-container {
+  width: 100%;
+}
+
+.snap-section {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Smart centering: only center if content is smaller than viewport */
+.snap-section > * {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+/* ─── Services Grid Responsiveness ───────────────── */
+.services-grid-responsive {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 24px;
+  width: 100%;
+}
+@media (min-width: 640px) {
+  .services-grid-responsive { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+  .services-grid-responsive { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* ─── Standard Section Layout ────────────────────── */
+.section-standard {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  width: 100%;
+  position: relative;
+}

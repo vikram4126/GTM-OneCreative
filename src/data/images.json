@@ -1,0 +1,32 @@
+[
+  {
+    "id": "img-1",
+    "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80",
+    "title": "Abstract Waves"
+  },
+  {
+    "id": "img-2",
+    "image": "https://images.unsplash.com/photo-1633167606207-d840b5070fc2?auto=format&fit=crop&w=800&q=80",
+    "title": "Neon Flow"
+  },
+  {
+    "id": "img-3",
+    "image": "https://images.unsplash.com/photo-1614850523296-d8c1af93d400?auto=format&fit=crop&w=800&q=80",
+    "title": "Gradient Mesh"
+  },
+  {
+    "id": "img-4",
+    "image": "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?auto=format&fit=crop&w=800&q=80",
+    "title": "Crystal Form"
+  },
+  {
+    "id": "img-5",
+    "image": "https://images.unsplash.com/photo-1618556450991-2f1af64e8191?auto=format&fit=crop&w=800&q=80",
+    "title": "Digital Peak"
+  },
+  {
+    "id": "img-6",
+    "image": "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=800&q=80",
+    "title": "Vibrant Sphere"
+  }
+]
