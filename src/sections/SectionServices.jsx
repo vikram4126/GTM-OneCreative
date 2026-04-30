@@ -6,34 +6,13 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 /* ── Card icon components (blue stroke) ──────────── */
-const IconScissors = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" strokeWidth="1.5" strokeLinecap="round">
-    <circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/>
-    <path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"/>
-  </svg>
-);
-const IconGlobe = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" strokeWidth="1.5" strokeLinecap="round">
-    <circle cx="12" cy="12" r="10"/>
-    <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-  </svg>
-);
-const IconChart = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" strokeWidth="1.5" strokeLinecap="round">
-    <path d="M18 20V10M12 20V4M6 20v-6"/>
-  </svg>
-);
-const IconStar = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" strokeWidth="1.5" strokeLinecap="round">
-    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-  </svg>
-);
+
 
 const CARDS = [
-  { id: 'uk-create',            title: ['UK', 'Create'],            Icon: IconScissors },
-  { id: 'us-creative-services', title: ['US Creative', 'Services'], Icon: IconGlobe    },
-  { id: 'us-advisory-creative', title: ['US Advisory', 'Creative'], Icon: IconChart    },
-  { id: 'uk-learning-design',   title: ['UK Learning', 'Design'],   Icon: IconStar     },
+  { id: 'uk-create',            title: ['UK', 'Create'],            iconSrc: '/images/icons/scissors.png' },
+  { id: 'us-creative-services', title: ['US Creative', 'Services'], iconSrc: '/images/icons/globe.png'    },
+  { id: 'us-advisory-creative', title: ['US Advisory', 'Creative'], iconSrc: '/images/icons/chart.png'    },
+  { id: 'uk-learning-design',   title: ['UK Learning', 'Design'],   iconSrc: '/images/icons/star.png'     },
 ];
 
 export const SectionServices = () => {
@@ -58,7 +37,7 @@ export const SectionServices = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="services-grid-responsive">
           {CARDS.map((card, i) => {
-            const { Icon } = card;
+            const { iconSrc } = card;
             return (
               <Link
                 key={i}
@@ -89,7 +68,7 @@ export const SectionServices = () => {
                 className="hover:scale-[1.02] transition-transform duration-300"
               >
               {/* Top-left icon */}
-              <div style={{ opacity: 0.8 }}><Icon /></div>
+              <div style={{ opacity: 0.8 }}><img src={iconSrc} alt={card.id} style={{ width: '24px', height: '24px' }} /></div>
 
               {/* Center text */}
               <div
@@ -119,7 +98,7 @@ export const SectionServices = () => {
               </div>
 
               {/* Bottom-right icon */}
-              <div style={{ alignSelf: 'flex-end', opacity: 0.8 }}><Icon /></div>
+              <div style={{ alignSelf: 'flex-end', opacity: 0.8 }}><img src={iconSrc} alt={card.id} style={{ width: '24px', height: '24px' }} /></div>
             </Link>
           );
         })}

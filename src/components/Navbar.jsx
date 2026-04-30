@@ -12,7 +12,7 @@ const Navbar = ({ onMenuToggle, isScrolled = false, showHomeButton = false, hide
       <div className="container mx-auto py-5 flex justify-between items-center pointer-events-auto px-6 lg:px-12">
         
         {/* KPMG SVG Logo */}
-        <div className="h-10 w-auto flex items-center">
+        <Link to="/" className="h-10 w-auto flex items-center" style={{ textDecoration: 'none' }}>
           <img
             src={kpmgLogo}
             alt="KPMG"
@@ -21,7 +21,7 @@ const Navbar = ({ onMenuToggle, isScrolled = false, showHomeButton = false, hide
               filter: 'brightness(0) saturate(100%) invert(14%) sepia(86%) saturate(1583%) hue-rotate(208deg) brightness(91%) contrast(101%)'
             }}
           />
-        </div>
+        </Link>
 
         {/* Right side actions */}
         <div className="flex items-center gap-4">

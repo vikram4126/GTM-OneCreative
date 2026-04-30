@@ -6,14 +6,14 @@ const SidebarMenu = ({ isOpen, onToggle, activeSection, hideSections = false }) 
   const location = useLocation();
 
   const allMenuItems = [
-    { label: 'Introduction',      id: 'intro-end' },
+    { label: 'Introduction',      id: 'storytelling' },
     { label: 'Pillars',           id: 'pillars' },
     { label: 'Services',          id: 'services' },
     { label: 'Creative Showcase', id: 'creative-showcase' },
     { label: 'Exploring',         id: 'exploring' },
     { label: 'Inspiration',       id: 'inspiration' },
     { label: 'Get in touch',      id: 'footer', className: 'get-in-touch' },
-    { label: 'Home',              id: 'intro-start', className: 'home-link' },
+    { label: 'Home',              id: 'storytelling', className: 'home-link' },
   ];
 
   const menuItems = hideSections 
@@ -61,16 +61,24 @@ const SidebarMenu = ({ isOpen, onToggle, activeSection, hideSections = false }) 
 
         {/* Nav Links */}
         <nav className="flex-1 flex flex-col overflow-y-auto pt-4 pb-4">
-          {menuItems.map((item) => (
+          {menuItems.filter(item => item.label !== 'Home').map((item) => (
             <div
               key={item.id}
-              className={`menu-item ${item.className || ''} ${activeSection === item.id ? 'active' : ''}`}
+              className={`menu-item ${item.className || ''}`}
               onClick={() => handleLinkClick(item.id)}
             >
               {item.label}
             </div>
           ))}
         </nav>
+
+        {/* Home — pinned to bottom */}
+        <div
+          className="menu-item home-link"
+          onClick={() => handleLinkClick('storytelling')}
+        >
+          Home
+        </div>
       </div>
     </>
   );

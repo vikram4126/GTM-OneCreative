@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import SidebarMenu from '../components/SidebarMenu';
 import { SectionHero } from '../sections/HeroSection';
+import StorytellingSection from '../sections/StorytellingSection';
 import { SectionVideoIntro } from '../sections/SectionVideoIntro';
 import {
   SectionDesignStrategy,
@@ -76,15 +77,15 @@ const Home = () => {
 
   const handleVideoComplete = () => {
     setIsVideoFinished(true);
-    const homeEl = document.getElementById('intro-start');
+    const homeEl = document.getElementById('storytelling');
     if (homeEl) {
       homeEl.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
-  // Show navbar when intro-start section enters viewport (scroll or skip)
+  // Show navbar when storytelling section enters viewport (scroll or skip)
   useEffect(() => {
-    const introSection = document.getElementById('intro-start');
+    const introSection = document.getElementById('storytelling');
     if (!introSection) return;
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -124,15 +125,21 @@ const Home = () => {
           <SectionVideoIntro onComplete={handleVideoComplete} />
         </section>
 
-        {/* 1. Hero — GSAP animation */}
-        <section id="intro-start" className="snap-section">
-          <SectionHero />
+        {/* 1a. Storytelling Animation */}
+        <section id="storytelling" className="snap-section">
+          <StorytellingSection />
         </section>
 
-        {/* 2. Creativity Section */}
-        <section id="intro-end" className="snap-section">
-          <SectionCreativity />
-        </section>
+        {/* 1b. Hero + Creativity — HIDDEN (not deleted) */}
+        <div style={{ display: 'none' }}>
+          <section id="intro-start" className="snap-section">
+            <SectionHero />
+          </section>
+
+          <section id="intro-end" className="snap-section">
+            <SectionCreativity />
+          </section>
+        </div>
 
         {/* 3. Design Strategy */}
         <section id="pillars" className="snap-section">
