@@ -147,7 +147,7 @@ const Home = () => {
         </section>
 
         {/* 4. Services Cards */}
-        <section id="services" className="snap-section">
+        <section id="services-wrapper" className="snap-section">
           <SectionServices />
         </section>
 
