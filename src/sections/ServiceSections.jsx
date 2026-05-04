@@ -45,7 +45,7 @@ const SidebarDots = ({ total, active, swiperRef }) => (
 );
 
 /* ── Section 1: Service Banner ── */
-export const ServiceBanner = ({ title = [], description = "" }) => {
+export const ServiceBanner = ({ title = [], description = "", iconTop, iconBottom }) => {
   const sectionRef = useRef(null);
   const leftRef = useRef(null);
   const centerRef = useRef(null);
@@ -70,7 +70,7 @@ export const ServiceBanner = ({ title = [], description = "" }) => {
 
 
       tl.to(centerRef.current, {
-        backgroundColor: 'var(--color-blue-dark)',
+        backgroundColor: '#00B8F5', // Match home page card color
         border: '0px solid transparent',
 
         duration: 0.8,
@@ -130,9 +130,9 @@ export const ServiceBanner = ({ title = [], description = "" }) => {
             ref={leftRef}
             style={{
               flex: 1,
-              textAlign: 'left',
+              textAlign: 'right',
               display: 'flex',
-              justifyContent: 'flex-start',
+              justifyContent: 'flex-end',
               marginRight: '-20px',
               position: 'relative',
               zIndex: 10
@@ -147,6 +147,7 @@ export const ServiceBanner = ({ title = [], description = "" }) => {
                 color: '#FFFFFF',
                 maxWidth: '500px',
                 textTransform: 'none',
+                textAlign: 'right',
               }}
             >
               {title.map((line, i) => <React.Fragment key={i}>{line}<br /></React.Fragment>)}
@@ -156,8 +157,9 @@ export const ServiceBanner = ({ title = [], description = "" }) => {
           <div
             ref={centerRef}
             style={{
-              width: 'clamp(200px, 30vw, 450px)',
-              height: 'clamp(300px, 40vh, 500px)',
+              width: '100%',
+              maxWidth: '350px',
+              height: 'clamp(450px, 55vh, 600px)',
               backgroundColor: 'var(--color-blue-navy)',
               flexShrink: 0,
               transformOrigin: 'center center',
@@ -165,9 +167,27 @@ export const ServiceBanner = ({ title = [], description = "" }) => {
               position: 'relative',
               zIndex: 1,
               boxShadow: '0 40px 80px rgba(0, 0, 0, 0.4)',
-              borderRadius: '0px'
+              borderRadius: '0px',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              padding: '24px'
             }}
-          />
+          >
+            {/* Top icon */}
+            {iconTop && (
+              <div style={{ opacity: 0.8 }}>
+                <img src={iconTop} alt="top-icon" style={{ width: '28px', height: '28px' }} />
+              </div>
+            )}
+            
+            {/* Bottom icon */}
+            {iconBottom && (
+              <div style={{ alignSelf: 'flex-end', opacity: 0.8 }}>
+                <img src={iconBottom} alt="bottom-icon" style={{ width: '28px', height: '28px' }} />
+              </div>
+            )}
+          </div>
 
 
           {/* Right Column - Paragraph */}

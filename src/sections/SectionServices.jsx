@@ -8,11 +8,31 @@ gsap.registerPlugin(ScrollTrigger);
 /* ── Card icon components (blue stroke) ──────────── */
 
 
-const CARDS = [
-  { id: 'uk-create',            title: ['UK', 'Create'],            iconSrc: '/images/icons/scissors.png' },
-  { id: 'us-creative-services', title: ['US Creative', 'Services'], iconSrc: '/images/icons/globe.png'    },
-  { id: 'us-advisory-creative', title: ['US Advisory', 'Creative'], iconSrc: '/images/icons/chart.png'    },
-  { id: 'uk-learning-design',   title: ['UK Learning', 'Design'],   iconSrc: '/images/icons/star.png'     },
+export const CARDS = [
+  { 
+    id: 'uk-create',            
+    title: ['UK', 'Create'],            
+    iconTop: '/images/icons/scissors.png',
+    iconBottom: '/images/icons/magic-wand.png' 
+  },
+  { 
+    id: 'us-creative-services', 
+    title: ['US Creative', 'Services'], 
+    iconTop: '/images/icons/globe.png',
+    iconBottom: '/images/icons/group.png'    
+  },
+  { 
+    id: 'us-advisory-creative', 
+    title: ['US Advisory', 'Creative'], 
+    iconTop: '/images/icons/chart.png',
+    iconBottom: '/images/icons/write.png'    
+  },
+  { 
+    id: 'uk-learning-design',   
+    title: ['UK Learning', 'Design'],   
+    iconTop: '/images/icons/star.png',
+    iconBottom: '/images/icons/create.png'     
+  },
 ];
 
 export const SectionServices = () => {
@@ -37,7 +57,6 @@ export const SectionServices = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="services-grid-responsive">
           {CARDS.map((card, i) => {
-            const { iconSrc } = card;
             return (
               <Link
                 key={i}
@@ -68,7 +87,9 @@ export const SectionServices = () => {
                 className="hover:scale-[1.02] transition-transform duration-300"
               >
               {/* Top-left icon */}
-              <div style={{ opacity: 0.8 }}><img src={iconSrc} alt={card.id} style={{ width: '24px', height: '24px' }} /></div>
+              <div style={{ opacity: 0.8 }}>
+                <img src={card.iconTop} alt={`${card.id}-top`} style={{ width: '28px', height: '28px' }} />
+              </div>
 
               {/* Center text */}
               <div
@@ -98,7 +119,9 @@ export const SectionServices = () => {
               </div>
 
               {/* Bottom-right icon */}
-              <div style={{ alignSelf: 'flex-end', opacity: 0.8 }}><img src={iconSrc} alt={card.id} style={{ width: '24px', height: '24px' }} /></div>
+              <div style={{ alignSelf: 'flex-end', opacity: 0.8 }}>
+                <img src={card.iconBottom} alt={`${card.id}-bottom`} style={{ width: '28px', height: '28px' }} />
+              </div>
             </Link>
           );
         })}

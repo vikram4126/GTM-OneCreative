@@ -1,25 +1,35 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import footerBg from '../assets/images/footer-bg.png';
-import memberKrishna from '../assets/images/member-krishna.jpg';
-import memberShweta from '../assets/images/member-shweta.jpg';
+
+const ALL_MEMBERS = [
+  {
+    name: 'Krishna Venkatrangan',
+    role: 'Director,',
+    company: 'OneCreative',
+    img: '/images/krishana.jpeg'
+  },
+  {
+    name: 'Shantanu',
+    role: 'Associate Director,',
+    company: 'OneCreative',
+    img: '/images/shantanu.jpeg'
+  },
+  {
+    name: 'Shweta Gor',
+    role: 'Associate Director,',
+    company: 'OneCreative',
+    img: '/images/shaweta.jpeg'
+  }
+];
 
 export const SectionFooter = ({ customMembers }) => {
-  const defaultMembers = [
-    {
-      name: 'Krishna Venkatrangan',
-      role: 'Director,',
-      company: 'OneCreative',
-      img: memberKrishna
-    },
-    {
-      name: 'Shweta Gor',
-      role: 'Associate Director,',
-      company: 'OneCreative',
-      img: memberShweta
-    }
-  ];
-
-  const members = customMembers && customMembers.length > 0 ? customMembers : defaultMembers;
+  const members = useMemo(() => {
+    if (customMembers && customMembers.length > 0) return customMembers;
+    
+    // Randomly pick 2 different members from ALL_MEMBERS
+    const shuffled = [...ALL_MEMBERS].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, 2);
+  }, [customMembers]);
 
   return (
     <footer 

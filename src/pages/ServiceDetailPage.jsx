@@ -8,11 +8,16 @@ import { SectionFooter } from '../sections/SectionFooter';
 import servicesData from '../data/services.json';
 import footerBg from '../assets/images/footer-bg.png';
 
+import { CARDS } from '../sections/SectionServices';
+
 const ServiceDetailPage = () => {
   const { id } = useParams();
   const [service, setService] = useState(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isNavbarDark, setIsNavbarDark] = useState(false);
+
+  // Get icons for the current service
+  const serviceIcons = CARDS.find(c => c.id === id) || {};
 
   useEffect(() => {
     const foundService = servicesData.find(s => s.id === id);
@@ -48,7 +53,9 @@ const ServiceDetailPage = () => {
         {/* Section 1: Banner */}
         <ServiceBanner 
           title={service.banner.title} 
-          description={service.banner.description} 
+          description={service.banner.description}
+          iconTop={serviceIcons.iconTop}
+          iconBottom={serviceIcons.iconBottom}
         />
 
         {/* Section 2: Service Details Slider */}
