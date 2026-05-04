@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&family=Bebas+Neue&display=swap');
 @import "tailwindcss";
 
 html, body {
@@ -9,23 +8,23 @@ html, body {
 }
 
 @font-face {
-  font-family: 'kpmg-font';
-  src: url('/fonts/OpenSans_Condensed-Bold-normal.woff2') format('woff2');
+  font-family: 'OpenSans-CondBold';
+  src: url('/fonts/OpenSans-CondBold.ttf') format('truetype');
   font-weight: 700;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'kpmg-font';
-  src: url('/fonts/OpenSans-SemiBold-normal.woff2') format('woff2');
-  font-weight: 600;
+  font-family: 'OpenSans-Regular';
+  src: url('/fonts/OpenSans-Regular.ttf') format('truetype');
+  font-weight: 400;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'kpmg-font';
-  src: url('/fonts/OpenSans-Regular-normal.woff2') format('woff2');
-  font-weight: 400;
+  font-family: 'OpenSans-Bold';
+  src: url('/fonts/OpenSans-Bold.ttf') format('truetype');
+  font-weight: 700;
   font-display: swap;
 }
 
@@ -40,15 +39,12 @@ html, body {
   --color-bg-light:    #F5F7FA;
   --color-white:       #FFFFFF;
 
-  --font-inter:  "Inter",      sans-serif;
-  --font-outfit: "Outfit",     sans-serif;
-  --font-bebas:  "Bebas Neue", sans-serif;
-  --font-heading: "kpmg-font", sans-serif;
-  --font-subheading: "kpmg-font", sans-serif;
-  --font-body: "kpmg-font", sans-serif;
+  --font-heading: "OpenSans-CondBold", sans-serif;
+  --font-body: "OpenSans-Regular", sans-serif;
+  --font-bold: "OpenSans-Bold", sans-serif;
 }
 
-/* ─── Reset — no border-radius anywhere globally ─── */
+/* ─── Reset ─── */
 *, *::before, *::after {
   box-sizing: border-box;
   border-radius: 0;
@@ -73,21 +69,30 @@ html, body {
   color: #1E49E2 !important;
 }
 
+/* ─── Global Typography ─── */
 html, body {
   margin: 0; padding: 0;
   background: #FFFFFF;
   color: #000;
-  font-family: var(--font-content);
+  font-family: var(--font-body);
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
 
-/* Global text defaults */
-h1, h2, h3, h4, h5, h6, p, span { 
-  margin: 0; 
+h1, h2, h3, h4 { 
+  font-family: var(--font-heading); 
+  font-weight: 700; 
 }
-h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; }
-h5, h6, .subheading { font-family: var(--font-subheading); font-weight: 600; }
+
+h5, h6, .subheading { 
+  font-family: var(--font-heading); 
+  font-weight: 700; 
+}
+
+b, strong, .font-bold { 
+  font-family: var(--font-bold) !important; 
+  font-weight: 700; 
+}
 
 
 /* ─── Global Section Styles ──────────── */
