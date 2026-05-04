@@ -80,7 +80,7 @@ const ServiceDetailPage = () => {
             padding: '80px 0'
           }}
         >
-          <SectionFooter />
+          <SectionFooter contactIds={service.contactIds} />
         </section>
       </main>
     </div>

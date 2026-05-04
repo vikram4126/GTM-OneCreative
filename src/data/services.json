@@ -12,6 +12,7 @@
       { "title": "Digital Content", "image": "service-detail-3.jpeg", "desc": "Producing high-impact digital content tailored for your target audience across all platforms." },
       { "title": "Campaign Design", "image": "service-detail-4.jpeg", "desc": "Designing integrated campaigns that resonate with consumers and drive action." }
     ],
+    "contactIds": ["krishna", "shantanu"],
     "categoryId": 0
   },
   {
@@ -27,6 +28,7 @@
       { "title": "UI/UX Design", "image": "service-detail-4.jpeg", "desc": "Designing intuitive user interfaces and engaging experiences for your digital products." },
       { "title": "Social Media", "image": "service-detail-1.jpeg", "desc": "Developing creative assets for social media campaigns that capture attention and foster community." }
     ],
+    "contactIds": ["shantanu", "shweta"],
     "categoryId": 1
   },
   {
@@ -42,6 +44,7 @@
       { "title": "Strategic Reports", "image": "service-detail-1.jpeg", "desc": "Creating visually engaging reports that highlight key insights and strategic directions." },
       { "title": "Leadership Comms", "image": "service-detail-2.jpeg", "desc": "Supporting leadership with creative assets that articulate vision and drive transformation." }
     ],
+    "contactIds": ["krishna", "shweta"],
     "categoryId": 2
   },
   {
@@ -57,6 +60,7 @@
       { "title": "Video Learning", "image": "service-detail-2.jpeg", "desc": "Producing educational videos that simplify complex topics and enhance learning experiences." },
       { "title": "Interactive Training", "image": "service-detail-3.jpeg", "desc": "Designing interactive training sessions that encourage participation and practical application." }
     ],
+    "contactIds": ["krishna", "shantanu"],
     "categoryId": 3
   }
 ]

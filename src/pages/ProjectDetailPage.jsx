@@ -85,7 +85,7 @@ const ProjectDetailPage = () => {
           padding: '80px 0'
         }}
       >
-        <SectionFooter customMembers={slide.contacts} />
+        <SectionFooter contactIds={slide.contactIds} customMembers={slide.contacts} />
       </footer>
     </div>
   );

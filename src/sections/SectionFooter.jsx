@@ -1,35 +1,43 @@
 import React, { useMemo } from 'react';
 import footerBg from '../assets/images/footer-bg.png';
 
-const ALL_MEMBERS = [
-  {
+export const MEMBER_MAP = {
+  krishna: {
     name: 'Krishna Venkatrangan',
     role: 'Director,',
     company: 'OneCreative',
     img: '/images/krishana.jpeg'
   },
-  {
+  shantanu: {
     name: 'Shantanu',
     role: 'Associate Director,',
     company: 'OneCreative',
     img: '/images/shantanu.jpeg'
   },
-  {
+  shweta: {
     name: 'Shweta Gor',
     role: 'Associate Director,',
     company: 'OneCreative',
     img: '/images/shaweta.jpeg'
   }
-];
+};
 
-export const SectionFooter = ({ customMembers }) => {
+const ALL_MEMBERS = Object.values(MEMBER_MAP);
+
+export const SectionFooter = ({ contactIds, customMembers }) => {
   const members = useMemo(() => {
+    // 1. Priority: full member objects passed directly
     if (customMembers && customMembers.length > 0) return customMembers;
     
-    // Randomly pick 2 different members from ALL_MEMBERS
+    // 2. Priority: contact IDs passed to be resolved
+    if (contactIds && contactIds.length > 0) {
+      return contactIds.map(id => MEMBER_MAP[id]).filter(Boolean);
+    }
+
+    // 3. Fallback: random 2 members
     const shuffled = [...ALL_MEMBERS].sort(() => 0.5 - Math.random());
     return shuffled.slice(0, 2);
-  }, [customMembers]);
+  }, [contactIds, customMembers]);
 
   return (
     <footer 
