@@ -23,7 +23,7 @@ const templateMap = {
 
 const ProjectDetailPage = () => {
   const { id } = useParams();
-  
+
   const slide = slidesData.find(s => s.id === id);
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -61,7 +61,7 @@ const ProjectDetailPage = () => {
   return (
     <div className="w-full relative bg-white">
       <Navbar onMenuToggle={toggleMenu} isScrolled={isNavbarDark} showHomeButton={true} hideBurger={true} />
-      
+
       {/* Dynamic Template Banner */}
       <div className="pt-20">
         <TemplateComponent slide={slide} />
@@ -73,10 +73,10 @@ const ProjectDetailPage = () => {
       </div>
 
       {/* Sync Footer with Home Page Footer */}
-      <footer 
+      <footer
         id="footer"
-        className="mt-20"
-        style={{ 
+        className=""
+        style={{
           backgroundImage: `url(${footerBg})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',

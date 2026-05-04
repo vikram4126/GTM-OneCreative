@@ -15,12 +15,12 @@ gsap.registerPlugin(ScrollTrigger);
 /* ─── Right-side clickable dot pagination ─── */
 const SidebarDots = ({ total, active, swiperRef }) => (
   <div style={{
-    position: 'absolute', 
-    right: 30, 
-    top: '50%', 
+    position: 'absolute',
+    right: 30,
+    top: '50%',
     transform: 'translateY(-50%)',
-    display: 'flex', 
-    flexDirection: 'column', 
+    display: 'flex',
+    flexDirection: 'column',
     gap: 12,
     zIndex: 50,
   }}>
@@ -29,16 +29,17 @@ const SidebarDots = ({ total, active, swiperRef }) => (
         key={i}
         onClick={() => swiperRef.current?.slideTo(i)}
         style={{
-          width: 18, 
+          width: 18,
           height: 18,
           borderRadius: 0,
-          border: '2px solid rgba(255,255,255,0.6)',
-          backgroundColor: i === active ? 'rgba(255,255,255,0.9)' : 'transparent',
+          border: '2px solid rgba(255,255,255,0.2)',
+          backgroundColor: i === active ? 'var(--color-white)' : 'transparent',
           cursor: 'pointer',
           transition: 'all 0.3s ease',
-          boxShadow: i === active ? '0 0 10px rgba(255,255,255,0.3)' : 'none'
+          boxShadow: i === active ? '0 0 15px rgba(0, 174, 239, 0.4)' : 'none'
         }}
       />
+
     ))}
   </div>
 );
@@ -61,21 +62,23 @@ export const ServiceBanner = ({ title = [], description = "" }) => {
         }
       });
 
-      gsap.set(centerRef.current, { 
+      gsap.set(centerRef.current, {
         backgroundColor: 'transparent',
-        border: '1.5px solid #1E49E2',
+        border: '1px solid rgba(255,255,255,0.1)',
         scaleY: 1
       });
 
+
       tl.to(centerRef.current, {
-        backgroundColor: '#00338d',
+        backgroundColor: 'var(--color-blue-dark)',
         border: '0px solid transparent',
+
         duration: 0.8,
         ease: 'power2.inOut'
       });
 
-      tl.fromTo([leftRef.current, rightRef.current], 
-        { opacity: 0, y: 30 }, 
+      tl.fromTo([leftRef.current, rightRef.current],
+        { opacity: 0, y: 30 },
         { opacity: 1, y: 0, duration: 0.8, stagger: 0.2, ease: 'power3.out' },
         '-=0.4'
       );
@@ -102,7 +105,7 @@ export const ServiceBanner = ({ title = [], description = "" }) => {
       }}
     >
 
-      <div 
+      <div
         className="container mx-auto px-6 lg:px-12 relative z-10"
         style={{
           display: 'flex',
@@ -121,12 +124,12 @@ export const ServiceBanner = ({ title = [], description = "" }) => {
           maxWidth: '1200px',
           gap: '0px'
         }}>
-          
+
           {/* Left Column - Heading */}
-          <div 
+          <div
             ref={leftRef}
-            style={{ 
-              flex: 1, 
+            style={{
+              flex: 1,
               textAlign: 'left',
               display: 'flex',
               justifyContent: 'flex-start',
@@ -135,60 +138,62 @@ export const ServiceBanner = ({ title = [], description = "" }) => {
               zIndex: 10
             }}
           >
-            <h2 
-              style={{ 
+            <h2
+              style={{
                 fontFamily: 'var(--font-heading)',
                 fontWeight: 900,
                 fontSize: 'clamp(2.5rem, 5.5vw, 4.8rem)',
                 lineHeight: 1.1,
-                color: '#FFFFFF', 
+                color: '#FFFFFF',
                 maxWidth: '500px',
                 textTransform: 'none',
               }}
             >
-              {title.map((line, i) => <React.Fragment key={i}>{line}<br/></React.Fragment>)}
+              {title.map((line, i) => <React.Fragment key={i}>{line}<br /></React.Fragment>)}
             </h2>
           </div>
 
-          {/* Middle Column - Dark Blue Rectangle */}
-          <div 
+          <div
             ref={centerRef}
             style={{
               width: 'clamp(200px, 30vw, 450px)',
               height: 'clamp(300px, 40vh, 500px)',
-              backgroundColor: '#00338d',
+              backgroundColor: 'var(--color-blue-navy)',
               flexShrink: 0,
               transformOrigin: 'center center',
               boxSizing: 'border-box',
               position: 'relative',
               zIndex: 1,
-              boxShadow: '0 0 40px rgba(0, 0, 0, 0.12)'
+              boxShadow: '0 40px 80px rgba(0, 0, 0, 0.4)',
+              borderRadius: '0px'
             }}
           />
 
+
           {/* Right Column - Paragraph */}
-          <div 
+          <div
             ref={rightRef}
-            style={{ 
-              flex: 1, 
+            style={{
+              flex: 1,
               textAlign: 'left',
               marginLeft: '-20px',
               position: 'relative',
               zIndex: 10
             }}
           >
-            <p 
+            <p
               style={{
                 fontFamily: 'var(--font-body)',
                 fontWeight: 600,
                 fontSize: 'clamp(1.1rem, 1.4vw, 1.25rem)',
                 lineHeight: 1.6,
-                color: '#FFFFFF', 
+                color: 'rgba(255, 255, 255, 0.7)',
                 maxWidth: '420px'
               }}
             >
               {description}
             </p>
+
           </div>
         </div>
       </div>
@@ -205,10 +210,10 @@ export const ServiceDetailSlider = ({ slides = [] }) => {
   // and we will require them or use a resolver.
   // For now, let's assume the images are in src/assets/images and we'll use a dynamic import style if possible
   // or just use the names.
-  
+
   // Since we copied them to src/assets/images, we can try to resolve them.
   // Actually, it's easier to import them all here if they are known.
-  
+
   const [resolvedSlides, setResolvedSlides] = useState([]);
 
   useEffect(() => {
@@ -229,17 +234,22 @@ export const ServiceDetailSlider = ({ slides = [] }) => {
   if (resolvedSlides.length === 0) return null;
 
   return (
-    <section 
-      style={{ 
-        position: 'relative', 
-        width: '100%', 
+    <section
+      style={{
+        position: 'relative',
+        width: '100%',
         backgroundImage: `url(${pillarsBg})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         overflow: 'hidden',
-        padding: '80px 0'
+        padding: '120px 0',
+        backgroundColor: 'var(--color-blue-dark)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
       }}
     >
+
       <Swiper
         modules={[EffectFade]}
         effect="fade"
@@ -265,22 +275,25 @@ export const ServiceDetailSlider = ({ slides = [] }) => {
               </h1>
 
               {/* Panoramic image */}
-              <div style={{ position: 'relative', zIndex: 1, width: '100%', height: '42vh', overflow: 'hidden', boxShadow: '0 20px 60px rgba(0,0,0,0.25)' }}>
+              <div style={{ position: 'relative', zIndex: 1, width: '100%', height: '42vh', overflow: 'hidden', boxShadow: '0 30px 60px rgba(0,0,0,0.3)', borderRadius: '12px' }}>
                 <img src={slide.img} alt={slide.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
 
+
               {/* Description */}
               <p style={{
-                marginTop: '2rem',
-                color: '#FFFFFF',
+                marginTop: '2.5rem',
+                color: 'rgba(255, 255, 255, 0.6)',
                 fontSize: 'clamp(1rem, 1.2vw, 1.25rem)',
                 textAlign: 'center',
                 maxWidth: '800px',
                 fontFamily: 'var(--font-body)',
-                lineHeight: 1.6
+                lineHeight: 1.7,
+                fontWeight: 500
               }}>
                 {slide.desc}
               </p>
+
             </div>
           </SwiperSlide>
         ))}
