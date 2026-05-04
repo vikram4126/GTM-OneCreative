@@ -40,10 +40,7 @@ export const SectionFooter = ({ contactIds, customMembers }) => {
   }, [contactIds, customMembers]);
 
   return (
-    <footer 
-      id="footer"
-      className="w-full relative"
-    >
+    <div className="w-full relative py-20">
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         
@@ -122,6 +119,6 @@ export const SectionFooter = ({ contactIds, customMembers }) => {
           Disclaimer - Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book..
         </p>
       </div>
-    </footer>
+    </div>
   );
 };

@@ -73,9 +73,9 @@ const ProjectDetailPage = () => {
       </div>
 
       {/* Sync Footer with Home Page Footer */}
-      <footer
+      <section
         id="footer"
-        className=""
+        className="snap-section"
         style={{
           backgroundImage: `url(${footerBg})`,
           backgroundSize: 'cover',
@@ -86,7 +86,7 @@ const ProjectDetailPage = () => {
         }}
       >
         <SectionFooter contactIds={slide.contactIds} customMembers={slide.contacts} />
-      </footer>
+      </section>
     </div>
   );
 };

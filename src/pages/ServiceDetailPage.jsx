@@ -71,6 +71,7 @@ const ServiceDetailPage = () => {
         {/* Section 4: Footer */}
         <section 
           id="footer"
+          className="snap-section"
           style={{ 
             backgroundImage: `url(${footerBg})`,
             backgroundSize: 'cover',

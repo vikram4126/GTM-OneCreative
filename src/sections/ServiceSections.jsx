@@ -51,6 +51,9 @@ export const ServiceBanner = ({ title = [], description = "", iconTop, iconBotto
   const centerRef = useRef(null);
   const rightRef = useRef(null);
 
+  const iconTopRef = useRef(null);
+  const iconBottomRef = useRef(null);
+
   useEffect(() => {
     const ctx = gsap.context(() => {
       if (!sectionRef.current) return;
@@ -62,26 +65,60 @@ export const ServiceBanner = ({ title = [], description = "", iconTop, iconBotto
         }
       });
 
+      // Initial states
       gsap.set(centerRef.current, {
         backgroundColor: 'transparent',
         border: '1px solid rgba(255,255,255,0.1)',
-        scaleY: 1
+        scale: 0.8,
+        opacity: 0
       });
+      gsap.set([leftRef.current, rightRef.current], { opacity: 0, y: 50 });
+      gsap.set([iconTopRef.current, iconBottomRef.current], { scale: 0, opacity: 0 });
 
-
+      // Step 1: Center Box Entry
       tl.to(centerRef.current, {
-        backgroundColor: '#00B8F5', // Match home page card color
+        backgroundColor: '#00B8F5',
         border: '0px solid transparent',
-
-        duration: 0.8,
-        ease: 'power2.inOut'
+        scale: 1,
+        opacity: 1,
+        duration: 1,
+        ease: 'power3.out'
       });
 
-      tl.fromTo([leftRef.current, rightRef.current],
-        { opacity: 0, y: 30 },
-        { opacity: 1, y: 0, duration: 0.8, stagger: 0.2, ease: 'power3.out' },
-        '-=0.4'
-      );
+      // Step 2: Columns Entry
+      tl.to([leftRef.current, rightRef.current], {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        stagger: 0.2,
+        ease: 'power3.out'
+      }, '-=0.6');
+
+      // Step 3: Icons Pop In
+      tl.to([iconTopRef.current, iconBottomRef.current], {
+        scale: 1,
+        opacity: 0.8,
+        duration: 0.5,
+        stagger: 0.1,
+        ease: 'back.out(1.7)'
+      }, '-=0.3');
+
+      // Micro-animations: Floating icons
+      gsap.to(iconTopRef.current, {
+        y: -10,
+        duration: 2,
+        repeat: -1,
+        yoyo: true,
+        ease: 'sine.inOut'
+      });
+      gsap.to(iconBottomRef.current, {
+        y: 10,
+        duration: 2.5,
+        repeat: -1,
+        yoyo: true,
+        ease: 'sine.inOut',
+        delay: 0.5
+      });
 
     }, sectionRef);
 
@@ -176,14 +213,14 @@ export const ServiceBanner = ({ title = [], description = "", iconTop, iconBotto
           >
             {/* Top icon */}
             {iconTop && (
-              <div style={{ opacity: 0.8 }}>
+              <div ref={iconTopRef} style={{ opacity: 0.8 }}>
                 <img src={iconTop} alt="top-icon" style={{ width: '28px', height: '28px' }} />
               </div>
             )}
             
             {/* Bottom icon */}
             {iconBottom && (
-              <div style={{ alignSelf: 'flex-end', opacity: 0.8 }}>
+              <div ref={iconBottomRef} style={{ alignSelf: 'flex-end', opacity: 0.8 }}>
                 <img src={iconBottom} alt="bottom-icon" style={{ width: '28px', height: '28px' }} />
               </div>
             )}
