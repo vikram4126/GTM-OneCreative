@@ -284,22 +284,7 @@ export const ServiceDetailSlider = ({ slides = [] }) => {
   // Since we copied them to src/assets/images, we can try to resolve them.
   // Actually, it's easier to import them all here if they are known.
 
-  const [resolvedSlides, setResolvedSlides] = useState([]);
-
-  useEffect(() => {
-    const loadImages = () => {
-      const updatedSlides = slides.map((slide) => {
-        // Use new URL() for Vite asset resolution
-        const imgUrl = new URL(`../assets/images/${slide.image}`, import.meta.url).href;
-        return { ...slide, img: imgUrl };
-      });
-      setResolvedSlides(updatedSlides);
-    };
-
-    if (slides.length > 0) {
-      loadImages();
-    }
-  }, [slides]);
+  const resolvedSlides = slides;
 
   if (resolvedSlides.length === 0) return null;
 
@@ -343,7 +328,7 @@ export const ServiceDetailSlider = ({ slides = [] }) => {
 
               {/* Panoramic image */}
               <div style={{ position: 'relative', zIndex: 1, width: '100%', height: '42vh', overflow: 'hidden', boxShadow: '0 30px 60px rgba(0,0,0,0.3)', borderRadius: '12px' }}>
-                <img src={slide.img} alt={slide.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <img src={`/images/${slide.image}`} alt={slide.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
 
               {/* Capabilities Overview button */}
