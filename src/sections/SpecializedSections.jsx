@@ -362,7 +362,8 @@ export const SectionInspiration = () => {
                       color: 'rgba(255,255,255,0.12)',
                       lineHeight: 1,
                       zIndex: 0,
-                      userSelect: 'none'
+                      userSelect: 'none',
+                      fontFamily: 'var(--font-heading)'
                     }}>
                       0{pi + 1}
                     </div>
