@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;400;600;700;800&display=swap');
 
 html,
 body {
@@ -9,7 +11,7 @@ body {
 }
 
 @font-face {
-  font-family: 'ƒ';
+  font-family: 'KPMG-Bold';
   src: url('/fonts/KPMG-Bold.ttf') format('truetype');
   font-weight: 700;
   font-display: swap;
@@ -48,7 +50,8 @@ body {
   --color-white: #FFFFFF;
 
   --font-heading: "KPMG-Bold", "OpenSans-CondBold", sans-serif;
-  --font-body: "OpenSans-Regular", sans-serif;
+  --font-subheading: "Open Sans Condensed", sans-serif;
+  --font-body: "Open Sans", sans-serif;
   --font-bold: "KPMG-Bold", "OpenSans-Bold", sans-serif;
 }
 
@@ -104,7 +107,7 @@ h4 {
 h5,
 h6,
 .subheading {
-  font-family: var(--font-heading);
+  font-family: var(--font-subheading);
   font-weight: 700;
 }
 
