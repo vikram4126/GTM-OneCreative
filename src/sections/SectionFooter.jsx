@@ -6,19 +6,22 @@ export const MEMBER_MAP = {
     name: 'Krishna Venkatrangan',
     role: 'Director,',
     company: 'OneCreative',
-    img: '/images/krishana.jpeg'
+    img: '/images/krishana.jpeg',
+    email: 'krishnav@onecreative.com'
   },
   shantanu: {
     name: 'Shantanu',
     role: 'Associate Director,',
     company: 'OneCreative',
-    img: '/images/shantanu.jpeg'
+    img: '/images/shantanu.jpeg',
+    email: 'shantanu@onecreative.com'
   },
   shweta: {
     name: 'Shweta Gor',
     role: 'Associate Director,',
     company: 'OneCreative',
-    img: '/images/shaweta.jpeg'
+    img: '/images/shaweta.jpeg',
+    email: 'shweta@onecreative.com'
   }
 };
 
@@ -102,11 +105,11 @@ export const SectionFooter = ({ contactIds, customMembers }) => {
                 <p className="text-white/90 text-sm font-semibold mb-4" style={{ fontFamily: 'var(--font-body)' }}>{m.company}</p>
                 
                 {/* Email Icon */}
-                <div>
+                <a href={`mailto:${m.email}`} className="inline-block hover:scale-110 transition-transform duration-300">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <rect width="20" height="16" x="2" y="4" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                   </svg>
-                </div>
+                </a>
               </div>
             </div>
           ))}

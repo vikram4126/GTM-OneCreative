@@ -179,7 +179,7 @@ const Home = () => {
             padding: '80px 0'
           }}
         >
-          <SectionFooter />
+          <SectionFooter contactIds={['krishna', 'shantanu']} />
         </section>
 
       </main>
