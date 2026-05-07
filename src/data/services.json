@@ -2,15 +2,101 @@
   {
     "id": "uk-create",
     "title": "UK Create",
+    "iconTop": "/images/icons/scissors.png",
+    "iconBottom": "/images/icons/magic-wand.png",
     "banner": {
       "title": ["UK", "Create"],
       "description": "Empowering UK businesses with world-class creative solutions that drive engagement and deliver measurable results through strategic design and storytelling."
     },
     "details": [
-      { "title": "Creative Strategy", "image": "service-detail-1.jpeg", "desc": "Developing robust creative strategies that align with your business goals and market demands." },
-      { "title": "Visual Identity", "image": "service-detail-2.jpeg", "desc": "Crafting unique visual identities that make your brand stand out in a crowded marketplace." },
-      { "title": "Digital Content", "image": "service-detail-3.jpeg", "desc": "Producing high-impact digital content tailored for your target audience across all platforms." },
-      { "title": "Campaign Design", "image": "service-detail-4.jpeg", "desc": "Designing integrated campaigns that resonate with consumers and drive action." }
+      { 
+        "title": "Creative Strategy", 
+        "image": "service-detail-1.jpeg", 
+        "desc": "Developing robust creative strategies that align with your business goals and market demands.",
+        "popupData": {
+          "title": "Creative Strategy Capabilities",
+          "intro": "Our creative strategy focuses on bridging the gap between business objectives and visual execution.",
+          "highlights": [
+            { "number": "200+", "label": "Strategies Defined" },
+            { "number": "50+", "label": "Brand Audits" },
+            { "number": "15+", "label": "Markets Analyzed" },
+            { "number": "10+", "label": "Awards Won" },
+            { "number": "5+", "label": "Global Partners" }
+          ],
+          "technologies": [
+            { "name": "Strategic Mapping", "description": "Defining the visual path for brand growth." },
+            { "name": "Competitive Analysis", "description": "Understanding market positioning." },
+            { "name": "Brand Architecture", "description": "Structuring brand ecosystems." }
+          ],
+          "galleryImages": ["pillar-1.jpg", "insp-1.jpg", "insp-2.jpg"]
+        }
+      },
+      { 
+        "title": "Visual Identity", 
+        "image": "service-detail-2.jpeg", 
+        "desc": "Crafting unique visual identities that make your brand stand out in a crowded marketplace.",
+        "popupData": {
+          "title": "Visual Identity Services",
+          "intro": "We create cohesive brand systems that resonate across all touchpoints.",
+          "highlights": [
+            { "number": "100+", "label": "Logos Designed" },
+            { "number": "40+", "label": "Style Guides" },
+            { "number": "500+", "label": "Icons Crafted" },
+            { "number": "20+", "label": "Years Experience" },
+            { "number": "15+", "label": "Global Offices" }
+          ],
+          "technologies": [
+            { "name": "Adobe Illustrator", "description": "Vector-based design for infinite scalability." },
+            { "name": "Typography Systems", "description": "Curated font pairings for brand voice." },
+            { "name": "Color Theory", "description": "Strategic palette selection for emotional impact." }
+          ],
+          "galleryImages": ["pillar-2.jpg", "insp-2.jpg", "insp-1.jpg"]
+        }
+      },
+      { 
+        "title": "Digital Content", 
+        "image": "service-detail-3.jpeg", 
+        "desc": "Producing high-impact digital content tailored for your target audience across all platforms.",
+        "popupData": {
+          "title": "Digital Content Production",
+          "intro": "Engaging content designed for the modern social and digital landscape.",
+          "highlights": [
+            { "number": "1000+", "label": "Social Posts" },
+            { "number": "200+", "label": "Videos Produced" },
+            { "number": "50+", "label": "Ad Campaigns" },
+            { "number": "10M+", "label": "Impressions" },
+            { "number": "15%", "label": "Engagement Lift" }
+          ],
+          "technologies": [
+            { "name": "Premiere Pro", "description": "Professional video editing for digital platforms." },
+            { "name": "After Effects", "description": "Motion graphics that capture attention." },
+            { "name": "Canva Enterprise", "description": "Scalable template systems for teams." }
+          ],
+          "galleryImages": ["pillar-3.jpg", "insp-1.jpg", "insp-2.jpg"]
+        }
+      },
+      { 
+        "title": "Campaign Design", 
+        "image": "service-detail-4.jpeg", 
+        "desc": "Designing integrated campaigns that resonate with consumers and drive action.",
+        "popupData": {
+          "title": "Integrated Campaign Design",
+          "intro": "End-to-end campaign concepts from ideation to multi-channel execution.",
+          "highlights": [
+            { "number": "80+", "label": "Global Campaigns" },
+            { "number": "30M+", "label": "Total Reach" },
+            { "number": "15%", "label": "Avg Conversion Lift" },
+            { "number": "25+", "label": "Media Partners" },
+            { "number": "5+", "label": "Cannes Lions" }
+          ],
+          "technologies": [
+            { "name": "Campaign Manager", "description": "Tracking and optimizing campaign performance." },
+            { "name": "A/B Testing", "description": "Data-driven creative optimization." },
+            { "name": "Omnichannel Strategy", "description": "Cohesive messaging across all platforms." }
+          ],
+          "galleryImages": ["pillar-4.jpg", "insp-2.jpg", "insp-1.jpg"]
+        }
+      }
     ],
     "contactIds": ["krishna", "shantanu"],
     "categoryId": 0
@@ -18,15 +104,101 @@
   {
     "id": "us-creative-services",
     "title": "US Creative Services",
+    "iconTop": "/images/icons/globe.png",
+    "iconBottom": "/images/icons/group.png",
     "banner": {
       "title": ["US Creative", "Services"],
       "description": "Comprehensive creative services for the US market, focusing on innovation, scalability, and brand consistency across diverse digital and print touchpoints."
     },
     "details": [
-      { "title": "Brand Evolution", "image": "service-detail-2.jpeg", "desc": "Helping established brands evolve and adapt to the changing digital landscape in the US." },
-      { "title": "Marketing Collateral", "image": "service-detail-3.jpeg", "desc": "Creating professional marketing materials that effectively communicate your value proposition." },
-      { "title": "UI/UX Design", "image": "service-detail-4.jpeg", "desc": "Designing intuitive user interfaces and engaging experiences for your digital products." },
-      { "title": "Social Media", "image": "service-detail-1.jpeg", "desc": "Developing creative assets for social media campaigns that capture attention and foster community." }
+      { 
+        "title": "Brand Evolution", 
+        "image": "service-detail-2.jpeg", 
+        "desc": "Helping established brands evolve and adapt to the changing digital landscape in the US.",
+        "popupData": {
+          "title": "Brand Evolution Strategy",
+          "intro": "Modernizing heritage brands for a new generation of digital-first consumers.",
+          "highlights": [
+            { "number": "25+", "label": "Rebrands Completed" },
+            { "number": "10+", "label": "Fortune 500 Clients" },
+            { "number": "20%", "label": "Brand Equity Growth" },
+            { "number": "50+", "label": "Industry Reports" },
+            { "number": "12+", "label": "Design Systems" }
+          ],
+          "technologies": [
+            { "name": "Brand Architecture", "description": "Structuring complex brand portfolios." },
+            { "name": "Consumer Insights", "description": "Targeting the right audience with the right message." },
+            { "name": "Visual Auditing", "description": "Analyzing brand consistency across markets." }
+          ],
+          "galleryImages": ["pillar-1.jpg", "insp-1.jpg", "insp-2.jpg"]
+        }
+      },
+      { 
+        "title": "Marketing Collateral", 
+        "image": "service-detail-3.jpeg", 
+        "desc": "Creating professional marketing materials that effectively communicate your value proposition.",
+        "popupData": {
+          "title": "Marketing Assets & Collateral",
+          "intro": "High-quality print and digital materials that drive sales and engagement.",
+          "highlights": [
+            { "number": "150+", "label": "Decks Created" },
+            { "number": "300+", "label": "Whitepapers" },
+            { "number": "50+", "label": "Trade Shows" },
+            { "number": "500+", "label": "Brochures" },
+            { "number": "100+", "label": "Infographics" }
+          ],
+          "technologies": [
+            { "name": "InDesign", "description": "Industry standard for layout and print design." },
+            { "name": "Interactive PDFs", "description": "Engaging digital reading experiences." },
+            { "name": "Print Production", "description": "End-to-end management of physical assets." }
+          ],
+          "galleryImages": ["pillar-2.jpg", "insp-2.jpg", "insp-1.jpg"]
+        }
+      },
+      { 
+        "title": "UI/UX Design", 
+        "image": "service-detail-4.jpeg", 
+        "desc": "Designing intuitive user interfaces and engaging experiences for your digital products.",
+        "popupData": {
+          "title": "UI/UX Design Excellence",
+          "intro": "User-centric design that prioritizes usability and aesthetic appeal.",
+          "highlights": [
+            { "number": "40+", "label": "Apps Designed" },
+            { "number": "100+", "label": "User Tests" },
+            { "number": "4.8/5", "label": "Avg User Rating" },
+            { "number": "20%", "label": "Retention Lift" },
+            { "number": "15+", "label": "Design Sprints" }
+          ],
+          "technologies": [
+            { "name": "Figma", "description": "Collaborative interface design and prototyping." },
+            { "name": "User Testing", "description": "Validating designs with real-world feedback." },
+            { "name": "Prototyping", "description": "Creating interactive low-fi and hi-fi models." }
+          ],
+          "galleryImages": ["pillar-3.jpg", "insp-1.jpg", "insp-2.jpg"]
+        }
+      },
+      { 
+        "title": "Social Media", 
+        "image": "service-detail-1.jpeg", 
+        "desc": "Developing creative assets for social media campaigns that capture attention and foster community.",
+        "popupData": {
+          "title": "Social Media Content Creation",
+          "intro": "Platform-specific content that drives conversation and community growth.",
+          "highlights": [
+            { "number": "5M+", "label": "Engagements" },
+            { "number": "20+", "label": "Social Channels" },
+            { "number": "200+", "label": "Influencer Collabs" },
+            { "number": "500+", "label": "Stories Produced" },
+            { "number": "2k+", "label": "Assets/Month" }
+          ],
+          "technologies": [
+            { "name": "Social Listening", "description": "Monitoring trends to stay ahead of the curve." },
+            { "name": "Content Calendar", "description": "Strategic planning for consistent presence." },
+            { "name": "Sprout Social", "description": "Enterprise-grade social management." }
+          ],
+          "galleryImages": ["pillar-4.jpg", "insp-2.jpg", "insp-1.jpg"]
+        }
+      }
     ],
     "contactIds": ["shantanu", "shweta"],
     "categoryId": 1
@@ -34,15 +206,101 @@
   {
     "id": "us-advisory-creative",
     "title": "US Advisory Creative",
+    "iconTop": "/images/icons/chart.png",
+    "iconBottom": "/images/icons/write.png",
     "banner": {
       "title": ["US Advisory", "Creative"],
       "description": "Bridging the gap between strategy and creativity, providing advisory-led design solutions that simplify complex information and enhance corporate communication."
     },
     "details": [
-      { "title": "Information Design", "image": "service-detail-3.jpeg", "desc": "Transforming complex data into clear, compelling visual narratives for stakeholders." },
-      { "title": "Corporate Presentations", "image": "service-detail-4.jpeg", "desc": "Designing high-stakes presentations that help you win business and influence decisions." },
-      { "title": "Strategic Reports", "image": "service-detail-1.jpeg", "desc": "Creating visually engaging reports that highlight key insights and strategic directions." },
-      { "title": "Leadership Comms", "image": "service-detail-2.jpeg", "desc": "Supporting leadership with creative assets that articulate vision and drive transformation." }
+      { 
+        "title": "Information Design", 
+        "image": "service-detail-3.jpeg", 
+        "desc": "Transforming complex data into clear, compelling visual narratives for stakeholders.",
+        "popupData": {
+          "title": "Information & Data Design",
+          "intro": "Making the complex simple through strategic visualization and clear design.",
+          "highlights": [
+            { "number": "500+", "label": "Charts Created" },
+            { "number": "100+", "label": "Reports Designed" },
+            { "number": "25+", "label": "Data Viz Tools" },
+            { "number": "10k+", "label": "Data Points mapped" },
+            { "number": "12+", "label": "Patents Held" }
+          ],
+          "technologies": [
+            { "name": "D3.js", "description": "Custom data visualizations for the web." },
+            { "name": "Infographic Design", "description": "Visualizing narratives for better understanding." },
+            { "name": "Tableau", "description": "Enterprise data visualization and dashboards." }
+          ],
+          "galleryImages": ["pillar-1.jpg", "insp-1.jpg", "insp-2.jpg"]
+        }
+      },
+      { 
+        "title": "Corporate Presentations", 
+        "image": "service-detail-4.jpeg", 
+        "desc": "Designing high-stakes presentations that help you win business and influence decisions.",
+        "popupData": {
+          "title": "High-Stakes Corporate Presentations",
+          "intro": "Presentation design that empowers leadership and wins pitches.",
+          "highlights": [
+            { "number": "200+", "label": "Pitch Decks" },
+            { "number": "$1B+", "label": "Capital Raised" },
+            { "number": "90%", "label": "Success Rate" },
+            { "number": "15+", "label": "IPO Projects" },
+            { "number": "50+", "label": "C-Suite Clients" }
+          ],
+          "technologies": [
+            { "name": "PowerPoint Pro", "description": "Advanced presentation features and animations." },
+            { "name": "Keynote", "description": "Apple-standard design for high-impact talks." },
+            { "name": "Brand Templates", "description": "Locking down brand consistency for teams." }
+          ],
+          "galleryImages": ["pillar-2.jpg", "insp-2.jpg", "insp-1.jpg"]
+        }
+      },
+      { 
+        "title": "Strategic Reports", 
+        "image": "service-detail-1.jpeg", 
+        "desc": "Creating visually engaging reports that highlight key insights and strategic directions.",
+        "popupData": {
+          "title": "Strategic Annual & ESG Reports",
+          "intro": "Turning compliance into communication through stunning report design.",
+          "highlights": [
+            { "number": "40+", "label": "Annual Reports" },
+            { "number": "15+", "label": "ESG Disclosures" },
+            { "number": "10+", "label": "Design Awards" },
+            { "number": "200+", "label": "Pages Designed" },
+            { "number": "100%", "label": "Compliance met" }
+          ],
+          "technologies": [
+            { "name": "Interactive Web Reports", "description": "Moving beyond static PDFs for better engagement." },
+            { "name": "Sustainability Design", "description": "Visualizing impact for stakeholders." },
+            { "name": "Typography Systems", "description": "Readability-focused font architectures." }
+          ],
+          "galleryImages": ["pillar-3.jpg", "insp-1.jpg", "insp-2.jpg"]
+        }
+      },
+      { 
+        "title": "Leadership Comms", 
+        "image": "service-detail-2.jpeg", 
+        "desc": "Supporting leadership with creative assets that articulate vision and drive transformation.",
+        "popupData": {
+          "title": "Leadership & Executive Comms",
+          "intro": "Strategic creative support for the C-Suite and internal communication teams.",
+          "highlights": [
+            { "number": "50+", "label": "Town Halls" },
+            { "number": "20+", "label": "Change Campaigns" },
+            { "number": "100k+", "label": "Employees Reached" },
+            { "number": "15+", "label": "Vision Videos" },
+            { "number": "10+", "label": "CEO Ghostwriting" }
+          ],
+          "technologies": [
+            { "name": "Internal Portals", "description": "Centralizing communication for large organizations." },
+            { "name": "Executive Storyboarding", "description": "Visualizing the leadership vision." },
+            { "name": "Internal Podcasts", "description": "Audio-based leadership communication systems." }
+          ],
+          "galleryImages": ["pillar-4.jpg", "insp-2.jpg", "insp-1.jpg"]
+        }
+      }
     ],
     "contactIds": ["krishna", "shweta"],
     "categoryId": 2
@@ -50,15 +308,101 @@
   {
     "id": "uk-learning-design",
     "title": "UK Learning Design",
+    "iconTop": "/images/icons/star.png",
+    "iconBottom": "/images/icons/create.png",
     "banner": {
       "title": ["UK Learning", "Design"],
       "description": "Innovative learning design solutions that transform education and corporate training into immersive, effective experiences that foster knowledge retention and growth."
     },
     "details": [
-      { "title": "E-Learning Modules", "image": "service-detail-4.jpeg", "desc": "Developing interactive e-learning modules that engage learners and deliver measurable outcomes." },
-      { "title": "Instructional Design", "image": "service-detail-1.jpeg", "desc": "Applying proven instructional design principles to create effective training programs." },
-      { "title": "Video Learning", "image": "service-detail-2.jpeg", "desc": "Producing educational videos that simplify complex topics and enhance learning experiences." },
-      { "title": "Interactive Training", "image": "service-detail-3.jpeg", "desc": "Designing interactive training sessions that encourage participation and practical application." }
+      { 
+        "title": "E-Learning Modules", 
+        "image": "service-detail-4.jpeg", 
+        "desc": "Developing interactive e-learning modules that engage learners and deliver measurable outcomes.",
+        "popupData": {
+          "title": "Interactive E-Learning Modules",
+          "intro": "Gamified and interactive learning experiences that improve retention.",
+          "highlights": [
+            { "number": "100+", "label": "Courses Built" },
+            { "number": "50k+", "label": "Active Learners" },
+            { "number": "92%", "label": "Completion Rate" },
+            { "number": "15+", "label": "Learning Awards" },
+            { "number": "500+", "label": "Lessons created" }
+          ],
+          "technologies": [
+            { "name": "Articulate Storyline", "description": "Leading tool for interactive course development." },
+            { "name": "LMS Integration", "description": "Seamless deployment to your learning platform." },
+            { "name": "SCORM Compliance", "description": "Standardizing learning object metadata." }
+          ],
+          "galleryImages": ["pillar-1.jpg", "insp-1.jpg", "insp-2.jpg"]
+        }
+      },
+      { 
+        "title": "Instructional Design", 
+        "image": "service-detail-1.jpeg", 
+        "desc": "Applying proven instructional design principles to create effective training programs.",
+        "popupData": {
+          "title": "Strategic Instructional Design",
+          "intro": "Designing learning paths based on cognitive science and adult learning theory.",
+          "highlights": [
+            { "number": "200+", "label": "Learning Paths" },
+            { "number": "40+", "label": "Curriculum Audits" },
+            { "number": "10+", "label": "Learning Experts" },
+            { "number": "5+", "label": "PhDs on team" },
+            { "number": "20+", "label": "Years in L&D" }
+          ],
+          "technologies": [
+            { "name": "ADDIE Model", "description": "Proven framework for instructional design." },
+            { "name": "Blended Learning", "description": "Combining digital and face-to-face training." },
+            { "name": "Bloom's Taxonomy", "description": "Structuring cognitive learning objectives." }
+          ],
+          "galleryImages": ["pillar-2.jpg", "insp-2.jpg", "insp-1.jpg"]
+        }
+      },
+      { 
+        "title": "Video Learning", 
+        "image": "service-detail-2.jpeg", 
+        "desc": "Producing educational videos that simplify complex topics and enhance learning experiences.",
+        "popupData": {
+          "title": "Educational & Explainer Videos",
+          "intro": "High-quality video content that simplifies the most complex subjects.",
+          "highlights": [
+            { "number": "300+", "label": "Educational Videos" },
+            { "number": "1M+", "label": "Views" },
+            { "number": "4.9/5", "label": "Learner Feedback" },
+            { "number": "15+", "label": "Languages" },
+            { "number": "500+", "label": "Animations" }
+          ],
+          "technologies": [
+            { "name": "Explainer Animation", "description": "Motion graphics for technical education." },
+            { "name": "Micro-Learning", "description": "Short, focused videos for just-in-time learning." },
+            { "name": "Voiceover Talent", "description": "Global pool of professional narrators." }
+          ],
+          "galleryImages": ["pillar-3.jpg", "insp-1.jpg", "insp-2.jpg"]
+        }
+      },
+      { 
+        "title": "Interactive Training", 
+        "image": "service-detail-3.jpeg", 
+        "desc": "Designing interactive training sessions that encourage participation and practical application.",
+        "popupData": {
+          "title": "Hands-on Interactive Training",
+          "intro": "Immersive training workshops and simulations for practical skill building.",
+          "highlights": [
+            { "number": "50+", "label": "Workshops Run" },
+            { "number": "2k+", "label": "Certifications" },
+            { "number": "85%", "label": "Skills Transfer" },
+            { "number": "10+", "label": "Global markets" },
+            { "number": "5+", "label": "Simulator Types" }
+          ],
+          "technologies": [
+            { "name": "VR Training", "description": "Immersive simulations for high-risk environments." },
+            { "name": "Live Polling", "description": "Engaging audiences during live training." },
+            { "name": "Gamification Engine", "description": "Building motivation into training paths." }
+          ],
+          "galleryImages": ["pillar-4.jpg", "insp-2.jpg", "insp-1.jpg"]
+        }
+      }
     ],
     "contactIds": ["krishna", "shantanu"],
     "categoryId": 3

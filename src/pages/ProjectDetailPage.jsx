@@ -1,6 +1,34 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import slidesData from '../data/slides.json';
+import homeSlides from '../data/home_slides.json';
+import ukCreateSlides from '../data/uk_create_slides.json';
+import usCreativeSlides from '../data/us_creative_slides.json';
+import usAdvisorySlides from '../data/us_advisory_slides.json';
+import ukLearningSlides from '../data/uk_learning_slides.json';
+
+// Create a mapping of source keys to their respective data arrays
+const DATA_SOURCES = {
+  'home': homeSlides,
+  'uk-create': ukCreateSlides,
+  'us-creative': usCreativeSlides,
+  'us-advisory': usAdvisorySlides,
+  'uk-learning': ukLearningSlides,
+  'default': slidesData
+};
+
+// Flatten all slides and tag them with their source for easy identification
+// We prioritize specific sources (home, uk-create, etc.) over the default slides.json 
+// in case there are duplicate IDs. This ensures the correct context for "More Projects".
+const ALL_SLIDES = [
+  ...homeSlides.map(s => ({ ...s, source: 'home' })),
+  ...ukCreateSlides.map(s => ({ ...s, source: 'uk-create' })),
+  ...usCreativeSlides.map(s => ({ ...s, source: 'us-creative' })),
+  ...usAdvisorySlides.map(s => ({ ...s, source: 'us-advisory' })),
+  ...ukLearningSlides.map(s => ({ ...s, source: 'uk-learning' })),
+  ...slidesData.map(s => ({ ...s, source: 'default' })),
+];
+
 import Template1 from '../components/templates/Template1';
 import Template2 from '../components/templates/Template2';
 import Template3 from '../components/templates/Template3';
@@ -24,7 +52,7 @@ const templateMap = {
 const ProjectDetailPage = () => {
   const { id } = useParams();
 
-  const slide = slidesData.find(s => s.id === id);
+  const slide = ALL_SLIDES.find(s => s.id === id);
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isNavbarDark, setIsNavbarDark] = useState(false);
@@ -58,6 +86,9 @@ const ProjectDetailPage = () => {
   // Determine the template component
   const TemplateComponent = templateMap[slide.template] || TemplateDefault;
 
+  // Contextual source data for the "More Projects" slider
+  const moreProjectsData = DATA_SOURCES[slide.source] || slidesData;
+
   return (
     <div className="w-full relative bg-white">
       <Navbar onMenuToggle={toggleMenu} isScrolled={isNavbarDark} showHomeButton={true} hideBurger={true} />
@@ -67,9 +98,14 @@ const ProjectDetailPage = () => {
         <TemplateComponent slide={slide} />
       </div>
 
-      {/* Reusable Slider Component Below Banner */}
+      {/* Contextual Slider: only shows projects from the same source (Home, specific Service, etc.) */}
       <div className="mt-12 border-t border-gray-100">
-        <CreativeSlider showTabs={false} fixedCategoryId={slide.categoryId} customHeading="More Projects" />
+        <CreativeSlider 
+          showTabs={false} 
+          fixedCategoryId={slide.source === 'home' ? slide.categoryId : undefined} 
+          slidesDataCustom={moreProjectsData}
+          customHeading="More Projects" 
+        />
       </div>
 
       {/* Sync Footer with Home Page Footer */}

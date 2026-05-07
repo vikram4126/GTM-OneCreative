@@ -9,6 +9,7 @@ import 'swiper/css/effect-fade';
 // Import assets
 import bannerBg from '../assets/images/service-banner-bg.jpeg';
 import pillarsBg from '../assets/images/pillars-bg.jpg';
+import PillarPopup from '../components/PillarPopup';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -77,7 +78,7 @@ export const ServiceBanner = ({ title = [], description = "", iconTop, iconBotto
 
       // Step 1: Center Box Entry
       tl.to(centerRef.current, {
-        backgroundColor: '#00B8F5',
+        backgroundColor: '#1e49e2',
         border: '0px solid transparent',
         scale: 1,
         opacity: 1,
@@ -217,7 +218,7 @@ export const ServiceBanner = ({ title = [], description = "", iconTop, iconBotto
                 <img src={iconTop} alt="top-icon" style={{ width: '28px', height: '28px' }} />
               </div>
             )}
-            
+
             {/* Bottom icon */}
             {iconBottom && (
               <div ref={iconBottomRef} style={{ alignSelf: 'flex-end', opacity: 0.8 }}>
@@ -262,6 +263,19 @@ export const ServiceBanner = ({ title = [], description = "", iconTop, iconBotto
 export const ServiceDetailSlider = ({ slides = [] }) => {
   const [active, setActive] = useState(0);
   const swiperRef = useRef(null);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [popupData, setPopupData] = useState(null);
+
+  const handleOpenPopup = (slideIndex) => {
+    const slide = resolvedSlides[slideIndex];
+    if (slide) {
+      // For service pages, popupData is a nested object. 
+      // For the Home page (pillars.json), the slide object itself is the data.
+      const data = slide.popupData || slide;
+      setPopupData(data);
+      setIsPopupOpen(true);
+    }
+  };
 
   // Dynamically import images if needed, but here we assume they are passed as paths
   // and we will require them or use a resolver.
@@ -336,20 +350,13 @@ export const ServiceDetailSlider = ({ slides = [] }) => {
                 <img src={slide.img} alt={slide.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
 
-
-              {/* Description */}
-              <p style={{
-                marginTop: '2.5rem',
-                color: 'rgba(255, 255, 255, 0.6)',
-                fontSize: 'clamp(1rem, 1.2vw, 1.25rem)',
-                textAlign: 'center',
-                maxWidth: '800px',
-                fontFamily: 'var(--font-body)',
-                lineHeight: 1.7,
-                fontWeight: 500
-              }}>
-                {slide.desc}
-              </p>
+              {/* Capabilities Overview button */}
+              <button
+                onClick={() => handleOpenPopup(i)}
+                className="pillar-cta-button"
+              >
+                Capabilities Overview
+              </button>
 
             </div>
           </SwiperSlide>
@@ -357,6 +364,12 @@ export const ServiceDetailSlider = ({ slides = [] }) => {
       </Swiper>
 
       <SidebarDots total={resolvedSlides.length} active={active} swiperRef={swiperRef} />
+
+      <PillarPopup
+        isOpen={isPopupOpen}
+        onClose={() => setIsPopupOpen(false)}
+        data={popupData}
+      />
     </section>
   );
 };

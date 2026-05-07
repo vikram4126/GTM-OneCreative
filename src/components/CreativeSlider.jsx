@@ -10,7 +10,12 @@ import 'swiper/css/navigation';
 
 const TABS = ['Graphic Design', 'PPT Deck Design', 'Motion Graphics', 'Other Design'];
 
-const CreativeSlider = ({ showTabs = true, fixedCategoryId, customHeading = "Creative show case" }) => {
+const CreativeSlider = ({
+  showTabs = true,
+  fixedCategoryId,
+  customHeading = "Creative show case",
+  slidesDataCustom
+}) => {
   // If fixedCategoryId is provided (on Project page), we use it. Otherwise default to 0.
   const [activeTab, setActiveTab] = useState(fixedCategoryId !== undefined ? fixedCategoryId : 0);
   const [isFading, setIsFading] = useState(false);
@@ -31,8 +36,16 @@ const CreativeSlider = ({ showTabs = true, fixedCategoryId, customHeading = "Cre
     }, 300);
   };
 
-  // Filter slides from JSON based on the active category tab
-  const currentSlides = slidesData.filter(slide => slide.categoryId === activeTab);
+  // Determine source data
+  const baseData = slidesDataCustom || slidesData;
+
+  // Filter slides: 
+  // 1. If showTabs is true, filter by activeTab category.
+  // 2. If showTabs is false but fixedCategoryId is provided (Project page), filter by that category.
+  // 3. If showTabs is false and no fixed category (Service page), show all slides in provided data.
+  const currentSlides = (showTabs || fixedCategoryId !== undefined)
+    ? baseData.filter(slide => slide.categoryId === activeTab)
+    : baseData;
 
   return (
     <div className="w-full bg-[#F5F7FA] py-[80px] flex flex-col justify-center overflow-hidden">
@@ -101,7 +114,7 @@ const CreativeSlider = ({ showTabs = true, fixedCategoryId, customHeading = "Cre
                 <Link to={`/project/${slide.id}`} className="block w-full h-full relative cursor-pointer group">
                   <div className="relative w-full aspect-[4/3] md:aspect-[16/10] bg-[#0C233C] overflow-hidden rounded-lg">
                     <img
-                      src={`images/slider-items/${slide.image}`}
+                      src={`images/slider-items/${slide.thumb}`}
                       alt={slide.title}
                       className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
@@ -116,15 +129,15 @@ const CreativeSlider = ({ showTabs = true, fixedCategoryId, customHeading = "Cre
 
           {/* Custom Navigation & Pagination Controls (Bottom Left) */}
           <div className="flex items-center mt-10 gap-4">
-            <button className="custom-prev flex items-center justify-center w-[32px] h-[32px] p-1 border-2 border-[#00338d] text-[#00338d] hover:bg-[#00338d] hover:text-white transition-colors cursor-pointer z-10" style={{ borderRadius: '50%' }}>
+            <button className="custom-prev flex items-center justify-center w-[32px] h-[32px] p-1 border-0 border-[#00338d] text-[#00338d] hover:bg-[#00338d] hover:text-white transition-colors cursor-pointer z-10" style={{ borderRadius: '50%' }}>
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <line x1="25" y1="12" x2="5" y2="12"></line>
                 <polyline points="12 19 5 12 12 5"></polyline>
               </svg>
             </button>
-            <button className="custom-next flex items-center justify-center w-[32px] h-[32px] p-1  border-2 border-[#00338d] text-[#00338d] hover:bg-[#00338d] hover:text-white transition-colors cursor-pointer z-10" style={{ borderRadius: '50%' }}>
+            <button className="custom-next flex items-center justify-center w-[32px] h-[32px] p-1  border-0 border-[#00338d] text-[#00338d] hover:bg-[#00338d] hover:text-white transition-colors cursor-pointer z-10" style={{ borderRadius: '50%' }}>
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <line x1="0" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
               </svg>
             </button>

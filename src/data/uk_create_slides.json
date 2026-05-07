@@ -1,0 +1,107 @@
+[
+  {
+    "id": "uk-create-project-1",
+    "categoryId": 0,
+    "title": "UK Create: Brand Identity",
+    "thumb": "uk-create-project-1-thumb.png",
+    "image": "uk-create-project-1-full.png",
+    "template": "gallery",
+    "content": "Specialized brand identity for UK markets.",
+    "gallery": [
+      "uk-create-project-1-slide-1.png",
+      "uk-create-project-1-slide-2.png"
+    ],
+    "contactIds": [
+      "krishna"
+    ]
+  },
+  {
+    "id": "uk-create-project-2",
+    "categoryId": 0,
+    "title": "UK Create: Typography",
+    "thumb": "uk-create-project-2-thumb.png",
+    "image": "uk-create-project-2-full.png",
+    "template": "video",
+    "content": "Bespoke typography systems.",
+    "contactIds": [
+      "shantanu"
+    ]
+  },
+  {
+    "id": "uk-create-project-3",
+    "categoryId": 0,
+    "title": "UK Create: Digital Design",
+    "thumb": "uk-create-project-3-thumb.png",
+    "image": "uk-create-project-3-full.png",
+    "template": "gallery",
+    "content": "Modern digital interfaces.",
+    "contactIds": [
+      "krishna"
+    ]
+  },
+  {
+    "id": "uk-create-project-4",
+    "categoryId": 0,
+    "title": "UK Create: Campaign Visuals",
+    "thumb": "uk-create-project-4-thumb.png",
+    "image": "uk-create-project-4-full.png",
+    "template": "video",
+    "content": "Visuals for UK campaigns.",
+    "contactIds": [
+      "shantanu"
+    ]
+  },
+  {
+    "id": "uk-create-project-5",
+    "categoryId": 0,
+    "title": "UK Create: Print Media",
+    "thumb": "uk-create-project-5-thumb.png",
+    "image": "uk-create-project-5-full.png",
+    "template": "gallery",
+    "content": "High-quality print collateral."
+  },
+  {
+    "id": "uk-create-project-6",
+    "categoryId": 0,
+    "title": "UK Create: Web Experience",
+    "thumb": "uk-create-project-6-thumb.png",
+    "image": "uk-create-project-6-full.png",
+    "template": "gallery",
+    "content": "Immersive web experience design.",
+    "gallery": [
+      "uk-create-project-6-slide-1.png"
+    ],
+    "contactIds": [
+      "shweta"
+    ]
+  },
+  {
+    "id": "uk-create-project-7",
+    "categoryId": 0,
+    "title": "UK Create: Social Campaign",
+    "thumb": "uk-create-project-7-thumb.png",
+    "image": "uk-create-project-7-full.png",
+    "template": "video",
+    "content": "Engaging social media assets.",
+    "contactIds": [
+      "krishna",
+      "shantanu"
+    ]
+  },
+  {
+    "id": "uk-create-project-8",
+    "categoryId": 0,
+    "title": "UK Create: Spatial Design",
+    "thumb": "uk-create-project-8-thumb.png",
+    "image": "uk-create-project-8-full.png",
+    "template": "gallery",
+    "content": "Exhibition and spatial branding.",
+    "gallery": [
+      "uk-create-project-8-slide-1.png"
+    ],
+    "contactIds": [
+      "shantanu",
+      "shweta"
+    ]
+  }
+]

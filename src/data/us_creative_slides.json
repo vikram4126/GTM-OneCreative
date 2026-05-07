@@ -1,0 +1,82 @@
+[
+  {
+    "id": "us-creative-project-1",
+    "categoryId": 1,
+    "title": "US Creative: Pitch Deck",
+    "thumb": "us-creative-project-1-thumb.png",
+    "image": "us-creative-project-1-full.png",
+    "template": "gallery",
+    "content": "High-stakes pitch decks for US startups.",
+    "gallery": [
+      "us-creative-project-1-slide-1.png"
+    ],
+    "contactIds": [
+      "shantanu"
+    ]
+  },
+  {
+    "id": "us-creative-project-2",
+    "categoryId": 1,
+    "title": "US Creative: Sales Deck",
+    "thumb": "us-creative-project-2-thumb.png",
+    "image": "us-creative-project-2-full.png",
+    "template": "video",
+    "content": "Scalable sales enablement tools."
+  },
+  {
+    "id": "us-creative-project-3",
+    "categoryId": 1,
+    "title": "US Creative: Corporate Overview",
+    "thumb": "us-creative-project-3-thumb.png",
+    "image": "us-creative-project-3-full.png",
+    "template": "gallery",
+    "content": "A comprehensive overview presentation for enterprise clients.",
+    "gallery": [
+      "us-creative-project-3-slide-1.png"
+    ],
+    "contactIds": [
+      "krishna",
+      "shweta"
+    ]
+  },
+  {
+    "id": "us-creative-project-4",
+    "categoryId": 1,
+    "title": "US Creative: Product Launch",
+    "thumb": "us-creative-project-4-thumb.png",
+    "image": "us-creative-project-4-full.png",
+    "template": "video",
+    "content": "High-energy presentation for a major product launch.",
+    "contactIds": [
+      "shantanu",
+      "krishna"
+    ]
+  },
+  {
+    "id": "us-creative-project-5",
+    "categoryId": 1,
+    "title": "US Creative: Financial Review",
+    "thumb": "us-creative-project-5-thumb.png",
+    "image": "us-creative-project-5-full.png",
+    "template": "gallery",
+    "content": "Data-heavy presentation made easy to digest.",
+    "gallery": [
+      "us-creative-project-5-slide-1.png"
+    ],
+    "contactIds": [
+      "shweta"
+    ]
+  },
+  {
+    "id": "us-creative-project-6",
+    "categoryId": 1,
+    "title": "US Creative: Training Module",
+    "thumb": "us-creative-project-6-thumb.png",
+    "image": "us-creative-project-6-full.png",
+    "template": "video",
+    "content": "Interactive and engaging training materials.",
+    "contactIds": [
+      "krishna"
+    ]
+  }
+]

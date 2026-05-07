@@ -16,9 +16,9 @@ const TemplateGallery = ({ slide }) => {
   const galleryImages = slide.gallery || [];
 
   return (
-    <div 
-      className="w-full min-h-[80vh] flex items-center justify-center py-20 relative" 
-      style={{ 
+    <div
+      className="w-full min-h-[80vh] flex items-center justify-center py-20 relative"
+      style={{
         backgroundImage: 'url(images/project-page-banner-background.jpeg)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
@@ -27,21 +27,21 @@ const TemplateGallery = ({ slide }) => {
     >
       {/* Changed gap-6 to gap-0 */}
       <div className="container mx-auto px-6 lg:px-12 w-full grid grid-cols-1 lg:grid-cols-[1.5fr_2fr_1.5fr] gap-0 items-stretch relative z-10">
-        
+
         {/* Left Content (Text) - Col 1: Overlaps Right by 10px, high z-index */}
         <div className="flex flex-col justify-center items-start text-white py-10 pr-4 relative lg:-mr-[10px] z-20">
           <div className="inline-block border border-white/60 px-4 py-1 mb-8">
             <span className="text-sm font-bold tracking-widest uppercase">{categoryLabels[slide.categoryId]}</span>
           </div>
-          
+
           <h1 className="text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-tight mb-8" style={{ fontFamily: 'var(--font-heading)' }}>
             {slide.title.split(' ').map((word, i) => (
               <React.Fragment key={i}>
-                {word}<br/>
+                {word}<br />
               </React.Fragment>
             ))}
           </h1>
-          
+
           <p className="text-lg font-medium opacity-90 leading-relaxed max-w-sm">
             {slide.content}
           </p>
@@ -50,9 +50,9 @@ const TemplateGallery = ({ slide }) => {
         {/* Middle Content - Big Main Image - Col 2: Lowest z-index */}
         <div className="flex items-center justify-center w-full relative z-10">
           <div className="w-full aspect-[4/5] bg-white shadow-2xl overflow-hidden relative group">
-            <img 
-              src={`images/slider-items/${slide.image}`} 
-              alt={`${slide.title} Main`} 
+            <img
+              src={`/images/slider-items/${slide.image}`}
+              alt={`${slide.title} Main`}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />
           </div>
@@ -81,9 +81,9 @@ const TemplateGallery = ({ slide }) => {
               {galleryImages.map((img, idx) => (
                 <SwiperSlide key={idx} className="w-full" style={{ height: 'calc((100% - 20px) / 2)' }}>
                   <div className="w-full h-full bg-transparent shadow-xl overflow-hidden relative group border-2 border-white/20 aspect-[4/5] p-[10px]">
-                    <img 
-                      src={`images/slider-items/${img}`} 
-                      alt={`Gallery ${idx + 1}`} 
+                    <img
+                      src={`/images/slider-items/${img}`}
+                      alt={`Gallery ${idx + 1}`}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                   </div>
@@ -96,7 +96,8 @@ const TemplateGallery = ({ slide }) => {
       </div>
 
       {/* Embedded Styles for the square pagination bullets matching the design image */}
-      <style dangerouslySetInnerHTML={{__html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         .gallery-custom-swiper {
           padding-right: 50px !important; /* Gap between slider items and pagination */
         }

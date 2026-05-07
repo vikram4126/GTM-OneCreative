@@ -11,6 +11,7 @@ import {
   SectionInspiration,
 } from '../sections/SpecializedSections';
 import { SectionCreativeShowcase } from '../sections/SectionCreativeShowcase';
+import homeSlidesData from '../data/home_slides.json';
 import { SectionServices } from '../sections/SectionServices';
 import { SectionCreativity } from '../sections/SectionCreativity';
 import { SectionFooter } from '../sections/SectionFooter';
@@ -153,7 +154,7 @@ const Home = () => {
 
         {/* 5. Creative Showcase */}
         <section id="creative-showcase" className="snap-section">
-          <SectionCreativeShowcase />
+          <SectionCreativeShowcase slidesDataCustom={homeSlidesData} customHeading="Creative Showcase" />
         </section>
 
         {/* 6. Exploring New Possibilities */}

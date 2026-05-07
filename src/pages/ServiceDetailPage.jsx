@@ -3,12 +3,22 @@ import { useParams } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import SidebarMenu from '../components/SidebarMenu';
 import { ServiceBanner, ServiceDetailSlider } from '../sections/ServiceSections';
-import CreativeSlider from '../components/CreativeSlider';
+import { SectionCreativeShowcase } from '../sections/SectionCreativeShowcase';
 import { SectionFooter } from '../sections/SectionFooter';
 import servicesData from '../data/services.json';
 import footerBg from '../assets/images/footer-bg.png';
 
-import { CARDS } from '../sections/SectionServices';
+import ukCreateSlides from '../data/uk_create_slides.json';
+import usCreativeSlides from '../data/us_creative_slides.json';
+import usAdvisorySlides from '../data/us_advisory_slides.json';
+import ukLearningSlides from '../data/uk_learning_slides.json';
+
+const SHOWCASE_DATA_MAP = {
+  'uk-create': ukCreateSlides,
+  'us-creative-services': usCreativeSlides,
+  'us-advisory-creative': usAdvisorySlides,
+  'uk-learning-design': ukLearningSlides,
+};
 
 const ServiceDetailPage = () => {
   const { id } = useParams();
@@ -16,8 +26,8 @@ const ServiceDetailPage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isNavbarDark, setIsNavbarDark] = useState(false);
 
-  // Get icons for the current service
-  const serviceIcons = CARDS.find(c => c.id === id) || {};
+  // Get icons for the current service from servicesData directly
+  const serviceIcons = service || {};
 
   useEffect(() => {
     const foundService = servicesData.find(s => s.id === id);
@@ -62,10 +72,10 @@ const ServiceDetailPage = () => {
         <ServiceDetailSlider slides={service.details} />
 
         {/* Section 3: Creative Showcase */}
-        <CreativeSlider 
-          showTabs={false} 
-          fixedCategoryId={service.categoryId} 
-          customHeading="Creative Showcase" 
+        <SectionCreativeShowcase 
+          slidesDataCustom={SHOWCASE_DATA_MAP[id] || []} 
+          customHeading={`${service.title} Showcase`}
+          showTabs={false}
         />
 
         {/* Section 4: Footer */}
@@ -76,9 +86,7 @@ const ServiceDetailPage = () => {
             backgroundImage: `url(${footerBg})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            backgroundColor: '#FFFFFF',
-            padding: '80px 0'
+            backgroundColor: '#FFFFFF'
           }}
         >
           <SectionFooter contactIds={service.contactIds} />

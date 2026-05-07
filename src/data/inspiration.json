@@ -1,0 +1,37 @@
+[
+  {
+    "mainTitle": "Inspiration Meets Technology",
+    "projects": [
+      { "title": "Title of Project", "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", "img": "insp-1.jpg" },
+      { "title": "Title of Project", "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", "img": "insp-2.jpg" }
+    ]
+  },
+  {
+    "mainTitle": "Innovation Drives Progress",
+    "projects": [
+      { "title": "Title of Project", "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", "img": "img08" },
+      { "title": "Title of Project", "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", "img": "img09" }
+    ]
+  },
+  {
+    "mainTitle": "Where Art Meets Purpose",
+    "projects": [
+      { "title": "Title of Project", "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", "img": "img10" },
+      { "title": "Title of Project", "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", "img": "img11" }
+    ]
+  },
+  {
+    "mainTitle": "Vision Beyond Boundaries",
+    "projects": [
+      { "title": "Title of Project", "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", "img": "img12" },
+      { "title": "Title of Project", "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", "img": "img13" }
+    ]
+  },
+  {
+    "mainTitle": "Stories That Move People",
+    "projects": [
+      { "title": "Title of Project", "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", "img": "img14" },
+      { "title": "Title of Project", "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", "img": "img01" }
+    ]
+  }
+]
