@@ -26,7 +26,7 @@ const Template1 = ({ slide }) => {
       <div className="w-full h-[50vh] relative bg-gray-200 overflow-hidden">
         <img 
           ref={imgRef}
-          src={`/images/slider-items/${slide.image}`} 
+          src={`images/slider-items/${slide.image}`} 
           alt={slide.title} 
           className="absolute inset-0 w-full h-full object-cover"
         />

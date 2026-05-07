@@ -328,7 +328,7 @@ export const ServiceDetailSlider = ({ slides = [] }) => {
 
               {/* Panoramic image */}
               <div style={{ position: 'relative', zIndex: 1, width: '100%', height: '42vh', overflow: 'hidden', boxShadow: '0 30px 60px rgba(0,0,0,0.3)', borderRadius: '12px' }}>
-                <img src={`/images/${slide.image}`} alt={slide.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <img src={`images/${slide.image}`} alt={slide.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
 
               {/* Capabilities Overview button */}

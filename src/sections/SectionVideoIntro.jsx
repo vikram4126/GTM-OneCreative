@@ -5,7 +5,7 @@ export const SectionVideoIntro = ({ onComplete }) => {
     <section className="h-screen w-full relative overflow-hidden bg-[#0C233C]">
       <video
         className="absolute inset-0 w-full h-full object-cover"
-        src="/feature-video.mp4"
+        src="feature-video.mp4"
         autoPlay
         muted
         playsInline

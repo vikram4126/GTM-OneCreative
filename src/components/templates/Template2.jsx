@@ -28,7 +28,7 @@ const Template2 = ({ slide }) => {
         
         <div ref={imageRef} className="w-full aspect-video rounded-2xl overflow-hidden shadow-2xl relative">
           <img 
-            src={`/images/slider-items/${slide.image}`} 
+            src={`images/slider-items/${slide.image}`} 
             alt={slide.title} 
             className="w-full h-full object-cover"
           />

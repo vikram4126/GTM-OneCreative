@@ -6,21 +6,21 @@ export const MEMBER_MAP = {
     name: 'Krishna Venkatrangan',
     role: 'Director,',
     company: 'OneCreative',
-    img: '/images/krishana.jpeg',
+    img: 'images/krishana.jpeg',
     email: 'krishnav@onecreative.com'
   },
   shantanu: {
     name: 'Shantanu',
     role: 'Associate Director,',
     company: 'OneCreative',
-    img: '/images/shantanu.jpeg',
+    img: 'images/shantanu.jpeg',
     email: 'shantanu@onecreative.com'
   },
   shweta: {
     name: 'Shweta Gor',
     role: 'Associate Director,',
     company: 'OneCreative',
-    img: '/images/shaweta.jpeg',
+    img: 'images/shaweta.jpeg',
     email: 'shweta@onecreative.com'
   }
 };

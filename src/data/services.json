@@ -2,8 +2,8 @@
   {
     "id": "uk-create",
     "title": "UK Create",
-    "iconTop": "/images/icons/scissors.png",
-    "iconBottom": "/images/icons/magic-wand.png",
+    "iconTop": "images/icons/scissors.png",
+    "iconBottom": "images/icons/magic-wand.png",
     "banner": {
       "title": ["UK", "Create"],
       "description": "Empowering UK businesses with world-class creative solutions that drive engagement and deliver measurable results through strategic design and storytelling."
@@ -104,8 +104,8 @@
   {
     "id": "us-creative-services",
     "title": "US Creative Services",
-    "iconTop": "/images/icons/globe.png",
-    "iconBottom": "/images/icons/group.png",
+    "iconTop": "images/icons/globe.png",
+    "iconBottom": "images/icons/group.png",
     "banner": {
       "title": ["US Creative", "Services"],
       "description": "Comprehensive creative services for the US market, focusing on innovation, scalability, and brand consistency across diverse digital and print touchpoints."
@@ -206,8 +206,8 @@
   {
     "id": "us-advisory-creative",
     "title": "US Advisory Creative",
-    "iconTop": "/images/icons/chart.png",
-    "iconBottom": "/images/icons/write.png",
+    "iconTop": "images/icons/chart.png",
+    "iconBottom": "images/icons/write.png",
     "banner": {
       "title": ["US Advisory", "Creative"],
       "description": "Bridging the gap between strategy and creativity, providing advisory-led design solutions that simplify complex information and enhance corporate communication."
@@ -308,8 +308,8 @@
   {
     "id": "uk-learning-design",
     "title": "UK Learning Design",
-    "iconTop": "/images/icons/star.png",
-    "iconBottom": "/images/icons/create.png",
+    "iconTop": "images/icons/star.png",
+    "iconBottom": "images/icons/create.png",
     "banner": {
       "title": ["UK Learning", "Design"],
       "description": "Innovative learning design solutions that transform education and corporate training into immersive, effective experiences that foster knowledge retention and growth."

@@ -37,7 +37,7 @@ const Template3 = ({ slide }) => {
         <div ref={rightRef} className="w-full md:w-1/2">
           <div className="w-full aspect-[4/5] rounded-xl overflow-hidden shadow-xl">
             <img 
-              src={`/images/slider-items/${slide.image}`} 
+              src={`images/slider-items/${slide.image}`} 
               alt={slide.title} 
               className="w-full h-full object-cover"
             />

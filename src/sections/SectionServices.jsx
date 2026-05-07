@@ -9,26 +9,26 @@ export const CARDS = [
   { 
     id: 'uk-create',            
     title: ['UK', 'Create'],            
-    iconTop: '/images/icons/scissors.png',
-    iconBottom: '/images/icons/magic-wand.png' 
+    iconTop: 'images/icons/scissors.png',
+    iconBottom: 'images/icons/magic-wand.png' 
   },
   { 
     id: 'us-creative-services', 
     title: ['US Creative', 'Services'], 
-    iconTop: '/images/icons/globe.png',
-    iconBottom: '/images/icons/group.png'    
+    iconTop: 'images/icons/globe.png',
+    iconBottom: 'images/icons/group.png'    
   },
   { 
     id: 'us-advisory-creative', 
     title: ['US Advisory', 'Creative'], 
-    iconTop: '/images/icons/chart.png',
-    iconBottom: '/images/icons/write.png'    
+    iconTop: 'images/icons/chart.png',
+    iconBottom: 'images/icons/write.png'    
   },
   { 
     id: 'uk-learning-design',   
     title: ['UK Learning', 'Design'],   
-    iconTop: '/images/icons/star.png',
-    iconBottom: '/images/icons/create.png'     
+    iconTop: 'images/icons/star.png',
+    iconBottom: 'images/icons/create.png'     
   },
 ];
 
