@@ -36,7 +36,7 @@ const Home = () => {
         if (el) {
           el.scrollIntoView({ behavior: 'smooth', block: 'start' });
           setIsVideoFinished(true); // Skip video if navigating to a section
-          
+
           // Refresh ScrollTrigger after smooth scroll to ensure everything is recalculated
           setTimeout(() => {
             import('gsap/ScrollTrigger').then(({ ScrollTrigger }) => {
@@ -168,10 +168,10 @@ const Home = () => {
         </section>
 
         {/* 9. Footer */}
-        <section 
+        <section
           id="footer"
           className="snap-section"
-          style={{ 
+          style={{
             backgroundImage: `url(${footerBg})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
@@ -180,7 +180,7 @@ const Home = () => {
             padding: '80px 0'
           }}
         >
-          <SectionFooter contactIds={['krishna', 'shantanu']} />
+          <SectionFooter contactIds={['shantanu', 'krishna']} />
         </section>
 
       </main>

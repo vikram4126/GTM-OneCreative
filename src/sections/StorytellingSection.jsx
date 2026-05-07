@@ -16,8 +16,8 @@ gsap.registerPlugin(ScrollTrigger);
  * ─────────────────────────────────────────────────────
  */
 
-const CARD_W   = 160;
-const CARD_H   = 220;
+const CARD_W = 160;
+const CARD_H = 220;
 const CARD_GAP = 32; // gap-8 = 2rem
 
 // Center offset of each card from the flex-row midpoint
@@ -28,21 +28,21 @@ const CARD_OFFSETS = [
   +(1.5 * CARD_W + 1.5 * CARD_GAP), // +288  card 3
 ];
 
-const BIG_W   = 320;
-const BIG_H   = 420;
+const BIG_W = 320;
+const BIG_H = 420;
 const SCALE_X = BIG_W / CARD_W; // 2
 const SCALE_Y = BIG_H / CARD_H; // ≈ 1.909
 
 export default function StorytellingSection() {
   const sectionRef = useRef(null);
-  const lineRef    = useRef(null);
-  const card0      = useRef(null);
-  const card1      = useRef(null);
-  const card2      = useRef(null);
-  const card3      = useRef(null);
+  const lineRef = useRef(null);
+  const card0 = useRef(null);
+  const card1 = useRef(null);
+  const card2 = useRef(null);
+  const card3 = useRef(null);
   const headingRef = useRef(null);
   const contentRef = useRef(null);
-  const hasPlayed  = useRef(false);
+  const hasPlayed = useRef(false);
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -55,7 +55,7 @@ export default function StorytellingSection() {
     gsap.set(cards, { scaleY: 0, opacity: 0, transformOrigin: 'center center', x: 0 });
     // Heading starts 60px to the LEFT, content 60px to the RIGHT (subtle slide)
     gsap.set(headingRef.current, { opacity: 0, x: -60 });
-    gsap.set(contentRef.current, { opacity: 0, x:  60 });
+    gsap.set(contentRef.current, { opacity: 0, x: 60 });
 
     const playAnimation = () => {
       if (hasPlayed.current) return;
@@ -87,7 +87,7 @@ export default function StorytellingSection() {
         scaleY: SCALE_Y,
         backgroundColor: '#aceaff',
         borderColor: '#00b8f5',
-        borderWidth: '1px',
+        borderWidth: '0px',
         boxShadow: '0 32px 80px rgba(0, 184, 245, 0.35), 0 8px 24px rgba(0, 51, 141, 0.15)',
         duration: 0.85,
         ease: 'expo.inOut',
