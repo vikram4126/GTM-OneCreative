@@ -66,10 +66,14 @@ const ServiceDetailPage = () => {
           description={service.banner.description}
           iconTop={serviceIcons.iconTop}
           iconBottom={serviceIcons.iconBottom}
+          bannerBg={service.bannerBg}
         />
 
         {/* Section 2: Service Details Slider */}
-        <ServiceDetailSlider slides={service.details} />
+        <ServiceDetailSlider 
+          slides={service.details} 
+          pillarBgColor={service.pillarBgColor}
+        />
 
         {/* Section 3: Creative Showcase */}
         <SectionCreativeShowcase 

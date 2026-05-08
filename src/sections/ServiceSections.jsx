@@ -45,7 +45,7 @@ const SidebarDots = ({ total, active, swiperRef }) => (
 );
 
 /* ── Section 1: Service Banner ── */
-export const ServiceBanner = ({ title = [], description = "", iconTop, iconBottom }) => {
+export const ServiceBanner = ({ title = [], description = "", iconTop, iconBottom, bannerBg }) => {
   const sectionRef = useRef(null);
   const leftRef = useRef(null);
   const centerRef = useRef(null);
@@ -259,7 +259,7 @@ export const ServiceBanner = ({ title = [], description = "", iconTop, iconBotto
 };
 
 /* ── Section 2: Service Detail Slider ── */
-export const ServiceDetailSlider = ({ slides = [] }) => {
+export const ServiceDetailSlider = ({ slides = [], pillarBgColor = '#00b8f5' }) => {
   const [active, setActive] = useState(0);
   const swiperRef = useRef(null);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -293,7 +293,7 @@ export const ServiceDetailSlider = ({ slides = [] }) => {
       style={{
         position: 'relative',
         width: '100%',
-        backgroundColor: '#00b8f5',
+        backgroundColor: pillarBgColor,
         overflow: 'hidden',
         padding: '120px 0',
         display: 'flex',
