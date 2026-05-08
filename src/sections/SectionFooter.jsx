@@ -96,13 +96,13 @@ export const SectionFooter = ({ contactIds, customMembers }) => {
                   marginLeft: '-15px', // Overlap 10-15px
                   zIndex: 2,
                   minWidth: '280px',
-                  padding: '24px', // Reduced padding
+                  padding: '10px 24px', // Reduced padding
                   boxShadow: '15px 15px 40px rgba(0,0,0,0.1)'
                 }}
               >
-                <h3 className="text-white font-bold text-2xl mb-2" style={{ fontFamily: 'var(--font-heading)' }}>{m.name}</h3>
+                <h3 className="text-white font-bold text-2xl" style={{ fontFamily: 'var(--font-heading)' }}>{m.name}</h3>
                 <p className="text-white/90 text-sm font-semibold" style={{ fontFamily: 'var(--font-body)' }}>{m.role}</p>
-                <p className="text-white/90 text-sm font-semibold mb-4" style={{ fontFamily: 'var(--font-body)' }}>{m.company}</p>
+                <p className="text-white/90 text-sm font-semibold mb-1" style={{ fontFamily: 'var(--font-body)' }}>{m.company}</p>
 
                 {/* Email Icon */}
                 <a href={`mailto:${m.email}`} className="inline-block transition-transform duration-300">

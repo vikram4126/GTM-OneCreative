@@ -9,29 +9,29 @@
   {
     "mainTitle": "Innovation Drives Progress",
     "projects": [
-      { "title": "Title of Project", "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", "img": "img08" },
-      { "title": "Title of Project", "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", "img": "img09" }
+      { "title": "Title of Project", "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", "img": "eugene-golovesov-vTJQzJRmSLQ-unsplash.jpg" },
+      { "title": "Title of Project", "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", "img": "leon-rohrwild-MxcwgJGO-Us-unsplash.jpg" }
     ]
   },
   {
     "mainTitle": "Where Art Meets Purpose",
     "projects": [
-      { "title": "Title of Project", "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", "img": "img10" },
-      { "title": "Title of Project", "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", "img": "img11" }
+      { "title": "Title of Project", "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", "img": "louis-gaudiau-jpxOY5OdFpc-unsplash.jpg" },
+      { "title": "Title of Project", "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", "img": "nowbelov-Zn3QjwsN2Q0-unsplash.jpg" }
     ]
   },
   {
     "mainTitle": "Vision Beyond Boundaries",
     "projects": [
-      { "title": "Title of Project", "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", "img": "img12" },
-      { "title": "Title of Project", "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", "img": "img13" }
+      { "title": "Title of Project", "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", "img": "quentin-schulz-URfsKbjVA2Q-unsplash.jpg" },
+      { "title": "Title of Project", "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", "img": "thibault-henry-HIWj0F3Xsxc-unsplash.jpg" }
     ]
   },
   {
     "mainTitle": "Stories That Move People",
     "projects": [
-      { "title": "Title of Project", "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", "img": "img14" },
-      { "title": "Title of Project", "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", "img": "img01" }
+      { "title": "Title of Project", "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", "img": "mike-hindle-n73nY4TfKZ8-unsplash.jpg" },
+      { "title": "Title of Project", "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", "img": "llxvisuals-eSLJG0y5S4U-unsplash.jpg" }
     ]
   }
 ]

@@ -8,7 +8,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-const TABS = ['Graphic Design', 'PPT Deck Design', 'Motion Graphics', 'Other Design'];
+const TABS = ['All', 'Graphic Design', 'PPT Deck Design', 'Motion Graphics', 'Other Design'];
 
 const CreativeSlider = ({
   showTabs = true,
@@ -16,14 +16,15 @@ const CreativeSlider = ({
   customHeading = "Creative show case",
   slidesDataCustom
 }) => {
-  // If fixedCategoryId is provided (on Project page), we use it. Otherwise default to 0.
-  const [activeTab, setActiveTab] = useState(fixedCategoryId !== undefined ? fixedCategoryId : 0);
+  // If fixedCategoryId is provided (on Project page), we map it to our tabs (which are shifted by 1). 
+  // If no fixedCategoryId, default to 0 ("All").
+  const [activeTab, setActiveTab] = useState(fixedCategoryId !== undefined ? fixedCategoryId + 1 : 0);
   const [isFading, setIsFading] = useState(false);
 
   // Sync activeTab if fixedCategoryId changes (e.g. navigating between services)
   React.useEffect(() => {
     if (fixedCategoryId !== undefined) {
-      setActiveTab(fixedCategoryId);
+      setActiveTab(fixedCategoryId + 1);
     }
   }, [fixedCategoryId]);
 
@@ -40,12 +41,21 @@ const CreativeSlider = ({
   const baseData = slidesDataCustom || slidesData;
 
   // Filter slides: 
-  // 1. If showTabs is true, filter by activeTab category.
-  // 2. If showTabs is false but fixedCategoryId is provided (Project page), filter by that category.
-  // 3. If showTabs is false and no fixed category (Service page), show all slides in provided data.
-  const currentSlides = (showTabs || fixedCategoryId !== undefined)
-    ? baseData.filter(slide => slide.categoryId === activeTab)
-    : baseData;
+  // 1. If showTabs is true:
+  //    - If activeTab is 0 ("All"), show all.
+  //    - Else filter by (activeTab - 1) categoryId.
+  // 2. If showTabs is false and fixedCategoryId is provided, filter by that.
+  // 3. If showTabs is false and no fixed category, show all.
+  const currentSlides = React.useMemo(() => {
+    if (showTabs) {
+      if (activeTab === 0) return baseData;
+      return baseData.filter(slide => slide.categoryId === activeTab - 1);
+    }
+    if (fixedCategoryId !== undefined) {
+      return baseData.filter(slide => slide.categoryId === fixedCategoryId);
+    }
+    return baseData;
+  }, [baseData, showTabs, activeTab, fixedCategoryId]);
 
   return (
     <div className="w-full bg-[#F5F7FA] py-[80px] flex flex-col justify-center overflow-hidden">
@@ -72,8 +82,8 @@ const CreativeSlider = ({
                 key={idx}
                 onClick={() => handleTabChange(idx)}
                 className={`px-16 py-4 transition-all duration-300 relative bg-[#D1D5DB] text-[#00338d] ${activeTab === idx
-                  ? 'font-bold'
-                  : 'font-bold hover:bg-[#E5E7EB]'
+                  ? 'font-body'
+                  : 'font-body hover:bg-[#E5E7EB]'
                   }`}
                 style={{
                   fontFamily: 'var(--font-heading)',
@@ -96,7 +106,7 @@ const CreativeSlider = ({
             slidesPerView={1.2}
             breakpoints={{
               640: { slidesPerView: 1.5, spaceBetween: 24 },
-              1024: { slidesPerView: 2.5, spaceBetween: 30 },
+              1024: { slidesPerView: 2.2, spaceBetween: 30 },
             }}
             pagination={{
               clickable: true,

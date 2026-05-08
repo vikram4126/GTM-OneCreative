@@ -6,28 +6,13 @@ import 'swiper/css/effect-fade';
 
 import PillarPopup from '../components/PillarPopup';
 import pillarsData from '../data/pillars.json';
+import inspirationData from '../data/inspiration.json';
 
 /* ── All asset images ─────────────────────────────────────── */
-import img01 from '../assets/images/llxvisuals-eSLJG0y5S4U-unsplash.jpg';
-import img02 from '../assets/images/mike-hindle-XIWA8_767pU-unsplash.jpg';
-import img03 from '../assets/images/marek-piwnicki-NwZmYW5ETnE-unsplash.jpg';
-import img04 from '../assets/images/nasa-hubble-space-telescope-oKR1KYjm8C0-unsplash.jpg';
-import img05 from '../assets/images/tianlei-wu-TzKBCfzQ2WI-unsplash.jpg';
-import img06 from '../assets/images/dmitry-kropachev-_uL1v6AuudQ-unsplash.jpg';
-import img07 from '../assets/images/ian-lhPNTD2ii0U-unsplash.jpg';
-import img08 from '../assets/images/eugene-golovesov-vTJQzJRmSLQ-unsplash.jpg';
-import img09 from '../assets/images/leon-rohrwild-MxcwgJGO-Us-unsplash.jpg';
-import img10 from '../assets/images/louis-gaudiau-jpxOY5OdFpc-unsplash.jpg';
-import img11 from '../assets/images/nowbelov-Zn3QjwsN2Q0-unsplash.jpg';
-import img12 from '../assets/images/quentin-schulz-URfsKbjVA2Q-unsplash.jpg';
-import img13 from '../assets/images/thibault-henry-HIWj0F3Xsxc-unsplash.jpg';
-import img14 from '../assets/images/mike-hindle-n73nY4TfKZ8-unsplash.jpg';
 import pillar1 from '../assets/images/pillar-1.jpg';
 import pillar2 from '../assets/images/pillar-2.jpg';
 import pillar3 from '../assets/images/pillar-3.jpg';
 import pillar4 from '../assets/images/pillar-4.jpg';
-import insp1 from '../assets/images/insp-1.jpg';
-import insp2 from '../assets/images/insp-2.jpg';
 import pillarsBg from '../assets/images/pillars-bg.jpg';
 
 /* ─── Right-side clickable dot pagination (only navigation) ── */
@@ -301,13 +286,7 @@ export const SectionInspiration = () => {
   const [active, setActive] = useState(0);
   const swiperRef = useRef(null);
 
-  const slides = [
-    { mainTitle: 'Inspiration Meets Technology', projects: [{ title: 'Title of Project', desc: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', img: insp1 }, { title: 'Title of Project', desc: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', img: insp2 }] },
-    { mainTitle: 'Innovation Drives Progress', projects: [{ title: 'Title of Project', desc: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', img: img08 }, { title: 'Title of Project', desc: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', img: img09 }] },
-    { mainTitle: 'Where Art Meets Purpose', projects: [{ title: 'Title of Project', desc: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', img: img10 }, { title: 'Title of Project', desc: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', img: img11 }] },
-    { mainTitle: 'Vision Beyond Boundaries', projects: [{ title: 'Title of Project', desc: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', img: img12 }, { title: 'Title of Project', desc: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', img: img13 }] },
-    { mainTitle: 'Stories That Move People', projects: [{ title: 'Title of Project', desc: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', img: img14 }, { title: 'Title of Project', desc: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', img: img01 }] },
-  ];
+  const slides = inspirationData;
 
   return (
     <section style={{
@@ -388,8 +367,8 @@ export const SectionInspiration = () => {
                           position: 'absolute',
                           top: '-10px',
                           bottom: '-10px',
-                          left: '0',
-                          right: '0',
+                          left: '10px',
+                          right: '10px',
                           borderTop: '2.5px solid rgba(255,255,255,0.7)',
                           borderBottom: '2.5px solid rgba(255,255,255,0.7)',
                           borderLeft: '2.5px solid rgba(255,255,255,0.7)',
@@ -400,7 +379,7 @@ export const SectionInspiration = () => {
                         {/* Main Image */}
                         <div style={{ width: '100%', aspectRatio: '16/9', overflow: 'hidden', backgroundColor: '#000' }}>
                           <img
-                            src={proj.img}
+                            src={`images/${proj.img}`}
                             alt={proj.title}
                             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                           />
@@ -410,8 +389,8 @@ export const SectionInspiration = () => {
                       {/* Text */}
                       <div style={{ flex: 1 }}>
                         <h3 style={{
-                          fontSize: 'clamp(1.5rem, 2.5vw, 2.2rem)',
-                          fontWeight: 800,
+                          fontSize: 'clampz(1.2rem, 2.0vw, 1.8rem)',
+                          fontWeight: 300,
                           color: '#fff',
                           fontFamily: 'var(--font-body)',
                           marginBottom: 12,

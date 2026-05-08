@@ -52,7 +52,7 @@ body {
   --font-heading: "KPMG-Bold", "OpenSans-CondBold", sans-serif;
   --font-subheading: "Open Sans Condensed", sans-serif;
   --font-body: "Open Sans", sans-serif;
-  --font-bold: "KPMG-Bold", "OpenSans-Bold", sans-serif;
+  --font-bold: "Open Sans", "OpenSans-Bold", sans-serif;
 }
 
 /* ─── Reset ─── */
