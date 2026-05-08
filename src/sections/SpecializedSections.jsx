@@ -9,11 +9,11 @@ import pillarsData from '../data/pillars.json';
 import inspirationData from '../data/inspiration.json';
 
 /* ── All asset images ─────────────────────────────────────── */
-import pillar1 from '../assets/images/pillar-1.jpg';
-import pillar2 from '../assets/images/pillar-2.jpg';
-import pillar3 from '../assets/images/pillar-3.jpg';
-import pillar4 from '../assets/images/pillar-4.jpg';
-import pillarsBg from '../assets/images/pillars-bg.jpg';
+const pillar1 = 'images/pillar-1.jpg';
+const pillar2 = 'images/pillar-2.jpg';
+const pillar3 = 'images/pillar-3.jpg';
+const pillar4 = 'images/pillar-4.jpg';
+const pillarsBg = 'images/pillars-bg.jpg';
 
 /* ─── Right-side clickable dot pagination (only navigation) ── */
 const SidebarDots = ({ total, active, swiperRef }) => (
@@ -379,7 +379,7 @@ export const SectionInspiration = () => {
                         {/* Main Image */}
                         <div style={{ width: '100%', aspectRatio: '16/9', overflow: 'hidden', backgroundColor: '#000' }}>
                           <img
-                            src={`images/${proj.img}`}
+                            src={proj.img}
                             alt={proj.title}
                             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                           />

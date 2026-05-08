@@ -124,7 +124,7 @@ const CreativeSlider = ({
                 <Link to={`/project/${slide.id}`} className="block w-full h-full relative cursor-pointer group">
                   <div className="relative w-full aspect-[4/3] md:aspect-[16/10] bg-[#0C233C] overflow-hidden rounded-lg">
                     <img
-                      src={`images/slider-items/${slide.thumb}`}
+                      src={slide.thumb}
                       alt={slide.title}
                       className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />

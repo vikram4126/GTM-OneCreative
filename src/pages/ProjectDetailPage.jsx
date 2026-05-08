@@ -39,7 +39,7 @@ import CreativeSlider from '../components/CreativeSlider';
 import Navbar from '../components/Navbar';
 import SidebarMenu from '../components/SidebarMenu';
 import { SectionFooter } from '../sections/SectionFooter';
-import footerBg from '../assets/images/footer-bg.png';
+const footerBg = 'images/footer-bg.png';
 
 const templateMap = {
   template1: Template1,

@@ -1,11 +1,7 @@
 import React, { useEffect } from 'react';
 
-/* ── Dynamic image imports for gallery ── */
-const imageModules = import.meta.glob('../assets/images/*.{jpg,jpeg,png}', { eager: true });
-
 const getImage = (filename) => {
-  const key = Object.keys(imageModules).find(k => k.endsWith(`/${filename}`));
-  return key ? imageModules[key].default : '';
+  return `images/${filename}`;
 };
 
 const PillarPopup = ({ isOpen, onClose, data }) => {

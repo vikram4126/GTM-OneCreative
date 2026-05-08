@@ -6,7 +6,7 @@ import { ServiceBanner, ServiceDetailSlider } from '../sections/ServiceSections'
 import { SectionCreativeShowcase } from '../sections/SectionCreativeShowcase';
 import { SectionFooter } from '../sections/SectionFooter';
 import servicesData from '../data/services.json';
-import footerBg from '../assets/images/footer-bg.png';
+const footerBg = 'images/footer-bg.png';
 
 import ukCreateSlides from '../data/uk_create_slides.json';
 import usCreativeSlides from '../data/us_creative_slides.json';

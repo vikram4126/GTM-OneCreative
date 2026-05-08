@@ -3,13 +3,13 @@
     "id": "graphis-design-1",
     "categoryId": 0,
     "title": "Home: Walmart Collateral",
-    "thumb": "graphis-design-1-thumb.png",
-    "image": "graphis-design-1-full.png",
+    "thumb": "images/slider-items/graphis-design-1-thumb.png",
+    "image": "images/slider-items/graphis-design-1-full.png",
     "template": "gallery",
     "content": "Home specific content.",
     "gallery": [
-      "graphis-design-1-slide-1.jpeg",
-      "graphis-design-1-slide-2.jpeg"
+      "images/slider-items/graphis-design-1-slide-1.jpeg",
+      "images/slider-items/graphis-design-1-slide-2.jpeg"
     ],
     "contactIds": [
       "krishna"
@@ -19,12 +19,12 @@
     "id": "graphis-design-2",
     "categoryId": 0,
     "title": "Home: Annual Report Design",
-    "thumb": "graphis-design-2-thumb.png",
-    "image": "graphis-design-2-full.png",
+    "thumb": "images/slider-items/graphis-design-2-thumb.png",
+    "image": "images/slider-items/graphis-design-2-full.png",
     "template": "gallery",
     "content": "Comprehensive financial report design with rich infographics.",
     "gallery": [
-      "graphis-design-2-slide-1.png"
+      "images/slider-items/graphis-design-2-slide-1.png"
     ],
     "contactIds": [
       "shweta"
@@ -34,8 +34,8 @@
     "id": "graphis-design-3",
     "categoryId": 0,
     "title": "Home: Event Branding",
-    "thumb": "graphis-design-3-thumb.png",
-    "image": "graphis-design-3-full.png",
+    "thumb": "images/slider-items/graphis-design-3-thumb.png",
+    "image": "images/slider-items/graphis-design-3-full.png",
     "template": "video",
     "content": "End-to-end branding for corporate events and summits.",
     "contactIds": [
@@ -47,8 +47,8 @@
     "id": "ppt-1",
     "categoryId": 1,
     "title": "Home: PPT Deck 1",
-    "thumb": "ppt-1-thumb.png",
-    "image": "ppt-1-full.png",
+    "thumb": "images/slider-items/ppt-1-thumb.png",
+    "image": "images/slider-items/ppt-1-full.png",
     "template": "video",
     "content": "Home specific content.",
     "contactIds": [
@@ -59,13 +59,13 @@
     "id": "ppt-2",
     "categoryId": 1,
     "title": "Home: Investor Pitch Deck",
-    "thumb": "ppt-2-thumb.png",
-    "image": "ppt-2-full.png",
+    "thumb": "images/slider-items/ppt-2-thumb.png",
+    "image": "images/slider-items/ppt-2-full.png",
     "template": "gallery",
     "content": "High-impact presentation design for startup funding.",
     "gallery": [
-      "ppt-2-slide-1.png",
-      "ppt-2-slide-2.png"
+      "images/slider-items/ppt-2-slide-1.png",
+      "images/slider-items/ppt-2-slide-2.png"
     ],
     "contactIds": [
       "shantanu"
@@ -75,8 +75,8 @@
     "id": "ppt-home-3",
     "categoryId": 1,
     "title": "Home: Quarterly Review",
-    "thumb": "ppt-home-3-thumb.png",
-    "image": "ppt-home-3-full.png",
+    "thumb": "images/slider-items/ppt-home-3-thumb.png",
+    "image": "images/slider-items/ppt-home-3-full.png",
     "template": "video",
     "content": "Clean, data-driven slides for executive summaries.",
     "contactIds": [
@@ -87,8 +87,8 @@
     "id": "motion-1",
     "categoryId": 2,
     "title": "Home: Motion Story",
-    "thumb": "motion-1-thumb.png",
-    "image": "motion-1-full.png",
+    "thumb": "images/slider-items/motion-1-thumb.png",
+    "image": "images/slider-items/motion-1-full.png",
     "template": "video",
     "content": "Home specific motion graphics content.",
     "contactIds": [
@@ -99,12 +99,12 @@
     "id": "motion-2",
     "categoryId": 2,
     "title": "Home: Explainer Video",
-    "thumb": "motion-2-thumb.png",
-    "image": "motion-2-full.png",
+    "thumb": "images/slider-items/motion-2-thumb.png",
+    "image": "images/slider-items/motion-2-full.png",
     "template": "gallery",
     "content": "Engaging animated explainer for a new SaaS product.",
     "gallery": [
-      "motion-2-slide-1.png"
+      "images/slider-items/motion-2-slide-1.png"
     ],
     "contactIds": [
       "shweta",
@@ -115,8 +115,8 @@
     "id": "motion-3",
     "categoryId": 2,
     "title": "Home: Logo Reveal",
-    "thumb": "motion-3-thumb.png",
-    "image": "motion-3-full.png",
+    "thumb": "images/slider-items/motion-3-thumb.png",
+    "image": "images/slider-items/motion-3-full.png",
     "template": "video",
     "content": "Dynamic and sleek motion graphics logo reveal.",
     "contactIds": [
@@ -127,8 +127,8 @@
     "id": "others-2",
     "categoryId": 3,
     "title": "Home: Product Packaging",
-    "thumb": "others-2-thumb.png",
-    "image": "others-2-full.png",
+    "thumb": "images/slider-items/others-2-thumb.png",
+    "image": "images/slider-items/others-2-full.png",
     "template": "video",
     "content": "Innovative packaging design for retail consumer goods.",
     "contactIds": [
@@ -139,12 +139,12 @@
     "id": "others-3",
     "categoryId": 3,
     "title": "Home: Wayfinding System",
-    "thumb": "others-3-thumb.png",
-    "image": "others-3-full.png",
+    "thumb": "images/slider-items/others-3-thumb.png",
+    "image": "images/slider-items/others-3-full.png",
     "template": "gallery",
     "content": "Spatial design and signage for a large corporate campus.",
     "gallery": [
-      "others-3-slide-1.png"
+      "images/slider-items/others-3-slide-1.png"
     ],
     "contactIds": [
       "krishna",

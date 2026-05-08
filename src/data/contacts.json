@@ -4,20 +4,20 @@
     "role": "Director,",
     "company": "OneCreative",
     "img": "images/krishana.jpeg",
-    "email": "krishnav@onecreative.com"
+    "email": "krishnav@kpmg.com"
   },
   "shantanu": {
     "name": "Shantanu",
     "role": "Associate Director,",
     "company": "OneCreative",
     "img": "images/shantanu.jpeg",
-    "email": "shantanu@onecreative.com"
+    "email": "shantanu@kpmg.com"
   },
   "shweta": {
     "name": "Shweta Gor",
     "role": "Associate Director,",
     "company": "OneCreative",
     "img": "images/shaweta.jpeg",
-    "email": "shweta@onecreative.com"
+    "email": "shweta@kpmg.com"
   }
 }

@@ -7,7 +7,6 @@ import 'swiper/css';
 import 'swiper/css/effect-fade';
 
 // Import assets
-import bannerBg from '../assets/images/service-banner-bg.jpeg';
 import PillarPopup from '../components/PillarPopup';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -328,7 +327,7 @@ export const ServiceDetailSlider = ({ slides = [], pillarBgColor = '#00b8f5' }) 
 
               {/* Panoramic image */}
               <div style={{ position: 'relative', zIndex: 1, width: '100%', height: '42vh', overflow: 'hidden', boxShadow: '0 30px 60px rgba(0,0,0,0.3)', borderRadius: '12px' }}>
-                <img src={`images/${slide.image}`} alt={slide.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <img src={slide.image} alt={slide.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
 
               {/* Capabilities Overview button */}

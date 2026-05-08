@@ -16,7 +16,7 @@ import { SectionServices } from '../sections/SectionServices';
 import { SectionCreativity } from '../sections/SectionCreativity';
 import { SectionFooter } from '../sections/SectionFooter';
 import SectionAttention from '../sections/SectionAttention';
-import footerBg from '../assets/images/footer-bg.png';
+const footerBg = 'images/footer-bg.png';
 
 const Home = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

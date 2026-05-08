@@ -3,17 +3,17 @@
     "id": "graphis-design-1",
     "categoryId": 0,
     "title": "Walmart Collateral Brochure",
-    "thumb": "graphis-design-1-thumb.png",
-    "image": "graphis-design-1-full.png",
+    "thumb": "images/slider-items/graphis-design-1-thumb.png",
+    "image": "images/slider-items/graphis-design-1-full.png",
     "template": "gallery",
     "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     "gallery": [
-      "graphis-design-1-slide-1.png",
-      "graphis-design-1-slide-2.png",
-      "graphis-design-1-slide-3.png",
-      "graphis-design-1-slide-4.png",
-      "graphis-design-1-slide-5.png",
-      "graphis-design-1-slide-6.png"
+      "images/slider-items/graphis-design-1-slide-1.png",
+      "images/slider-items/graphis-design-1-slide-2.png",
+      "images/slider-items/graphis-design-1-slide-3.png",
+      "images/slider-items/graphis-design-1-slide-4.png",
+      "images/slider-items/graphis-design-1-slide-5.png",
+      "images/slider-items/graphis-design-1-slide-6.png"
     ],
     "contactIds": [
       "krishna",
@@ -24,13 +24,13 @@
     "id": "graphis-design-2",
     "categoryId": 0,
     "title": "Partnering for SUCCESS 2025",
-    "thumb": "graphis-design-2-thumb.png",
-    "image": "graphis-design-2-full.png",
+    "thumb": "images/slider-items/graphis-design-2-thumb.png",
+    "image": "images/slider-items/graphis-design-2-full.png",
     "template": "gallery",
     "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     "gallery": [
-      "graphis-design-2-slide-1.png",
-      "graphis-design-2-slide-2.png"
+      "images/slider-items/graphis-design-2-slide-1.png",
+      "images/slider-items/graphis-design-2-slide-2.png"
     ],
     "contactIds": [
       "shantanu",
@@ -41,8 +41,8 @@
     "id": "graphis-design-3",
     "categoryId": 0,
     "title": "Graphic Design 3",
-    "thumb": "graphis-design-3-thumb.png",
-    "image": "graphis-design-3-full.png",
+    "thumb": "images/slider-items/graphis-design-3-thumb.png",
+    "image": "images/slider-items/graphis-design-3-full.png",
     "template": "video",
     "content": "Modern digital art and illustrations.",
     "contactIds": [
@@ -54,13 +54,13 @@
     "id": "graphis-design-4",
     "categoryId": 0,
     "title": "Graphic Design 4",
-    "thumb": "graphis-design-4-thumb.png",
-    "image": "graphis-design-4-full.png",
+    "thumb": "images/slider-items/graphis-design-4-thumb.png",
+    "image": "images/slider-items/graphis-design-4-full.png",
     "template": "gallery",
     "content": "Creative concepts translated into pixel-perfect designs.",
     "gallery": [
-      "graphis-design-4-slide-1.png",
-      "graphis-design-4-slide-2.png"
+      "images/slider-items/graphis-design-4-slide-1.png",
+      "images/slider-items/graphis-design-4-slide-2.png"
     ],
     "contactIds": [
       "krishna",
@@ -71,8 +71,8 @@
     "id": "graphis-design-5",
     "categoryId": 0,
     "title": "Graphic Design 5",
-    "thumb": "graphis-design-5-thumb.png",
-    "image": "graphis-design-5-full.png",
+    "thumb": "images/slider-items/graphis-design-5-thumb.png",
+    "image": "images/slider-items/graphis-design-5-full.png",
     "template": "video",
     "content": "Typography and color theory at work.",
     "contactIds": [
@@ -84,13 +84,13 @@
     "id": "graphis-design-16",
     "categoryId": 0,
     "title": "Graphic Design 16",
-    "thumb": "graphis-design-16-thumb.png",
-    "image": "graphis-design-16-full.png",
+    "thumb": "images/slider-items/graphis-design-16-thumb.png",
+    "image": "images/slider-items/graphis-design-16-full.png",
     "template": "gallery",
     "content": "Pushing the boundaries of conventional design.",
     "gallery": [
-      "graphis-design-16-slide-1.png",
-      "graphis-design-16-slide-2.png"
+      "images/slider-items/graphis-design-16-slide-1.png",
+      "images/slider-items/graphis-design-16-slide-2.png"
     ],
     "contactIds": [
       "krishna",
@@ -101,8 +101,8 @@
     "id": "ppt-1",
     "categoryId": 1,
     "title": "PPT Deck 1",
-    "thumb": "ppt-1-thumb.png",
-    "image": "ppt-1-full.png",
+    "thumb": "images/slider-items/ppt-1-thumb.png",
+    "image": "images/slider-items/ppt-1-full.png",
     "template": "video",
     "content": "Professional presentation decks for corporate clients.",
     "contactIds": [
@@ -114,13 +114,13 @@
     "id": "ppt-2",
     "categoryId": 1,
     "title": "PPT Deck 2",
-    "thumb": "ppt-2-thumb.png",
-    "image": "ppt-2-full.png",
+    "thumb": "images/slider-items/ppt-2-thumb.png",
+    "image": "images/slider-items/ppt-2-full.png",
     "template": "gallery",
     "content": "Engaging pitch decks that win investors.",
     "gallery": [
-      "ppt-2-slide-1.png",
-      "ppt-2-slide-2.png"
+      "images/slider-items/ppt-2-slide-1.png",
+      "images/slider-items/ppt-2-slide-2.png"
     ],
     "contactIds": [
       "shantanu",
@@ -131,8 +131,8 @@
     "id": "ppt-3",
     "categoryId": 1,
     "title": "PPT Deck 3",
-    "thumb": "ppt-3-thumb.png",
-    "image": "ppt-3-full.png",
+    "thumb": "images/slider-items/ppt-3-thumb.png",
+    "image": "images/slider-items/ppt-3-full.png",
     "template": "video",
     "content": "Clean and minimal slide layouts.",
     "contactIds": [
@@ -144,13 +144,13 @@
     "id": "ppt-4",
     "categoryId": 1,
     "title": "PPT Deck 4",
-    "thumb": "ppt-4-thumb.png",
-    "image": "ppt-4-full.png",
+    "thumb": "images/slider-items/ppt-4-thumb.png",
+    "image": "images/slider-items/ppt-4-full.png",
     "template": "gallery",
     "content": "Data visualization and infographics.",
     "gallery": [
-      "ppt-4-slide-1.png",
-      "ppt-4-slide-2.png"
+      "images/slider-items/ppt-4-slide-1.png",
+      "images/slider-items/ppt-4-slide-2.png"
     ],
     "contactIds": [
       "krishna",
@@ -161,8 +161,8 @@
     "id": "motion-1",
     "categoryId": 2,
     "title": "Motion Graphics 1",
-    "thumb": "motion-1-thumb.png",
-    "image": "motion-1-full.png",
+    "thumb": "images/slider-items/motion-1-thumb.png",
+    "image": "images/slider-items/motion-1-full.png",
     "template": "video",
     "content": "Dynamic motion graphics that bring brands to life.",
     "contactIds": [
@@ -174,13 +174,13 @@
     "id": "motion-2",
     "categoryId": 2,
     "title": "Motion Graphics 2",
-    "thumb": "motion-2-thumb.png",
-    "image": "motion-2-full.png",
+    "thumb": "images/slider-items/motion-2-thumb.png",
+    "image": "images/slider-items/motion-2-full.png",
     "template": "gallery",
     "content": "Smooth animations and transitions.",
     "gallery": [
-      "motion-2-slide-1.png",
-      "motion-2-slide-2.png"
+      "images/slider-items/motion-2-slide-1.png",
+      "images/slider-items/motion-2-slide-2.png"
     ],
     "contactIds": [
       "krishna",
@@ -191,8 +191,8 @@
     "id": "motion-3",
     "categoryId": 2,
     "title": "Motion Graphics 3",
-    "thumb": "motion-3-thumb.png",
-    "image": "motion-3-full.png",
+    "thumb": "images/slider-items/motion-3-thumb.png",
+    "image": "images/slider-items/motion-3-full.png",
     "template": "video",
     "content": "Explainer videos and product demos.",
     "contactIds": [
@@ -204,13 +204,13 @@
     "id": "motion-4",
     "categoryId": 2,
     "title": "Motion Graphics 4",
-    "thumb": "motion-4-thumb.png",
-    "image": "motion-4-full.png",
+    "thumb": "images/slider-items/motion-4-thumb.png",
+    "image": "images/slider-items/motion-4-full.png",
     "template": "gallery",
     "content": "Micro-interactions and UI animations.",
     "gallery": [
-      "motion-4-slide-1.png",
-      "motion-4-slide-2.png"
+      "images/slider-items/motion-4-slide-1.png",
+      "images/slider-items/motion-4-slide-2.png"
     ],
     "contactIds": [
       "shantanu",
@@ -221,8 +221,8 @@
     "id": "motion-5",
     "categoryId": 2,
     "title": "Motion Graphics 5",
-    "thumb": "motion-5-thumb.png",
-    "image": "motion-5-full.png",
+    "thumb": "images/slider-items/motion-5-thumb.png",
+    "image": "images/slider-items/motion-5-full.png",
     "template": "video",
     "content": "Engaging visual storytelling.",
     "contactIds": [
@@ -234,8 +234,8 @@
     "id": "others-1",
     "categoryId": 3,
     "title": "Other Design 1",
-    "thumb": "others-1-thumb.png",
-    "image": "others-1-full.png",
+    "thumb": "images/slider-items/others-1-thumb.png",
+    "image": "images/slider-items/others-1-full.png",
     "template": "video",
     "content": "Miscellaneous design works and experiments.",
     "contactIds": [
@@ -247,13 +247,13 @@
     "id": "others-2",
     "categoryId": 3,
     "title": "Other Design 2",
-    "thumb": "others-2-thumb.png",
-    "image": "others-2-full.png",
+    "thumb": "images/slider-items/others-2-thumb.png",
+    "image": "images/slider-items/others-2-full.png",
     "template": "gallery",
     "content": "Creative explorations.",
     "gallery": [
-      "others-2-slide-1.png",
-      "others-2-slide-2.png"
+      "images/slider-items/others-2-slide-1.png",
+      "images/slider-items/others-2-slide-2.png"
     ],
     "contactIds": [
       "shantanu",
@@ -264,8 +264,8 @@
     "id": "others-3",
     "categoryId": 3,
     "title": "Other Design 3",
-    "thumb": "others-3-thumb.png",
-    "image": "others-3-full.png",
+    "thumb": "images/slider-items/others-3-thumb.png",
+    "image": "images/slider-items/others-3-full.png",
     "template": "video",
     "content": "UI/UX concepts.",
     "contactIds": [
@@ -277,13 +277,13 @@
     "id": "others-4",
     "categoryId": 3,
     "title": "Other Design 4",
-    "thumb": "others-4-thumb.png",
-    "image": "others-4-full.png",
+    "thumb": "images/slider-items/others-4-thumb.png",
+    "image": "images/slider-items/others-4-full.png",
     "template": "gallery",
     "content": "Packaging design.",
     "gallery": [
-      "others-4-slide-1.png",
-      "others-4-slide-2.png"
+      "images/slider-items/others-4-slide-1.png",
+      "images/slider-items/others-4-slide-2.png"
     ],
     "contactIds": [
       "krishna",
@@ -294,8 +294,8 @@
     "id": "others-5",
     "categoryId": 3,
     "title": "Other Design 5",
-    "thumb": "others-5-thumb.png",
-    "image": "others-5-full.png",
+    "thumb": "images/slider-items/others-5-thumb.png",
+    "image": "images/slider-items/others-5-full.png",
     "template": "video",
     "content": "Print media.",
     "contactIds": [
@@ -307,13 +307,13 @@
     "id": "others-6",
     "categoryId": 3,
     "title": "Other Design 6",
-    "thumb": "others-6-thumb.png",
-    "image": "others-6-full.png",
+    "thumb": "images/slider-items/others-6-thumb.png",
+    "image": "images/slider-items/others-6-full.png",
     "template": "gallery",
     "content": "3D modeling and rendering.",
     "gallery": [
-      "others-6-slide-1.png",
-      "others-6-slide-2.png"
+      "images/slider-items/others-6-slide-1.png",
+      "images/slider-items/others-6-slide-2.png"
     ],
     "contactIds": [
       "krishna",

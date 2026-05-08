@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import footerBg from '../assets/images/footer-bg.png';
+const footerBg = 'images/footer-bg.png';
 
 export const MEMBER_MAP = {
   krishna: {

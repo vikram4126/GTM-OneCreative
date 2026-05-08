@@ -4,104 +4,289 @@
     "title": "Design Strategy",
     "intro": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.",
     "highlights": [
-      { "number": "450+", "label": "Assets Created" },
-      { "number": "120+", "label": "Projects Delivered" },
-      { "number": "85+", "label": "Clients Served" },
-      { "number": "30+", "label": "Awards Won" },
-      { "number": "15+", "label": "Years Experience" },
-      { "number": "200+", "label": "Team Members" },
-      { "number": "50+", "label": "Global Offices" }
+      {
+        "number": "450+",
+        "label": "Assets Created"
+      },
+      {
+        "number": "120+",
+        "label": "Projects Delivered"
+      },
+      {
+        "number": "85+",
+        "label": "Clients Served"
+      },
+      {
+        "number": "30+",
+        "label": "Awards Won"
+      },
+      {
+        "number": "15+",
+        "label": "Years Experience"
+      },
+      {
+        "number": "200+",
+        "label": "Team Members"
+      },
+      {
+        "number": "50+",
+        "label": "Global Offices"
+      }
     ],
     "technologies": [
-      { "name": "Adobe XD", "description": "Lorem Ipsum is simply dummy text of the printing industry." },
-      { "name": "Figma", "description": "Lorem Ipsum is simply dummy text of the printing industry." },
-      { "name": "Sketch", "description": "Lorem Ipsum is simply dummy text of the printing industry." },
-      { "name": "InVision", "description": "Lorem Ipsum is simply dummy text of the printing industry." }
+      {
+        "name": "Adobe XD",
+        "description": "Lorem Ipsum is simply dummy text of the printing industry."
+      },
+      {
+        "name": "Figma",
+        "description": "Lorem Ipsum is simply dummy text of the printing industry."
+      },
+      {
+        "name": "Sketch",
+        "description": "Lorem Ipsum is simply dummy text of the printing industry."
+      },
+      {
+        "name": "InVision",
+        "description": "Lorem Ipsum is simply dummy text of the printing industry."
+      }
     ],
-    "galleryImages": ["pillar-1.jpg", "insp-1.jpg", "insp-2.jpg"]
+    "galleryImages": [
+      "insp-3.jpg",
+      "insp-1.jpg",
+      "insp-2.jpg"
+    ]
   },
   {
     "id": "visual-storytelling",
     "title": "Visual Storytelling",
     "intro": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.",
     "highlights": [
-      { "number": "350+", "label": "Stories Crafted" },
-      { "number": "90+", "label": "Campaigns Launched" },
-      { "number": "75+", "label": "Brand Partners" },
-      { "number": "25+", "label": "Industry Awards" },
-      { "number": "12+", "label": "Years Expertise" },
-      { "number": "180+", "label": "Creative Minds" },
-      { "number": "40+", "label": "Markets Reached" }
+      {
+        "number": "350+",
+        "label": "Stories Crafted"
+      },
+      {
+        "number": "90+",
+        "label": "Campaigns Launched"
+      },
+      {
+        "number": "75+",
+        "label": "Brand Partners"
+      },
+      {
+        "number": "25+",
+        "label": "Industry Awards"
+      },
+      {
+        "number": "12+",
+        "label": "Years Expertise"
+      },
+      {
+        "number": "180+",
+        "label": "Creative Minds"
+      },
+      {
+        "number": "40+",
+        "label": "Markets Reached"
+      }
     ],
     "technologies": [
-      { "name": "After Effects", "description": "Lorem Ipsum is simply dummy text of the printing industry." },
-      { "name": "Premiere Pro", "description": "Lorem Ipsum is simply dummy text of the printing industry." },
-      { "name": "Cinema 4D", "description": "Lorem Ipsum is simply dummy text of the printing industry." },
-      { "name": "DaVinci", "description": "Lorem Ipsum is simply dummy text of the printing industry." }
+      {
+        "name": "After Effects",
+        "description": "Lorem Ipsum is simply dummy text of the printing industry."
+      },
+      {
+        "name": "Premiere Pro",
+        "description": "Lorem Ipsum is simply dummy text of the printing industry."
+      },
+      {
+        "name": "Cinema 4D",
+        "description": "Lorem Ipsum is simply dummy text of the printing industry."
+      },
+      {
+        "name": "DaVinci",
+        "description": "Lorem Ipsum is simply dummy text of the printing industry."
+      }
     ],
-    "galleryImages": ["pillar-2.jpg", "insp-1.jpg", "insp-2.jpg"]
+    "galleryImages": [
+      "pillar-2.jpg",
+      "insp-1.jpg",
+      "insp-2.jpg"
+    ]
   },
   {
     "id": "creative-direction",
     "title": "Creative Direction",
     "intro": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.",
     "highlights": [
-      { "number": "500+", "label": "Concepts Created" },
-      { "number": "110+", "label": "Brands Elevated" },
-      { "number": "95+", "label": "Global Clients" },
-      { "number": "40+", "label": "Design Awards" },
-      { "number": "18+", "label": "Years Leading" },
-      { "number": "250+", "label": "Team Strong" },
-      { "number": "60+", "label": "Countries Served" }
+      {
+        "number": "500+",
+        "label": "Concepts Created"
+      },
+      {
+        "number": "110+",
+        "label": "Brands Elevated"
+      },
+      {
+        "number": "95+",
+        "label": "Global Clients"
+      },
+      {
+        "number": "40+",
+        "label": "Design Awards"
+      },
+      {
+        "number": "18+",
+        "label": "Years Leading"
+      },
+      {
+        "number": "250+",
+        "label": "Team Strong"
+      },
+      {
+        "number": "60+",
+        "label": "Countries Served"
+      }
     ],
     "technologies": [
-      { "name": "Photoshop", "description": "Lorem Ipsum is simply dummy text of the printing industry." },
-      { "name": "Illustrator", "description": "Lorem Ipsum is simply dummy text of the printing industry." },
-      { "name": "Lightroom", "description": "Lorem Ipsum is simply dummy text of the printing industry." },
-      { "name": "Canva Pro", "description": "Lorem Ipsum is simply dummy text of the printing industry." }
+      {
+        "name": "Photoshop",
+        "description": "Lorem Ipsum is simply dummy text of the printing industry."
+      },
+      {
+        "name": "Illustrator",
+        "description": "Lorem Ipsum is simply dummy text of the printing industry."
+      },
+      {
+        "name": "Lightroom",
+        "description": "Lorem Ipsum is simply dummy text of the printing industry."
+      },
+      {
+        "name": "Canva Pro",
+        "description": "Lorem Ipsum is simply dummy text of the printing industry."
+      }
     ],
-    "galleryImages": ["pillar-3.jpg", "insp-2.jpg", "insp-1.jpg"]
+    "galleryImages": [
+      "pillar-3.jpg",
+      "insp-2.jpg",
+      "insp-1.jpg"
+    ]
   },
   {
     "id": "future-vision",
     "title": "Future Vision",
     "intro": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.",
     "highlights": [
-      { "number": "300+", "label": "Innovations Built" },
-      { "number": "80+", "label": "Prototypes Tested" },
-      { "number": "65+", "label": "Enterprise Clients" },
-      { "number": "20+", "label": "Patents Filed" },
-      { "number": "10+", "label": "Years R&D" },
-      { "number": "150+", "label": "Engineers" },
-      { "number": "35+", "label": "Labs Worldwide" }
+      {
+        "number": "300+",
+        "label": "Innovations Built"
+      },
+      {
+        "number": "80+",
+        "label": "Prototypes Tested"
+      },
+      {
+        "number": "65+",
+        "label": "Enterprise Clients"
+      },
+      {
+        "number": "20+",
+        "label": "Patents Filed"
+      },
+      {
+        "number": "10+",
+        "label": "Years R&D"
+      },
+      {
+        "number": "150+",
+        "label": "Engineers"
+      },
+      {
+        "number": "35+",
+        "label": "Labs Worldwide"
+      }
     ],
     "technologies": [
-      { "name": "React", "description": "Lorem Ipsum is simply dummy text of the printing industry." },
-      { "name": "Three.js", "description": "Lorem Ipsum is simply dummy text of the printing industry." },
-      { "name": "WebGL", "description": "Lorem Ipsum is simply dummy text of the printing industry." },
-      { "name": "Unity", "description": "Lorem Ipsum is simply dummy text of the printing industry." }
+      {
+        "name": "React",
+        "description": "Lorem Ipsum is simply dummy text of the printing industry."
+      },
+      {
+        "name": "Three.js",
+        "description": "Lorem Ipsum is simply dummy text of the printing industry."
+      },
+      {
+        "name": "WebGL",
+        "description": "Lorem Ipsum is simply dummy text of the printing industry."
+      },
+      {
+        "name": "Unity",
+        "description": "Lorem Ipsum is simply dummy text of the printing industry."
+      }
     ],
-    "galleryImages": ["pillar-4.jpg", "insp-1.jpg", "insp-2.jpg"]
+    "galleryImages": [
+      "pillar-4.jpg",
+      "insp-1.jpg",
+      "insp-2.jpg"
+    ]
   },
   {
     "id": "digital-innovation",
     "title": "Digital Innovation",
     "intro": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.",
     "highlights": [
-      { "number": "600+", "label": "Solutions Shipped" },
-      { "number": "130+", "label": "Apps Developed" },
-      { "number": "100+", "label": "Platforms Built" },
-      { "number": "35+", "label": "Tech Awards" },
-      { "number": "20+", "label": "Years Innovating" },
-      { "number": "300+", "label": "Developers" },
-      { "number": "70+", "label": "Regions Active" }
+      {
+        "number": "600+",
+        "label": "Solutions Shipped"
+      },
+      {
+        "number": "130+",
+        "label": "Apps Developed"
+      },
+      {
+        "number": "100+",
+        "label": "Platforms Built"
+      },
+      {
+        "number": "35+",
+        "label": "Tech Awards"
+      },
+      {
+        "number": "20+",
+        "label": "Years Innovating"
+      },
+      {
+        "number": "300+",
+        "label": "Developers"
+      },
+      {
+        "number": "70+",
+        "label": "Regions Active"
+      }
     ],
     "technologies": [
-      { "name": "Node.js", "description": "Lorem Ipsum is simply dummy text of the printing industry." },
-      { "name": "Python", "description": "Lorem Ipsum is simply dummy text of the printing industry." },
-      { "name": "AWS", "description": "Lorem Ipsum is simply dummy text of the printing industry." },
-      { "name": "Docker", "description": "Lorem Ipsum is simply dummy text of the printing industry." }
+      {
+        "name": "Node.js",
+        "description": "Lorem Ipsum is simply dummy text of the printing industry."
+      },
+      {
+        "name": "Python",
+        "description": "Lorem Ipsum is simply dummy text of the printing industry."
+      },
+      {
+        "name": "AWS",
+        "description": "Lorem Ipsum is simply dummy text of the printing industry."
+      },
+      {
+        "name": "Docker",
+        "description": "Lorem Ipsum is simply dummy text of the printing industry."
+      }
     ],
-    "galleryImages": ["pillar-1.jpg", "insp-2.jpg", "insp-1.jpg"]
+    "galleryImages": [
+      "insp-3.jpg",
+      "insp-2.jpg",
+      "insp-1.jpg"
+    ]
   }
 ]

@@ -14,7 +14,7 @@
     "details": [
       {
         "title": "Creative Strategy",
-        "image": "service-detail-1.jpeg",
+        "image": "images/service-detail-1.jpeg",
         "desc": "Developing robust creative strategies that align with your business goals and market demands.",
         "popupData": {
           "title": "Creative Strategy Capabilities",
@@ -56,7 +56,7 @@
             }
           ],
           "galleryImages": [
-            "pillar-1.jpg",
+            "insp-3.jpg",
             "insp-1.jpg",
             "insp-2.jpg"
           ]
@@ -64,7 +64,7 @@
       },
       {
         "title": "Visual Identity",
-        "image": "service-detail-2.jpeg",
+        "image": "images/service-detail-2.jpeg",
         "desc": "Crafting unique visual identities that make your brand stand out in a crowded marketplace.",
         "popupData": {
           "title": "Visual Identity Services",
@@ -106,7 +106,7 @@
             }
           ],
           "galleryImages": [
-            "pillar-2.jpg",
+            "insp-2.jpg",
             "insp-2.jpg",
             "insp-1.jpg"
           ]
@@ -114,7 +114,7 @@
       },
       {
         "title": "Digital Content",
-        "image": "service-detail-3.jpeg",
+        "image": "images/service-detail-3.jpeg",
         "desc": "Producing high-impact digital content tailored for your target audience across all platforms.",
         "popupData": {
           "title": "Digital Content Production",
@@ -156,7 +156,7 @@
             }
           ],
           "galleryImages": [
-            "pillar-3.jpg",
+            "insp-3.jpg",
             "insp-1.jpg",
             "insp-2.jpg"
           ]
@@ -164,7 +164,7 @@
       },
       {
         "title": "Campaign Design",
-        "image": "service-detail-4.jpeg",
+        "image": "images/service-detail-4.jpeg",
         "desc": "Designing integrated campaigns that resonate with consumers and drive action.",
         "popupData": {
           "title": "Integrated Campaign Design",
@@ -236,7 +236,7 @@
     "details": [
       {
         "title": "Brand Evolution",
-        "image": "service-detail-2.jpeg",
+        "image": "images/service-detail-2.jpeg",
         "desc": "Helping established brands evolve and adapt to the changing digital landscape in the US.",
         "popupData": {
           "title": "Brand Evolution Strategy",
@@ -278,15 +278,15 @@
             }
           ],
           "galleryImages": [
-            "pillar-1.jpg",
             "insp-1.jpg",
-            "insp-2.jpg"
+            "insp-2.jpg",
+            "insp-3.jpg"
           ]
         }
       },
       {
         "title": "Marketing Collateral",
-        "image": "service-detail-3.jpeg",
+        "image": "images/service-detail-3.jpeg",
         "desc": "Creating professional marketing materials that effectively communicate your value proposition.",
         "popupData": {
           "title": "Marketing Assets & Collateral",
@@ -328,7 +328,7 @@
             }
           ],
           "galleryImages": [
-            "pillar-2.jpg",
+            "insp-2.jpg",
             "insp-2.jpg",
             "insp-1.jpg"
           ]
@@ -336,7 +336,7 @@
       },
       {
         "title": "UI/UX Design",
-        "image": "service-detail-4.jpeg",
+        "image": "images/service-detail-4.jpeg",
         "desc": "Designing intuitive user interfaces and engaging experiences for your digital products.",
         "popupData": {
           "title": "UI/UX Design Excellence",
@@ -378,7 +378,7 @@
             }
           ],
           "galleryImages": [
-            "pillar-3.jpg",
+            "insp-3.jpg",
             "insp-1.jpg",
             "insp-2.jpg"
           ]
@@ -386,7 +386,7 @@
       },
       {
         "title": "Social Media",
-        "image": "service-detail-1.jpeg",
+        "image": "images/service-detail-1.jpeg",
         "desc": "Developing creative assets for social media campaigns that capture attention and foster community.",
         "popupData": {
           "title": "Social Media Content Creation",
@@ -458,7 +458,7 @@
     "details": [
       {
         "title": "Information Design",
-        "image": "service-detail-3.jpeg",
+        "image": "images/service-detail-3.jpeg",
         "desc": "Transforming complex data into clear, compelling visual narratives for stakeholders.",
         "popupData": {
           "title": "Information & Data Design",
@@ -500,15 +500,15 @@
             }
           ],
           "galleryImages": [
-            "pillar-1.jpg",
+            "insp-2.jpg",
             "insp-1.jpg",
-            "insp-2.jpg"
+            "insp-3.jpg"
           ]
         }
       },
       {
         "title": "Corporate Presentations",
-        "image": "service-detail-4.jpeg",
+        "image": "images/service-detail-4.jpeg",
         "desc": "Designing high-stakes presentations that help you win business and influence decisions.",
         "popupData": {
           "title": "High-Stakes Corporate Presentations",
@@ -550,7 +550,7 @@
             }
           ],
           "galleryImages": [
-            "pillar-2.jpg",
+            "insp-2.jpg",
             "insp-2.jpg",
             "insp-1.jpg"
           ]
@@ -558,7 +558,7 @@
       },
       {
         "title": "Strategic Reports",
-        "image": "service-detail-1.jpeg",
+        "image": "images/service-detail-1.jpeg",
         "desc": "Creating visually engaging reports that highlight key insights and strategic directions.",
         "popupData": {
           "title": "Strategic Annual & ESG Reports",
@@ -600,7 +600,7 @@
             }
           ],
           "galleryImages": [
-            "pillar-3.jpg",
+            "insp-3.jpg",
             "insp-1.jpg",
             "insp-2.jpg"
           ]
@@ -608,7 +608,7 @@
       },
       {
         "title": "Leadership Comms",
-        "image": "service-detail-2.jpeg",
+        "image": "images/service-detail-2.jpeg",
         "desc": "Supporting leadership with creative assets that articulate vision and drive transformation.",
         "popupData": {
           "title": "Leadership & Executive Comms",
@@ -680,7 +680,7 @@
     "details": [
       {
         "title": "E-Learning Modules",
-        "image": "service-detail-4.jpeg",
+        "image": "images/service-detail-4.jpeg",
         "desc": "Developing interactive e-learning modules that engage learners and deliver measurable outcomes.",
         "popupData": {
           "title": "Interactive E-Learning Modules",
@@ -722,15 +722,15 @@
             }
           ],
           "galleryImages": [
-            "pillar-1.jpg",
             "insp-1.jpg",
-            "insp-2.jpg"
+            "insp-2.jpg",
+            "insp-3.jpg"
           ]
         }
       },
       {
         "title": "Instructional Design",
-        "image": "service-detail-1.jpeg",
+        "image": "images/service-detail-1.jpeg",
         "desc": "Applying proven instructional design principles to create effective training programs.",
         "popupData": {
           "title": "Strategic Instructional Design",
@@ -772,7 +772,7 @@
             }
           ],
           "galleryImages": [
-            "pillar-2.jpg",
+            "insp-2.jpg",
             "insp-2.jpg",
             "insp-1.jpg"
           ]
@@ -780,7 +780,7 @@
       },
       {
         "title": "Video Learning",
-        "image": "service-detail-2.jpeg",
+        "image": "images/service-detail-2.jpeg",
         "desc": "Producing educational videos that simplify complex topics and enhance learning experiences.",
         "popupData": {
           "title": "Educational & Explainer Videos",
@@ -822,7 +822,7 @@
             }
           ],
           "galleryImages": [
-            "pillar-3.jpg",
+            "insp-3.jpg",
             "insp-1.jpg",
             "insp-2.jpg"
           ]
@@ -830,7 +830,7 @@
       },
       {
         "title": "Interactive Training",
-        "image": "service-detail-3.jpeg",
+        "image": "images/service-detail-3.jpeg",
         "desc": "Designing interactive training sessions that encourage participation and practical application.",
         "popupData": {
           "title": "Hands-on Interactive Training",
