@@ -98,15 +98,15 @@ export const SectionDesignStrategy = () => {
             <div className="container mx-auto px-6" style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
 
               {/* Heading overlapping image top */}
-              <h1 className="content-creation-title section-heading" style={{
-                fontSize: 'clamp(2.5rem, 5.5vw, 4.8rem)',
+              <h2 className="section-heading plus" style={{
                 textAlign: 'center', textTransform: 'none',
-                lineHeight: 1, fontWeight: 900, width: '100%',
+                fontWeight: 900, width: '100%',
                 position: 'relative', zIndex: 2,
                 marginBottom: '-1.4vw',
+                color: '#ffffff',
               }}>
                 {slide.title}
-              </h1>
+              </h2>
 
               {/* Panoramic image — no border radius */}
               <div style={{ position: 'relative', zIndex: 1, width: '100%', height: '42vh', overflow: 'hidden', boxShadow: '0 20px 60px rgba(0,0,0,0.25)' }}>
@@ -127,7 +127,7 @@ export const SectionDesignStrategy = () => {
                   transition: 'all 0.3s ease',
                 }}
                 onMouseEnter={e => { e.currentTarget.style.backgroundColor = 'rgba(255,255,255,1)'; e.currentTarget.style.color = '#00338d'; }}
-                onMouseLeave={e => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = 'rgba(255,255,255,0.7)'; }}
+                onMouseLeave={e => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = 'rgba(255,255,255,1)'; }}
               >
                 Capabilities Overview
               </button>
@@ -231,16 +231,13 @@ export const SectionExploring = () => {
                 textAlign: 'right',
                 width: '40%'
               }}>
-                <h1 className="content-creation-title section-heading" style={{
-                  fontSize: 'clamp(2.5rem, 5.5vw, 4.8rem)',
+                <h2 className="section-heading" style={{
                   textTransform: 'none',
                   fontWeight: 900,
-                  lineHeight: 0.9,
                   color: '#fff',
-                  fontFamily: 'var(--font-heading)'
                 }}>
                   {slide.lines.map((line, j) => <span key={j} style={{ display: 'block' }}>{line}</span>)}
-                </h1>
+                </h2>
               </div>
 
               {/* RIGHT CONTENT — Starting near edge of Donut */}
@@ -253,7 +250,7 @@ export const SectionExploring = () => {
               }}>
                 <h3 style={{
                   fontSize: 'clamp(1.2rem, 1.8vw, 1.6rem)',
-                  fontWeight: 800,
+                  fontWeight: 300,
                   color: '#fff',
                   fontFamily: 'var(--font-body)',
                   marginBottom: 14
@@ -313,18 +310,16 @@ export const SectionInspiration = () => {
             <div className="container mx-auto px-6 relative" style={{ width: '100%', display: 'flex', flexDirection: 'column', height: 'auto', maxWidth: '1200px' }}>
 
               {/* Heading */}
-              <h1 className="content-creation-title section-heading" style={{
-                fontSize: 'clamp(3rem, 6vw, 5.5rem)',
+              <h2 className="section-heading" style={{
                 textAlign: 'center',
                 textTransform: 'none',
-                lineHeight: 1,
                 fontWeight: 900,
                 marginBottom: '4rem',
                 flexShrink: 0,
                 color: '#fff'
               }}>
                 {slide.mainTitle}
-              </h1>
+              </h2>
 
               {/* Cards Wrapper */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: 30, position: 'relative' }}>
@@ -389,7 +384,7 @@ export const SectionInspiration = () => {
                       {/* Text */}
                       <div style={{ flex: 1 }}>
                         <h3 style={{
-                          fontSize: 'clampz(1.2rem, 2.0vw, 1.8rem)',
+                          fontSize: 'clamp(1.2rem, 1.8vw, 1.6rem)',
                           fontWeight: 300,
                           color: '#fff',
                           fontFamily: 'var(--font-body)',
@@ -399,7 +394,7 @@ export const SectionInspiration = () => {
                           {proj.title}
                         </h3>
                         <p style={{
-                          fontSize: 'clamp(1.1rem, 1.6vw, 1.4rem)',
+                          fontSize: 'clamp(1rem, 1.3vw, 1.15rem)',
                           lineHeight: 1.6,
                           color: 'rgba(255,255,255,0.9)',
                           fontFamily: 'var(--font-body)',

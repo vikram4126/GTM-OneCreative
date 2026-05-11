@@ -99,12 +99,12 @@ const ProjectDetailPage = () => {
       </div>
 
       {/* Contextual Slider: only shows projects from the same source (Home, specific Service, etc.) */}
-      <div className="mt-12 border-t border-gray-100">
-        <CreativeSlider 
-          showTabs={false} 
-          fixedCategoryId={slide.source === 'home' ? slide.categoryId : undefined} 
+      <div className="mt-0 border-t border-gray-100">
+        <CreativeSlider
+          showTabs={false}
+          fixedCategoryId={slide.source === 'home' ? slide.categoryId : undefined}
           slidesDataCustom={moreProjectsData}
-          customHeading="More Projects" 
+          customHeading="More Projects"
         />
       </div>
 

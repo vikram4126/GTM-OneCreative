@@ -138,7 +138,16 @@ strong,
 }
 
 .section-heading {
-  color: #FFFFFF !important;
+  @apply font-heading leading-[1.1];
+  font-size: clamp(2.5rem, 5.0vw, 4.8rem) !important;
+}
+
+.section-heading.plus {
+  font-size: clamp(3.5rem, 7.5vw, 8.8rem) !important;
+}
+
+.section-heading.half {
+  font-size: clamp(2.5rem, 3.2vw, 3.4rem) !important;
 }
 
 /* ─── Scrollbar ──────────────────────────────────── */

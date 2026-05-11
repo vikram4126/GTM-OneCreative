@@ -63,12 +63,11 @@ const CreativeSlider = ({
 
         {/* Heading */}
         <h2
-          className="text-[#00338d] w-full text-center"
+          className="section-heading half text-[#00338d] w-full text-left"
           style={{
-            fontSize: 'clamp(2.5rem, 5.5vw, 4.8rem)',
             fontWeight: 900,
-            lineHeight: 1,
-            marginBottom: '30px'
+            marginBottom: '30px',
+            textTransform: 'none'
           }}
         >
           {customHeading}

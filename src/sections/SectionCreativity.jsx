@@ -98,11 +98,9 @@ export const SectionCreativity = () => {
             }}
           >
             <h2 
+              className="section-heading"
               style={{ 
-                fontFamily: 'var(--font-heading)',
                 fontWeight: 900,
-                fontSize: 'clamp(2.5rem, 5.5vw, 4.8rem)',
-                lineHeight: 1.1,
                 color: '#00338d', 
                 maxWidth: '500px',
                 textTransform: 'none',

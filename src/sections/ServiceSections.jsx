@@ -314,7 +314,7 @@ export const ServiceDetailSlider = ({ slides = [], pillarBgColor = '#00b8f5' }) 
             <div className="container mx-auto px-6" style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
 
               {/* Heading overlapping image top */}
-              <h1 className="content-creation-title section-heading" style={{
+              <h2 className="content-creation-title section-heading text-white" style={{
                 fontSize: 'clamp(2.5rem, 5.5vw, 4.8rem)',
                 textAlign: 'center', textTransform: 'none',
                 lineHeight: 1, fontWeight: 900, width: '100%',
@@ -323,10 +323,10 @@ export const ServiceDetailSlider = ({ slides = [], pillarBgColor = '#00b8f5' }) 
                 color: '#FFFFFF !important'
               }}>
                 {slide.title}
-              </h1>
+              </h2>
 
               {/* Panoramic image */}
-              <div style={{ position: 'relative', zIndex: 1, width: '100%', height: '42vh', overflow: 'hidden', boxShadow: '0 30px 60px rgba(0,0,0,0.3)', borderRadius: '12px' }}>
+              <div style={{ position: 'relative', zIndex: 1, width: '100%', height: '42vh', overflow: 'hidden', boxShadow: '0 30px 60px rgba(0,0,0,0.3)', borderRadius: '0px' }}>
                 <img src={slide.image} alt={slide.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
 

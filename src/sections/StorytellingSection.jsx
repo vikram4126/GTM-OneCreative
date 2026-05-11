@@ -194,23 +194,22 @@ export default function StorytellingSection() {
           style={{
             position: 'absolute',
             top: '50%',
-            right: `calc(50% + ${BIG_W / 2 - 40}px)`,
+            right: `calc(50% + ${BIG_W / 2 - 80}px)`,
             transform: 'translateY(-50%)',
-            textAlign: 'right',
-            width: 'clamp(180px, 26vw, 340px)',
-            paddingRight: '24px',
+            textAlign: 'left',
+            width: 'clamp(180px, 26vw, 400px)',
+            paddingRight: '20px',
             pointerEvents: 'none',
             zIndex: 2,
           }}
         >
           <h2
+            className="section-heading"
             style={{
-              fontFamily: 'var(--font-heading)',
-              fontSize: 'clamp(1.8rem, 3.2vw, 3rem)',
               fontWeight: 900,
-              lineHeight: 1.1,
               color: '#00338d',
               margin: 0,
+              textTransform: 'none'
             }}
           >
             Creativity<br />that powers<br />business
@@ -232,7 +231,7 @@ export default function StorytellingSection() {
             left: `calc(50% + ${BIG_W / 2 - 40}px)`,
             transform: 'translateY(-50%)',
             textAlign: 'left',
-            width: 'clamp(160px, 20vw, 260px)',
+            width: 'clamp(160px, 20vw, 400px)',
             paddingLeft: '24px',
             pointerEvents: 'none',
             zIndex: 2,
@@ -241,11 +240,12 @@ export default function StorytellingSection() {
           <p
             style={{
               fontFamily: 'var(--font-body)',
-              fontSize: 'clamp(0.85rem, 1.2vw, 1rem)',
+              fontSize: 'clamp(1rem, 1.5vw, 2rem)',
               lineHeight: 1.7,
               color: '#00338d',
               fontWeight: 600,
               margin: 0,
+              lineHeight: 1.5,
             }}
           >
             OneCreative is an in-house creative agency delivering creative,

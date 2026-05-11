@@ -6,29 +6,29 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 export const CARDS = [
-  { 
-    id: 'uk-create',            
-    title: ['UK', 'Create'],            
+  {
+    id: 'uk-create',
+    title: ['UK', 'Create'],
     iconTop: 'images/icons/scissors.png',
-    iconBottom: 'images/icons/magic-wand.png' 
+    iconBottom: 'images/icons/magic-wand.png'
   },
-  { 
-    id: 'us-creative-services', 
-    title: ['US Creative', 'Services'], 
+  {
+    id: 'us-creative-services',
+    title: ['US Creative', 'Services'],
     iconTop: 'images/icons/globe.png',
-    iconBottom: 'images/icons/group.png'    
+    iconBottom: 'images/icons/group.png'
   },
-  { 
-    id: 'us-advisory-creative', 
-    title: ['US Advisory', 'Creative'], 
+  {
+    id: 'us-advisory-creative',
+    title: ['US Advisory', 'Creative'],
     iconTop: 'images/icons/chart.png',
-    iconBottom: 'images/icons/write.png'    
+    iconBottom: 'images/icons/write.png'
   },
-  { 
-    id: 'uk-learning-design',   
-    title: ['UK Learning', 'Design'],   
+  {
+    id: 'uk-learning-design',
+    title: ['UK Learning', 'Design'],
     iconTop: 'images/icons/star.png',
-    iconBottom: 'images/icons/create.png'     
+    iconBottom: 'images/icons/create.png'
   },
 ];
 
@@ -61,11 +61,11 @@ export const SectionServices = () => {
       });
 
       // 2. Create the timeline (paused)
-      const tl = gsap.timeline({ 
+      const tl = gsap.timeline({
         paused: true,
-        onStart: () => { 
+        onStart: () => {
           console.log('Services Animation Sequence Started');
-          playedRef.current = true; 
+          playedRef.current = true;
         }
       });
       tlRef.current = tl;
@@ -74,11 +74,11 @@ export const SectionServices = () => {
       gsap.set(cardRefs.current, {
         opacity: 0,
         x: (i) => offsets[i].x,
-        y: -600, 
+        y: -600,
         scale: 1,
         transformOrigin: "center center"
       });
-      
+
       gsap.set(contentRefs.current, { opacity: 0 });
 
       // --- STEP 2: Vertical Drop to Center ---
@@ -144,7 +144,7 @@ export const SectionServices = () => {
     const isServicesHash = location.hash === '#services';
     if (isServicesHash && tlRef.current && !playedRef.current) {
       console.log('Hash matches #services - Attempting manual play');
-      
+
       // Try playing at different intervals to catch layout stabilization
       const playTimeline = () => {
         if (tlRef.current && !playedRef.current) {
@@ -208,7 +208,7 @@ export const SectionServices = () => {
                 className="hover:scale-[1.02] transition-transform duration-300"
               >
                 {/* Content Wrapper for independent reveal */}
-                <div 
+                <div
                   ref={el => (contentRefs.current[i] = el)}
                   style={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}
                 >
@@ -228,13 +228,10 @@ export const SectionServices = () => {
                     }}
                   >
                     <h2
+                      className="section-heading half"
                       style={{
-                        fontFamily: 'var(--font-heading)',
-                        fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)',
-                        fontWeight: 700,
                         textAlign: 'center',
-                        lineHeight: 1.1,
-                        color: '#FFFFFF', 
+                        color: '#FFFFFF',
                         textTransform: 'none',
                       }}
                     >
