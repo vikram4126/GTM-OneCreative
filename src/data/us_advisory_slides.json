@@ -21,6 +21,7 @@
     "thumb": "images/slider-items/us-advisory-project-2-thumb.png",
     "image": "images/slider-items/us-advisory-project-2-full.png",
     "template": "video",
+    "video": "feature-video.mp4",
     "content": "Visualizing sustainability impact."
   },
   {
@@ -46,6 +47,7 @@
     "thumb": "images/slider-items/us-advisory-project-4-thumb.png",
     "image": "images/slider-items/us-advisory-project-4-full.png",
     "template": "video",
+    "video": "feature-video.mp4",
     "content": "Strategic roadmap visualization for digital transformation.",
     "contactIds": [
       "shweta"
@@ -74,6 +76,7 @@
     "thumb": "images/slider-items/us-advisory-project-6-thumb.png",
     "image": "images/slider-items/us-advisory-project-6-full.png",
     "template": "video",
+    "video": "feature-video.mp4",
     "content": "Comprehensive risk assessment visual reports.",
     "contactIds": [
       "krishna"

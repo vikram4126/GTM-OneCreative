@@ -42,17 +42,30 @@ const TemplateVideo = ({ slide }) => {
 
         {/* Video Box - 90% space */}
         <div className="w-[90%] relative z-10 group cursor-pointer">
-          <div className="w-full aspect-video bg-black/40 shadow-2xl overflow-hidden relative border border-white/5">
-            <img 
-              src={slide.image} 
-              alt={slide.title} 
-              className="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:scale-105 transition-transform duration-700"
-            />
-            
-            {/* Play Button Overlay - Large White Triangle */}
-            <div className="absolute inset-0 flex items-center justify-center">
-               <div className="w-0 h-0 border-t-[30px] lg:border-t-[45px] border-t-transparent border-l-[50px] lg:border-l-[75px] border-l-white/90 border-b-[30px] lg:border-b-[45px] border-b-transparent ml-4 drop-shadow-2xl hover:scale-110 transition-transform duration-300"></div>
-            </div>
+          <div className="w-full aspect-video bg-black shadow-2xl overflow-hidden relative border border-white/5">
+            {slide.video ? (
+              <video 
+                src={slide.video} 
+                className="absolute inset-0 w-full h-full object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+              />
+            ) : (
+              <>
+                <img 
+                  src={slide.image} 
+                  alt={slide.title} 
+                  className="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:scale-105 transition-transform duration-700"
+                />
+                
+                {/* Play Button Overlay - Large White Triangle */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                   <div className="w-0 h-0 border-t-[30px] lg:border-t-[45px] border-t-transparent border-l-[50px] lg:border-l-[75px] border-l-white/90 border-b-[30px] lg:border-b-[45px] border-b-transparent ml-4 drop-shadow-2xl hover:scale-110 transition-transform duration-300"></div>
+                </div>
+              </>
+            )}
           </div>
         </div>
 

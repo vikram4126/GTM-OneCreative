@@ -22,6 +22,7 @@
     "thumb": "images/slider-items/uk-create-project-2-thumb.png",
     "image": "images/slider-items/uk-create-project-2-full.png",
     "template": "video",
+    "video": "feature-video.mp4",
     "content": "Bespoke typography systems.",
     "contactIds": [
       "shantanu"
@@ -46,6 +47,7 @@
     "thumb": "images/slider-items/uk-create-project-4-thumb.png",
     "image": "images/slider-items/uk-create-project-4-full.png",
     "template": "video",
+    "video": "feature-video.mp4",
     "content": "Visuals for UK campaigns.",
     "contactIds": [
       "shantanu"
@@ -82,6 +84,7 @@
     "thumb": "images/slider-items/uk-create-project-7-thumb.png",
     "image": "images/slider-items/uk-create-project-7-full.png",
     "template": "video",
+    "video": "feature-video.mp4",
     "content": "Engaging social media assets.",
     "contactIds": [
       "krishna",

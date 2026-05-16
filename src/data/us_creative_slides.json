@@ -21,6 +21,7 @@
     "thumb": "images/slider-items/us-creative-project-2-thumb.png",
     "image": "images/slider-items/us-creative-project-2-full.png",
     "template": "video",
+    "video": "feature-video.mp4",
     "content": "Scalable sales enablement tools."
   },
   {
@@ -46,6 +47,7 @@
     "thumb": "images/slider-items/us-creative-project-4-thumb.png",
     "image": "images/slider-items/us-creative-project-4-full.png",
     "template": "video",
+    "video": "feature-video.mp4",
     "content": "High-energy presentation for a major product launch.",
     "contactIds": [
       "shantanu",
@@ -74,6 +76,7 @@
     "thumb": "images/slider-items/us-creative-project-6-thumb.png",
     "image": "images/slider-items/us-creative-project-6-full.png",
     "template": "video",
+    "video": "feature-video.mp4",
     "content": "Interactive and engaging training materials.",
     "contactIds": [
       "krishna"

@@ -37,6 +37,7 @@
     "thumb": "images/slider-items/graphis-design-3-thumb.png",
     "image": "images/slider-items/graphis-design-3-full.png",
     "template": "video",
+    "video": "images/slider-items/graphis-design-3-full.mp4",
     "content": "End-to-end branding for corporate events and summits.",
     "contactIds": [
       "krishna",
@@ -50,6 +51,7 @@
     "thumb": "images/slider-items/ppt-1-thumb.png",
     "image": "images/slider-items/ppt-1-full.png",
     "template": "video",
+    "video": "images/slider-items/ppt-1-full.mp4",
     "content": "Home specific content.",
     "contactIds": [
       "shantanu"
@@ -78,6 +80,7 @@
     "thumb": "images/slider-items/ppt-home-3-thumb.png",
     "image": "images/slider-items/ppt-home-3-full.png",
     "template": "video",
+    "video": "images/slider-items/ppt-3-full.mp4",
     "content": "Clean, data-driven slides for executive summaries.",
     "contactIds": [
       "krishna"
@@ -90,6 +93,7 @@
     "thumb": "images/slider-items/motion-1-thumb.png",
     "image": "images/slider-items/motion-1-full.png",
     "template": "video",
+    "video": "feature-video.mp4",
     "content": "Home specific motion graphics content.",
     "contactIds": [
       "krishna"
@@ -118,6 +122,7 @@
     "thumb": "images/slider-items/motion-3-thumb.png",
     "image": "images/slider-items/motion-3-full.png",
     "template": "video",
+    "video": "feature-video.mp4",
     "content": "Dynamic and sleek motion graphics logo reveal.",
     "contactIds": [
       "krishna"
@@ -130,6 +135,7 @@
     "thumb": "images/slider-items/others-2-thumb.png",
     "image": "images/slider-items/others-2-full.png",
     "template": "video",
+    "video": "feature-video.mp4",
     "content": "Innovative packaging design for retail consumer goods.",
     "contactIds": [
       "shantanu"

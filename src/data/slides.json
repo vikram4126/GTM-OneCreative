@@ -41,6 +41,7 @@
     "thumb": "images/slider-items/graphis-design-3-thumb.png",
     "image": "images/slider-items/graphis-design-3-full.png",
     "template": "video",
+    "video": "images/slider-items/graphis-design-3-full.mp4",
     "content": "Modern digital art and illustrations.",
     "contactIds": [
       "krishna",
@@ -71,6 +72,7 @@
     "thumb": "images/slider-items/graphis-design-5-thumb.png",
     "image": "images/slider-items/graphis-design-5-full.png",
     "template": "video",
+    "video": "images/slider-items/graphis-design-5-full.mp4",
     "content": "Typography and color theory at work.",
     "contactIds": [
       "shantanu",
@@ -101,6 +103,7 @@
     "thumb": "images/slider-items/ppt-1-thumb.png",
     "image": "images/slider-items/ppt-1-full.png",
     "template": "video",
+    "video": "images/slider-items/ppt-1-full.mp4",
     "content": "Professional presentation decks for corporate clients.",
     "contactIds": [
       "krishna",
@@ -131,6 +134,7 @@
     "thumb": "images/slider-items/ppt-3-thumb.png",
     "image": "images/slider-items/ppt-3-full.png",
     "template": "video",
+    "video": "images/slider-items/ppt-3-full.mp4",
     "content": "Clean and minimal slide layouts.",
     "contactIds": [
       "krishna",
@@ -161,6 +165,7 @@
     "thumb": "images/slider-items/motion-1-thumb.png",
     "image": "images/slider-items/motion-1-full.png",
     "template": "video",
+    "video": "feature-video.mp4",
     "content": "Dynamic motion graphics that bring brands to life.",
     "contactIds": [
       "shantanu",
@@ -191,6 +196,7 @@
     "thumb": "images/slider-items/motion-3-thumb.png",
     "image": "images/slider-items/motion-3-full.png",
     "template": "video",
+    "video": "feature-video.mp4",
     "content": "Explainer videos and product demos.",
     "contactIds": [
       "krishna",
@@ -221,6 +227,7 @@
     "thumb": "images/slider-items/motion-5-thumb.png",
     "image": "images/slider-items/motion-5-full.png",
     "template": "video",
+    "video": "feature-video.mp4",
     "content": "Engaging visual storytelling.",
     "contactIds": [
       "krishna",
@@ -234,6 +241,7 @@
     "thumb": "images/slider-items/others-1-thumb.png",
     "image": "images/slider-items/others-1-full.png",
     "template": "video",
+    "video": "feature-video.mp4",
     "content": "Miscellaneous design works and experiments.",
     "contactIds": [
       "krishna",
@@ -264,6 +272,7 @@
     "thumb": "images/slider-items/others-3-thumb.png",
     "image": "images/slider-items/others-3-full.png",
     "template": "video",
+    "video": "feature-video.mp4",
     "content": "UI/UX concepts.",
     "contactIds": [
       "krishna",
@@ -294,6 +303,7 @@
     "thumb": "images/slider-items/others-5-thumb.png",
     "image": "images/slider-items/others-5-full.png",
     "template": "video",
+    "video": "feature-video.mp4",
     "content": "Print media.",
     "contactIds": [
       "shantanu",

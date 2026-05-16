@@ -21,6 +21,7 @@
     "thumb": "images/slider-items/uk-learning-project-2-thumb.png",
     "image": "images/slider-items/uk-learning-project-2-full.png",
     "template": "video",
+    "video": "feature-video.mp4",
     "content": "High-fidelity training simulators."
   },
   {
@@ -45,6 +46,7 @@
     "thumb": "images/slider-items/uk-learning-project-4-thumb.png",
     "image": "images/slider-items/uk-learning-project-4-full.png",
     "template": "video",
+    "video": "feature-video.mp4",
     "content": "Advanced curriculum for emerging corporate leaders.",
     "contactIds": [
       "krishna",
@@ -74,6 +76,7 @@
     "thumb": "images/slider-items/uk-learning-project-6-thumb.png",
     "image": "images/slider-items/uk-learning-project-6-full.png",
     "template": "video",
+    "video": "feature-video.mp4",
     "content": "Bite-sized learning content designed for mobile devices.",
     "contactIds": [
       "shantanu"
