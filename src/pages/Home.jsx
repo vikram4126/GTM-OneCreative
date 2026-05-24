@@ -162,11 +162,11 @@ const Home = () => {
           <SectionExploring />
         </section>
 
-        {/* 7. Inspiration Meets Technology */}
+        {/* 7. Inspiration Meets Technology 
         <section id="inspiration" className="snap-section">
           <SectionInspiration />
         </section>
-
+*/}
         {/* 9. Footer */}
         <section
           id="footer"
