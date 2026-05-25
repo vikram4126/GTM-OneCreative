@@ -58,7 +58,7 @@ const CreativeSlider = ({
   }, [baseData, showTabs, activeTab, fixedCategoryId]);
 
   return (
-    <div className="w-full bg-[#F5F7FA] py-[80px] flex flex-col justify-center overflow-hidden">
+    <div className="w-full bg-[#F5F7FA] py-12 md:py-[80px] flex flex-col justify-center overflow-hidden">
       <div className="container mx-auto px-6 lg:px-12 flex flex-col items-start max-w-[1400px]">
 
         {/* Heading */}
@@ -75,19 +75,21 @@ const CreativeSlider = ({
 
         {/* Tabs - Only show if showTabs is true */}
         {showTabs && (
-          <div className="flex flex-wrap justify-center w-full gap-0 mb-12">
+          <div 
+            className="flex w-full mb-8 sm:mb-12 overflow-x-auto sm:flex-wrap sm:justify-center gap-0 items-center [&::-webkit-scrollbar]:hidden"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
             {TABS.map((tab, idx) => (
               <button
                 key={idx}
                 onClick={() => handleTabChange(idx)}
-                className={`px-16 py-4 transition-all duration-300 relative bg-[#D1D5DB] text-[#00338d] ${activeTab === idx
-                  ? 'font-body'
+                className={`flex-shrink-0 px-6 py-3 sm:px-8 sm:py-4 lg:px-16 lg:py-4 transition-all duration-300 relative bg-[#D1D5DB] text-[#00338d] text-sm sm:text-base lg:text-lg ${activeTab === idx
+                  ? 'font-body font-bold'
                   : 'font-body hover:bg-[#E5E7EB]'
                   }`}
                 style={{
                   fontFamily: 'var(--font-heading)',
-                  fontSize: '1.2rem',
-                  borderBottom: activeTab === idx ? '5px solid #00338d' : '5px solid transparent',
+                  borderBottom: activeTab === idx ? '4px solid #00338d' : '4px solid transparent',
                 }}
               >
                 {tab}
@@ -137,7 +139,7 @@ const CreativeSlider = ({
           </Swiper>
 
           {/* Custom Navigation & Pagination Controls (Bottom Left) */}
-          <div className="flex items-center mt-10 gap-4">
+          <div className="flex items-center mt-8 md:mt-10 gap-3 md:gap-4">
             <button className="custom-prev flex items-center justify-center w-[32px] h-[32px] p-1 border-0 border-[#00338d] text-[#00338d] hover:bg-[#00338d] hover:text-white transition-colors cursor-pointer z-10" style={{ borderRadius: '50%' }}>
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="25" y1="12" x2="5" y2="12"></line>

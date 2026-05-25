@@ -1,39 +1,37 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-/**
- * StorytellingSection
- * ─────────────────────────────────────────────────────
- * STEP 1  Line expands from center (scaleX)
- * STEP 2  Line morphs into 4 cards (scaleY grow)
- * STEP 3  Cards slide to center and merge (3 fade out)
- * STEP 4  Survivor card scales to 320×420 big box
- * STEP 5  Heading slides in from far-left → touches left edge of box
- *          Content slides in from far-right → touches right edge of box
- * ─────────────────────────────────────────────────────
- */
-
-const CARD_W = 160;
-const CARD_H = 220;
-const CARD_GAP = 32; // gap-8 = 2rem
-
-// Center offset of each card from the flex-row midpoint
-const CARD_OFFSETS = [
-  -(1.5 * CARD_W + 1.5 * CARD_GAP), // –288  card 0
-  -(0.5 * CARD_W + 0.5 * CARD_GAP), // –96   card 1
-  +(0.5 * CARD_W + 0.5 * CARD_GAP), // +96   card 2  ← survivor
-  +(1.5 * CARD_W + 1.5 * CARD_GAP), // +288  card 3
-];
-
-const BIG_W = 320;
-const BIG_H = 420;
-const SCALE_X = BIG_W / CARD_W; // 2
-const SCALE_Y = BIG_H / CARD_H; // ≈ 1.909
-
 export default function StorytellingSection() {
+  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1200);
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const isMobile = windowWidth < 768;
+  const isTablet = windowWidth >= 768 && windowWidth < 1024;
+
+  const CARD_W = isMobile ? 65 : isTablet ? 110 : 160;
+  const CARD_H = isMobile ? 95 : isTablet ? 150 : 220;
+  const CARD_GAP = isMobile ? 12 : isTablet ? 20 : 32;
+
+  const BIG_W = isMobile ? 220 : isTablet ? 260 : 320;
+  const BIG_H = isMobile ? 280 : isTablet ? 340 : 420;
+
+  const SCALE_X = BIG_W / CARD_W;
+  const SCALE_Y = BIG_H / CARD_H;
+
+  const CARD_OFFSETS = [
+    -(1.5 * CARD_W + 1.5 * CARD_GAP),
+    -(0.5 * CARD_W + 0.5 * CARD_GAP),
+    +(0.5 * CARD_W + 0.5 * CARD_GAP),
+    +(1.5 * CARD_W + 1.5 * CARD_GAP),
+  ];
   const sectionRef = useRef(null);
   const lineRef = useRef(null);
   const card0 = useRef(null);
@@ -53,9 +51,15 @@ export default function StorytellingSection() {
     // ── Initial hidden states ──────────────────────────────────────
     gsap.set(lineRef.current, { scaleX: 0, opacity: 0, transformOrigin: 'center center' });
     gsap.set(cards, { scaleY: 0, opacity: 0, transformOrigin: 'center center', x: 0 });
-    // Heading starts 60px to the LEFT, content 60px to the RIGHT (subtle slide)
-    gsap.set(headingRef.current, { opacity: 0, x: -60 });
-    gsap.set(contentRef.current, { opacity: 0, x: 60 });
+    
+    // Determine initial offset based on mobile vs desktop
+    const initXHeading = isMobile ? 0 : -60;
+    const initYHeading = isMobile ? 40 : 0;
+    const initXContent = isMobile ? 0 : 60;
+    const initYContent = isMobile ? -40 : 0;
+    
+    gsap.set(headingRef.current, { opacity: 0, x: initXHeading, y: initYHeading });
+    gsap.set(contentRef.current, { opacity: 0, x: initXContent, y: initYContent });
 
     const playAnimation = () => {
       if (hasPlayed.current) return;
@@ -93,11 +97,9 @@ export default function StorytellingSection() {
         ease: 'expo.inOut',
       }, '+=0.05');
 
-      // STEP 5 — Slide inward to x:0 (their natural CSS-positioned location)
-      //  • Heading: right edge is at (50% - BIG_W/2) of the stage → touches box left edge
-      //  • Content: left edge is at (50% + BIG_W/2) of the stage → touches box right edge
-      tl.to(headingRef.current, { opacity: 1, x: 0, duration: 0.9, ease: 'power3.out' }, '+=0.1');
-      tl.to(contentRef.current, { opacity: 1, x: 0, duration: 0.9, ease: 'power3.out' }, '<');
+      // STEP 5 — Slide inward to 0,0
+      tl.to(headingRef.current, { opacity: 1, x: 0, y: 0, duration: 0.9, ease: 'power3.out' }, '+=0.1');
+      tl.to(contentRef.current, { opacity: 1, x: 0, y: 0, duration: 0.9, ease: 'power3.out' }, '<');
     };
 
     // Play once when section is 35% visible
@@ -182,16 +184,18 @@ export default function StorytellingSection() {
           ))}
         </div>
 
-        {/*
-          ── STEP 5: Heading ──────────────────────────────────────────
-          Overlap box left edge by 20px:
-            box left edge = 50% − 160px from stage left
-            heading right edge = 50% − 160px + 20px = 50% − 140px from stage left
-            ∴ right: calc(50% + 140px)
-        */}
+        {/* ── STEP 5: Heading ── */}
         <div
-          ref={headingRef}
-          style={{
+          style={isMobile ? {
+            position: 'absolute',
+            bottom: `calc(50% + ${BIG_H / 2 + 30}px)`,
+            left: '50%',
+            transform: 'translateX(-50%)',
+            textAlign: 'center',
+            width: '90%',
+            zIndex: 2,
+            pointerEvents: 'none'
+          } : {
             position: 'absolute',
             top: '50%',
             right: `calc(50% + ${BIG_W / 2 - 80}px)`,
@@ -203,29 +207,33 @@ export default function StorytellingSection() {
             zIndex: 2,
           }}
         >
-          <h2
-            className="section-heading"
-            style={{
-              fontWeight: 900,
-              color: '#00338d',
-              margin: 0,
-              textTransform: 'none'
-            }}
-          >
-            Creativity<br />that powers<br />business
-          </h2>
+          <div ref={headingRef}>
+            <h2
+              className="section-heading"
+              style={{
+                fontWeight: 900,
+                color: '#00338d',
+                margin: 0,
+                textTransform: 'none'
+              }}
+            >
+              Creativity{isMobile ? ' ' : <br />}that powers{isMobile ? ' ' : <br />}business
+            </h2>
+          </div>
         </div>
 
-        {/*
-          ── STEP 5: Content ──────────────────────────────────────────
-          Overlap box right edge by 20px:
-            box right edge = 50% + 160px from stage left
-            content left edge = 50% + 160px − 20px = 50% + 140px
-            ∴ left: calc(50% + 140px)
-        */}
+        {/* ── STEP 5: Content ── */}
         <div
-          ref={contentRef}
-          style={{
+          style={isMobile ? {
+            position: 'absolute',
+            top: `calc(50% + ${BIG_H / 2 + 30}px)`,
+            left: '50%',
+            transform: 'translateX(-50%)',
+            textAlign: 'center',
+            width: '90%',
+            zIndex: 2,
+            pointerEvents: 'none'
+          } : {
             position: 'absolute',
             top: '50%',
             left: `calc(50% + ${BIG_W / 2 - 40}px)`,
@@ -237,21 +245,22 @@ export default function StorytellingSection() {
             zIndex: 2,
           }}
         >
-          <p
-            style={{
-              fontFamily: 'var(--font-body)',
-              fontSize: 'clamp(1rem, 1.5vw, 2rem)',
-              lineHeight: 1.7,
-              color: '#00338d',
-              fontWeight: 600,
-              margin: 0,
-              lineHeight: 1.5,
-            }}
-          >
-            OneCreative is an in-house creative agency delivering creative,
-            digital, and learning design solutions that help businesses
-            communicate effectively.
-          </p>
+          <div ref={contentRef}>
+            <p
+              style={{
+                fontFamily: 'var(--font-body)',
+                fontSize: 'clamp(1rem, 1.5vw, 2rem)',
+                lineHeight: 1.7,
+                color: '#00338d',
+                fontWeight: 600,
+                margin: 0,
+              }}
+            >
+              OneCreative is an in-house creative agency delivering creative,
+              digital, and learning design solutions that help businesses
+              communicate effectively.
+            </p>
+          </div>
         </div>
 
       </div>
