@@ -19,29 +19,25 @@ const TemplateVideo = ({ slide }) => {
         backgroundColor: '#00338d' // fallback
       }}
     >
-      <div className="container mx-auto px-6 lg:px-12 w-full relative z-10 flex items-center justify-center">
+      <div className="container mx-auto px-6 lg:px-12 w-full grid grid-cols-1 lg:grid-cols-[2fr_8fr] gap-10 lg:gap-16 items-center relative z-10">
 
-        {/* Content - Absolute positioned as requested */}
-        <div className="absolute left-6 lg:left-20 top-20 lg:top-32 z-30 flex flex-col items-start text-white max-w-[450px]">
-          <div className="inline-block border border-white px-4 py-1 mb-8">
+        {/* Content - 20% space */}
+        <div className="flex flex-col items-start text-white">
+          <div className="inline-block border border-white px-4 py-1 mb-6 lg:mb-8">
             <span className="text-sm font-bold tracking-widest uppercase">{categoryLabels[slide.categoryId]}</span>
           </div>
 
-          <h1 className="text-5xl lg:text-7xl font-extrabold leading-tight mb-8" style={{ fontFamily: 'var(--font-heading)' }}>
-            {slide.title.split(' ').map((word, i) => (
-              <React.Fragment key={i}>
-                {word}<br />
-              </React.Fragment>
-            ))}
+          <h1 className="text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-tight mb-6 lg:mb-8" style={{ fontFamily: 'var(--font-heading)' }}>
+            {slide.title}
           </h1>
 
-          <p className="text-lg lg:text-xl font-medium opacity-90 leading-relaxed drop-shadow-lg">
+          <p className="text-base lg:text-lg font-medium opacity-90 leading-relaxed">
             {slide.content}
           </p>
         </div>
 
-        {/* Video Box - 90% space */}
-        <div className="w-[90%] relative z-10 group cursor-pointer">
+        {/* Video Box - 80% space */}
+        <div className="w-full relative z-10 group cursor-pointer">
           <div className="w-full aspect-video bg-black shadow-2xl overflow-hidden relative border border-white/5">
             {slide.video ? (
               <video
