@@ -151,12 +151,12 @@ export const ServiceBanner = ({ title = [], description = "", iconTop, iconBotto
           gap: '40px',
         }}
       >
-        <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-center w-full max-w-[1200px] gap-10 md:gap-0">
+        <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-center w-full max-w-[1200px] gap-0">
 
           {/* Left Column - Heading */}
           <div
             ref={leftRef}
-            className="flex-1 flex justify-center md:justify-end md:-mr-[20px] relative z-10 w-full md:w-auto"
+            className="flex-1 flex justify-center md:justify-end -mb-[30px] md:mb-0 md:-mr-[20px] relative z-10 w-full md:w-auto"
           >
             <h2
               className="text-center md:text-right text-white"
@@ -198,7 +198,7 @@ export const ServiceBanner = ({ title = [], description = "", iconTop, iconBotto
 
           <div
             ref={rightRef}
-            className="flex-1 flex justify-center md:justify-start md:-ml-[20px] relative z-10 w-full md:w-auto"
+            className="flex-1 flex justify-center md:justify-start -mt-[30px] md:mt-0 md:-ml-[20px] relative z-10 w-full md:w-auto"
           >
             <p
               className="text-center md:text-left"
