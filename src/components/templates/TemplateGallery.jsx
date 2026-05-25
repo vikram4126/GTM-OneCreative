@@ -34,12 +34,8 @@ const TemplateGallery = ({ slide }) => {
             <span className="text-sm font-bold tracking-widest uppercase">{categoryLabels[slide.categoryId]}</span>
           </div>
 
-          <h1 className="text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-tight mb-8" style={{ fontFamily: 'var(--font-heading)' }}>
-            {slide.title.split(' ').map((word, i) => (
-              <React.Fragment key={i}>
-                {word}<br />
-              </React.Fragment>
-            ))}
+          <h1 className="text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-tight mb-8 pr-8 lg:pr-12" style={{ fontFamily: 'var(--font-heading)' }}>
+            {slide.title}
           </h1>
 
           <p className="text-lg font-medium opacity-90 leading-relaxed max-w-sm">
