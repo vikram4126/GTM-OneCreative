@@ -11,18 +11,14 @@ import inspirationData from '../data/inspiration.json';
 /* ── All asset images ─────────────────────────────────────── */
 const pillarsBg = 'images/pillars-bg.jpg';
 
-/* ─── Right-side clickable dot pagination (only navigation) ── */
+/* ─── Responsive clickable dot pagination ── */
 const SidebarDots = ({ total, active, swiperRef }) => (
-  <div style={{
-    position: 'absolute',
-    right: 30,
-    top: '50%',
-    transform: 'translateY(-50%)',
-    display: 'flex',
-    flexDirection: 'column',
-    gap: 12,
-    zIndex: 50,
-  }}>
+  <div 
+    className="absolute z-50 flex gap-3 
+               bottom-8 left-1/2 -translate-x-1/2 flex-row
+               md:bottom-auto md:left-auto md:translate-x-0
+               md:right-[30px] md:top-1/2 md:-translate-y-1/2 md:flex-col"
+  >
     {Array.from({ length: total }).map((_, i) => (
       <div
         key={i}
