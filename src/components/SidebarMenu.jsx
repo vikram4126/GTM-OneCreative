@@ -6,18 +6,17 @@ const SidebarMenu = ({ isOpen, onToggle, activeSection, hideSections = false }) 
   const location = useLocation();
 
   const allMenuItems = [
-    { label: 'Introduction',      id: 'storytelling' },
-    { label: 'Pillars',           id: 'pillars' },
-    { label: 'Services',          id: 'services' },
+    { label: 'Introduction', id: 'storytelling' },
+    { label: 'Pillars', id: 'pillars' },
+    { label: 'Services', id: 'services' },
     { label: 'Creative Showcase', id: 'creative-showcase' },
-    { label: 'Exploring',         id: 'exploring' },
-    { label: 'Inspiration',       id: 'inspiration' },
-    { label: 'Get in touch',      id: 'footer', className: 'get-in-touch' },
-    { label: 'Home',              id: 'storytelling', className: 'home-link' },
+    { label: 'Exploring', id: 'exploring' },
+    { label: 'Get in touch', id: 'footer', className: 'get-in-touch' },
+    { label: 'Home', id: 'storytelling', className: 'home-link' },
   ];
 
-  const menuItems = hideSections 
-    ? allMenuItems.filter(item => item.label === 'Home') 
+  const menuItems = hideSections
+    ? allMenuItems.filter(item => item.label === 'Home')
     : allMenuItems;
 
   const handleLinkClick = (id) => {
@@ -35,7 +34,7 @@ const SidebarMenu = ({ isOpen, onToggle, activeSection, hideSections = false }) 
         }
       }, 300);
     }
-    onToggle(); 
+    onToggle();
   };
 
   return (
