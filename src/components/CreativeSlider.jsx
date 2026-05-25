@@ -63,7 +63,9 @@ const CreativeSlider = ({
 
         {/* Heading */}
         <h2
-          className="section-heading half text-[#00338d] w-full text-left"
+          className={`section-heading text-[#00338d] w-full ${
+            customHeading.toLowerCase().includes('more project') ? 'half text-left' : 'text-center'
+          }`}
           style={{
             fontWeight: 900,
             marginBottom: '30px',
@@ -75,7 +77,7 @@ const CreativeSlider = ({
 
         {/* Tabs - Only show if showTabs is true */}
         {showTabs && (
-          <div 
+          <div
             className="flex w-full mb-8 sm:mb-12 overflow-x-auto sm:flex-wrap sm:justify-center gap-0 items-center [&::-webkit-scrollbar]:hidden"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
