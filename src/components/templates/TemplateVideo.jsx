@@ -19,7 +19,7 @@ const TemplateVideo = ({ slide }) => {
         backgroundColor: '#00338d' // fallback
       }}
     >
-      <div className="container mx-auto px-6 lg:px-12 w-full grid grid-cols-1 lg:grid-cols-[2fr_8fr] gap-10 lg:gap-16 items-center relative z-10">
+      <div className="container mx-auto px-6 lg:px-12 w-full grid grid-cols-1 lg:grid-cols-[2fr_8fr] gap-10 lg:gap-16 items-start relative z-10">
 
         {/* Content - 20% space */}
         <div className="flex flex-col items-start text-white">

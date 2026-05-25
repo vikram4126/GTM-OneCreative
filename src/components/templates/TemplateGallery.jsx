@@ -26,10 +26,10 @@ const TemplateGallery = ({ slide }) => {
       }}
     >
       {/* Changed gap-6 to gap-0 */}
-      <div className="container mx-auto px-6 lg:px-12 w-full grid grid-cols-1 lg:grid-cols-[1.5fr_2fr_1.5fr] gap-0 items-stretch relative z-10">
+      <div className="container mx-auto px-6 lg:px-12 w-full grid grid-cols-1 lg:grid-cols-[1.5fr_2fr_1.5fr] gap-0 items-start relative z-10">
 
         {/* Left Content (Text) - Col 1: Overlaps Right by 10px, high z-index */}
-        <div className="flex flex-col justify-center items-start text-white py-10 pr-4 relative lg:-mr-[10px] z-20">
+        <div className="flex flex-col justify-start items-start text-white py-10 pr-4 relative lg:-mr-[10px] z-20">
           <div className="inline-block border border-white/60 px-4 py-1 mb-8">
             <span className="text-sm font-bold tracking-widest uppercase">{categoryLabels[slide.categoryId]}</span>
           </div>
