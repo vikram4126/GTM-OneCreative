@@ -185,10 +185,10 @@ export default function StorytellingSection() {
         </div>
 
         {/* ── STEP 5: Heading ── */}
-        <div
-          style={isMobile ? {
-            position: 'absolute',
-            bottom: `calc(50% + ${BIG_H / 2 + 30}px)`,
+          <div
+            style={isMobile ? {
+              position: 'absolute',
+              bottom: `calc(50% + ${BIG_H / 2 - 25}px)`,
             left: '50%',
             transform: 'translateX(-50%)',
             textAlign: 'center',
@@ -223,10 +223,10 @@ export default function StorytellingSection() {
         </div>
 
         {/* ── STEP 5: Content ── */}
-        <div
-          style={isMobile ? {
-            position: 'absolute',
-            top: `calc(50% + ${BIG_H / 2 + 30}px)`,
+          <div
+            style={isMobile ? {
+              position: 'absolute',
+              top: `calc(50% + ${BIG_H / 2 - 20}px)`,
             left: '50%',
             transform: 'translateX(-50%)',
             textAlign: 'center',
