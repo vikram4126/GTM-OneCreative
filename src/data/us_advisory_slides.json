@@ -1,0 +1,85 @@
+[
+  {
+    "id": "us-advisory-project-1",
+    "categoryId": 2,
+    "title": "US Advisory: Data Viz",
+    "thumb": "images/slider-items/us-advisory-project-1-thumb.png",
+    "image": "images/slider-items/us-advisory-project-1-full.png",
+    "template": "gallery",
+    "content": "Complex data visualization for advisory reports.",
+    "gallery": [
+      "images/slider-items/us-advisory-project-1-slide-1.png"
+    ],
+    "contactIds": [
+      "krishna"
+    ]
+  },
+  {
+    "id": "us-advisory-project-2",
+    "categoryId": 2,
+    "title": "US Advisory: ESG Report",
+    "thumb": "images/slider-items/us-advisory-project-2-thumb.png",
+    "image": "images/slider-items/us-advisory-project-2-full.png",
+    "template": "video",
+    "video": "feature-video.mp4",
+    "content": "Visualizing sustainability impact."
+  },
+  {
+    "id": "us-advisory-project-3",
+    "categoryId": 2,
+    "title": "US Advisory: Market Analysis",
+    "thumb": "images/slider-items/us-advisory-project-3-thumb.png",
+    "image": "images/slider-items/us-advisory-project-3-full.png",
+    "template": "gallery",
+    "content": "Deep dive into market trends with visual aids.",
+    "gallery": [
+      "images/slider-items/us-advisory-project-3-slide-1.png"
+    ],
+    "contactIds": [
+      "krishna",
+      "shantanu"
+    ]
+  },
+  {
+    "id": "us-advisory-project-4",
+    "categoryId": 2,
+    "title": "US Advisory: Tech Strategy",
+    "thumb": "images/slider-items/us-advisory-project-4-thumb.png",
+    "image": "images/slider-items/us-advisory-project-4-full.png",
+    "template": "video",
+    "video": "feature-video.mp4",
+    "content": "Strategic roadmap visualization for digital transformation.",
+    "contactIds": [
+      "shweta"
+    ]
+  },
+  {
+    "id": "us-advisory-project-5",
+    "categoryId": 2,
+    "title": "US Advisory: Mergers & Acq",
+    "thumb": "images/slider-items/us-advisory-project-5-thumb.png",
+    "image": "images/slider-items/us-advisory-project-5-full.png",
+    "template": "gallery",
+    "content": "M&A deal presentations and financial modeling.",
+    "gallery": [
+      "images/slider-items/us-advisory-project-5-slide-1.png"
+    ],
+    "contactIds": [
+      "shantanu",
+      "shweta"
+    ]
+  },
+  {
+    "id": "us-advisory-project-6",
+    "categoryId": 2,
+    "title": "US Advisory: Risk Management",
+    "thumb": "images/slider-items/us-advisory-project-6-thumb.png",
+    "image": "images/slider-items/us-advisory-project-6-full.png",
+    "template": "video",
+    "video": "feature-video.mp4",
+    "content": "Comprehensive risk assessment visual reports.",
+    "contactIds": [
+      "krishna"
+    ]
+  }
+]
