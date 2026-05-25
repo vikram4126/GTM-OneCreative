@@ -88,7 +88,7 @@ const PillarPopup = ({ isOpen, onClose, data }) => {
             marginBottom: 24,
             whiteSpace: 'nowrap',
           }}>
-            {data.title}
+            {data.popupTitle || data.title}
           </h2>
 
           {/* Two-column layout: 60/40 */}
@@ -109,7 +109,7 @@ const PillarPopup = ({ isOpen, onClose, data }) => {
                 color: '#333',
                 marginBottom: 28,
               }}>
-                {data.intro}
+                {data.popupIntro || data.intro}
               </p>
 
               {/* Divider */}

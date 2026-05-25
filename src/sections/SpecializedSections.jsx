@@ -9,10 +9,6 @@ import pillarsData from '../data/pillars.json';
 import inspirationData from '../data/inspiration.json';
 
 /* ── All asset images ─────────────────────────────────────── */
-const pillar1 = 'images/pillar-1.jpg';
-const pillar2 = 'images/pillar-2.jpg';
-const pillar3 = 'images/pillar-3.jpg';
-const pillar4 = 'images/pillar-4.jpg';
 const pillarsBg = 'images/pillars-bg.jpg';
 
 /* ─── Right-side clickable dot pagination (only navigation) ── */
@@ -50,22 +46,16 @@ const SidebarDots = ({ total, active, swiperRef }) => (
    SECTION 1 — Design Strategy  (5 slides)
    Now with pillars-bg.jpg background + Capabilities Overview popup
 ═══════════════════════════════════════════════════════════ */
-export const SectionDesignStrategy = () => {
+export const SectionDesignStrategy = ({ customData, customBgColor }) => {
   const [active, setActive] = useState(0);
   const swiperRef = useRef(null);
   const [popupOpen, setPopupOpen] = useState(false);
   const [popupData, setPopupData] = useState(null);
 
-  const slides = [
-    { title: 'Design Strategy', img: pillar1 },
-    { title: 'Visual Storytelling', img: pillar2 },
-    { title: 'Creative Direction', img: pillar3 },
-    { title: 'Future Vision', img: pillar4 },
-    { title: 'Digital Innovation', img: pillar1 },
-  ];
+  const dataToUse = customData || pillarsData;
 
   const handleOpenPopup = (slideIndex) => {
-    setPopupData(pillarsData[slideIndex]);
+    setPopupData(dataToUse[slideIndex]);
     setPopupOpen(true);
   };
 
@@ -74,9 +64,10 @@ export const SectionDesignStrategy = () => {
       style={{
         position: 'relative',
         width: '100%',
-        backgroundImage: `url(${pillarsBg})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        ...(customBgColor 
+          ? { backgroundColor: customBgColor }
+          : { backgroundImage: `url(${pillarsBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }
+        ),
         overflow: 'hidden',
         padding: '80px 0',
         minHeight: '100vh',
@@ -93,24 +84,53 @@ export const SectionDesignStrategy = () => {
         onSlideChange={(s) => setActive(s.activeIndex)}
         style={{ width: '100%' }}
       >
-        {slides.map((slide, i) => (
+        {dataToUse.map((pillar, i) => (
           <SwiperSlide key={i} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <div className="container mx-auto px-6" style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
 
-              {/* Heading overlapping image top */}
+              {/* Heading overlapping image top — significant pull-down overlap */}
               <h2 className="section-heading plus" style={{
                 textAlign: 'center', textTransform: 'none',
                 fontWeight: 900, width: '100%',
                 position: 'relative', zIndex: 2,
-                marginBottom: '-1.4vw',
+                marginBottom: 'clamp(-2.5rem, -5vw, -4rem)',
                 color: '#ffffff',
+                textShadow: '0 2px 24px rgba(0,0,0,0.55)',
               }}>
-                {slide.title}
+                {pillar.title}
               </h2>
 
-              {/* Panoramic image — no border radius */}
-              <div style={{ position: 'relative', zIndex: 1, width: '100%', height: '42vh', overflow: 'hidden', boxShadow: '0 20px 60px rgba(0,0,0,0.25)' }}>
-                <img src={slide.img} alt={slide.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              {/* Panoramic image with centered text overlay */}
+              <div style={{ position: 'relative', zIndex: 1, width: '100%', height: 'clamp(280px, 48vh, 520px)', overflow: 'hidden', boxShadow: '0 20px 60px rgba(0,0,0,0.35)' }}>
+                <img src={pillar.img} alt={pillar.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+
+                {/* Gradient overlay for readability */}
+                <div style={{
+                  position: 'absolute', inset: 0,
+                  background: 'linear-gradient(to bottom, rgba(0,0,0,0.52) 0%, rgba(0,0,0,0.18) 45%, rgba(0,0,0,0.52) 100%)',
+                }} />
+
+                {/* Centered text overlay */}
+                <div style={{
+                  position: 'absolute', inset: 0,
+                  display: 'flex', flexDirection: 'column',
+                  alignItems: 'center', justifyContent: 'center',
+                  padding: '2rem clamp(1.5rem, 10%, 7rem)',
+                  textAlign: 'center', zIndex: 3,
+                }}>
+                  <p style={{
+                    fontFamily: 'var(--font-body)',
+                    fontSize: 'clamp(0.9rem, 1.4vw, 1.2rem)',
+                    lineHeight: 1.85,
+                    color: 'rgba(255,255,255,0.97)',
+                    maxWidth: '65ch',
+                    margin: 0,
+                    textShadow: '0 1px 10px rgba(0,0,0,0.65)',
+                    letterSpacing: '0.015em',
+                  }}>
+                    {pillar.intro}
+                  </p>
+                </div>
               </div>
 
               {/* Capabilities Overview button */}
@@ -136,7 +156,7 @@ export const SectionDesignStrategy = () => {
         ))}
       </Swiper>
 
-      <SidebarDots total={slides.length} active={active} swiperRef={swiperRef} />
+      <SidebarDots total={dataToUse.length} active={active} swiperRef={swiperRef} />
 
       {/* Capabilities Overview Popup */}
       <PillarPopup isOpen={popupOpen} onClose={() => setPopupOpen(false)} data={popupData} />

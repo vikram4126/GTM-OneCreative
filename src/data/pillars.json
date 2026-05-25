@@ -2,6 +2,7 @@
   {
     "id": "design-strategy",
     "title": "Design Strategy",
+    "img": "images/pillar-1.jpg",
     "intro": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.",
     "highlights": [
       {
@@ -60,6 +61,7 @@
   {
     "id": "visual-storytelling",
     "title": "Visual Storytelling",
+    "img": "images/pillar-2.jpg",
     "intro": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.",
     "highlights": [
       {
@@ -118,6 +120,7 @@
   {
     "id": "creative-direction",
     "title": "Creative Direction",
+    "img": "images/pillar-3.jpg",
     "intro": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.",
     "highlights": [
       {
@@ -176,6 +179,7 @@
   {
     "id": "future-vision",
     "title": "Future Vision",
+    "img": "images/pillar-4.jpg",
     "intro": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.",
     "highlights": [
       {
@@ -234,6 +238,7 @@
   {
     "id": "digital-innovation",
     "title": "Digital Innovation",
+    "img": "images/pillar-1.jpg",
     "intro": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.",
     "highlights": [
       {

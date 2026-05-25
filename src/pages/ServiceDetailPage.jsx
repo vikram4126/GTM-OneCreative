@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import SidebarMenu from '../components/SidebarMenu';
 import { ServiceBanner, ServiceDetailSlider } from '../sections/ServiceSections';
+import { SectionDesignStrategy } from '../sections/SpecializedSections';
 import { SectionCreativeShowcase } from '../sections/SectionCreativeShowcase';
 import { SectionFooter } from '../sections/SectionFooter';
 import servicesData from '../data/services.json';
@@ -69,11 +70,22 @@ const ServiceDetailPage = () => {
           bannerBg={service.bannerBg}
         />
 
-        {/* Section 2: Service Details Slider */}
-        <ServiceDetailSlider 
-          slides={service.details} 
-          pillarBgColor={service.pillarBgColor}
-        />
+        {/* Section 1: Pillar Design Strategy */}
+        <section id="pillars" className="snap-section">
+          <SectionDesignStrategy 
+            customData={service.details.map(detail => ({
+              title: detail.title,
+              img: detail.image,
+              intro: detail.desc,
+              popupTitle: detail.popupData?.title,
+              popupIntro: detail.popupData?.intro,
+              highlights: detail.popupData?.highlights || [],
+              technologies: detail.popupData?.technologies || [],
+              galleryImages: detail.popupData?.galleryImages || []
+            }))} 
+            customBgColor={service.pillarBgColor}
+          />
+        </section>
 
         {/* Section 3: Creative Showcase */}
         <SectionCreativeShowcase 
