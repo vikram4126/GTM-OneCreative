@@ -151,39 +151,22 @@ export const ServiceBanner = ({ title = [], description = "", iconTop, iconBotto
           gap: '40px',
         }}
       >
-        <div className="container mx-auto px-6" style={{
-          display: 'flex',
-          flexDirection: 'row',
-          alignItems: 'center',
-          justifyContent: 'center',
-          width: '100%',
-          maxWidth: '1200px',
-          gap: '0px'
-        }}>
+        <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-center w-full max-w-[1200px] gap-10 md:gap-0">
 
           {/* Left Column - Heading */}
           <div
             ref={leftRef}
-            style={{
-              flex: 1,
-              textAlign: 'right',
-              display: 'flex',
-              justifyContent: 'flex-end',
-              marginRight: '-20px',
-              position: 'relative',
-              zIndex: 10
-            }}
+            className="flex-1 flex justify-center md:justify-end md:-mr-[20px] relative z-10 w-full md:w-auto"
           >
             <h2
+              className="text-center md:text-right text-white"
               style={{
                 fontFamily: 'var(--font-heading)',
                 fontWeight: 900,
                 fontSize: 'clamp(2.5rem, 5.5vw, 4.8rem)',
                 lineHeight: 1.1,
-                color: '#FFFFFF',
                 maxWidth: '500px',
                 textTransform: 'none',
-                textAlign: 'right',
               }}
             >
               {title.map((line, i) => <React.Fragment key={i}>{line}<br /></React.Fragment>)}
@@ -192,22 +175,9 @@ export const ServiceBanner = ({ title = [], description = "", iconTop, iconBotto
 
           <div
             ref={centerRef}
+            className="w-full max-w-[350px] bg-[var(--color-blue-navy)] shrink-0 origin-center box-border relative z-[1] shadow-[0_40px_80px_rgba(0,0,0,0.4)] flex flex-col justify-between p-6"
             style={{
-              width: '100%',
-              maxWidth: '350px',
-              height: 'clamp(450px, 55vh, 600px)',
-              backgroundColor: 'var(--color-blue-navy)',
-              flexShrink: 0,
-              transformOrigin: 'center center',
-              boxSizing: 'border-box',
-              position: 'relative',
-              zIndex: 1,
-              boxShadow: '0 40px 80px rgba(0, 0, 0, 0.4)',
-              borderRadius: '0px',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between',
-              padding: '24px'
+              height: 'clamp(350px, 50vh, 600px)',
             }}
           >
             {/* Top icon */}
@@ -226,18 +196,12 @@ export const ServiceBanner = ({ title = [], description = "", iconTop, iconBotto
           </div>
 
 
-          {/* Right Column - Paragraph */}
           <div
             ref={rightRef}
-            style={{
-              flex: 1,
-              textAlign: 'left',
-              marginLeft: '-20px',
-              position: 'relative',
-              zIndex: 10
-            }}
+            className="flex-1 flex justify-center md:justify-start md:-ml-[20px] relative z-10 w-full md:w-auto"
           >
             <p
+              className="text-center md:text-left"
               style={{
                 fontFamily: 'var(--font-body)',
                 fontWeight: 600,
