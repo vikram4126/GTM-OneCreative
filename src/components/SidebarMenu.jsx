@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 
-const SidebarMenu = ({ isOpen, onToggle, activeSection, hideSections = false }) => {
+const SidebarMenu = ({ isOpen, onToggle, activeSection, menuType = 'default', currentServiceId }) => {
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -12,27 +12,36 @@ const SidebarMenu = ({ isOpen, onToggle, activeSection, hideSections = false }) 
     { label: 'Creative Showcase', id: 'creative-showcase' },
     { label: 'Exploring', id: 'exploring' },
     { label: 'Get in touch', id: 'footer', className: 'get-in-touch' },
-    { label: 'Home', id: 'storytelling', className: 'home-link' },
   ];
 
-  const menuItems = hideSections
-    ? allMenuItems.filter(item => item.label === 'Home')
-    : allMenuItems;
+  const servicesMenuItems = [
+    { label: 'UK Create', path: '/service/uk-create', id: 'uk-create' },
+    { label: 'UK Learning', path: '/service/uk-learning-design', id: 'uk-learning-design' },
+    { label: 'US Creative', path: '/service/us-creative-services', id: 'us-creative-services' },
+    { label: 'US Advisory', path: '/service/us-advisory-creative', id: 'us-advisory-creative' },
+  ];
 
-  const handleLinkClick = (id) => {
-    if (location.pathname === '/') {
-      const el = document.getElementById(id);
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+  const menuItems = menuType === 'services' ? servicesMenuItems : allMenuItems;
+
+  const handleLinkClick = (item) => {
+    if (item.path) {
+      navigate(item.path);
     } else {
-      navigate(`/#${id}`);
-      setTimeout(() => {
+      const id = item.id;
+      if (location.pathname === '/') {
         const el = document.getElementById(id);
         if (el) {
           el.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
-      }, 300);
+      } else {
+        navigate(`/#${id}`);
+        setTimeout(() => {
+          const el = document.getElementById(id);
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }, 300);
+      }
     }
     onToggle();
   };
@@ -60,21 +69,26 @@ const SidebarMenu = ({ isOpen, onToggle, activeSection, hideSections = false }) 
 
         {/* Nav Links */}
         <nav className="flex-1 flex flex-col overflow-y-auto pt-4 pb-4">
-          {menuItems.filter(item => item.label !== 'Home').map((item) => (
-            <div
-              key={item.id}
-              className={`menu-item ${item.className || ''}`}
-              onClick={() => handleLinkClick(item.id)}
-            >
-              {item.label}
-            </div>
-          ))}
+          {menuItems.map((item) => {
+            const isActive = menuType === 'services'
+              ? currentServiceId === item.id
+              : activeSection === item.id;
+            return (
+              <div
+                key={item.id}
+                className={`menu-item ${item.className || ''} ${isActive ? 'active' : ''}`}
+                onClick={() => handleLinkClick(item)}
+              >
+                {item.label}
+              </div>
+            );
+          })}
         </nav>
 
         {/* Home — pinned to bottom */}
         <div
           className="menu-item home-link"
-          onClick={() => handleLinkClick('storytelling')}
+          onClick={() => handleLinkClick({ path: '/' })}
         >
           Home
         </div>

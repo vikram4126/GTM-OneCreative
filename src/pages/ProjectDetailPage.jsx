@@ -73,7 +73,8 @@ const ProjectDetailPage = () => {
   if (!slide) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 text-[#00338d]">
-        <Navbar onMenuToggle={toggleMenu} isScrolled={isNavbarDark} showHomeButton={true} hideBurger={true} />
+        <Navbar onMenuToggle={toggleMenu} isScrolled={isNavbarDark} hideBurger={false} />
+        <SidebarMenu isOpen={isMenuOpen} onToggle={toggleMenu} menuType="services" />
         <h1 className="text-6xl font-bold mb-4 mt-20">404</h1>
         <p className="text-xl mb-8">Project not found.</p>
         <Link to="/" className="px-6 py-3 bg-[#00338d] text-white rounded font-bold hover:bg-blue-800 transition">
@@ -91,7 +92,8 @@ const ProjectDetailPage = () => {
 
   return (
     <div className="w-full relative bg-white">
-      <Navbar onMenuToggle={toggleMenu} isScrolled={isNavbarDark} showHomeButton={true} hideBurger={true} />
+      <Navbar onMenuToggle={toggleMenu} isScrolled={isNavbarDark} hideBurger={false} />
+      <SidebarMenu isOpen={isMenuOpen} onToggle={toggleMenu} menuType="services" />
 
       {/* Dynamic Template Banner */}
       <div className="pt-20">

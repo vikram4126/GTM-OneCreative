@@ -58,7 +58,8 @@ const ServiceDetailPage = () => {
 
   return (
     <div className="relative overflow-x-hidden">
-      <Navbar onMenuToggle={toggleMenu} isScrolled={isNavbarDark} showHomeButton={true} hideBurger={true} />
+      <Navbar onMenuToggle={toggleMenu} isScrolled={isNavbarDark} hideBurger={false} />
+      <SidebarMenu isOpen={isMenuOpen} onToggle={toggleMenu} menuType="services" currentServiceId={id} />
 
       <main className="w-full relative scroll-smooth">
         {/* Section 1: Banner */}
