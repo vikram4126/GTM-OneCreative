@@ -6,6 +6,7 @@
     "thumb": "images/slider-items/graphis-design-1-thumb.png",
     "image": "images/slider-items/graphis-design-1-full.png",
     "template": "gallery",
+    "video": "images/slider-items/graphis-design-3-full.mp4",
     "content": "Home specific content.",
     "gallery": [
       "images/slider-items/graphis-design-1-slide-1.jpeg",
@@ -38,6 +39,10 @@
     "image": "images/slider-items/graphis-design-3-full.png",
     "template": "video",
     "video": "images/slider-items/graphis-design-3-full.mp4",
+    "gallery": [
+      "images/slider-items/graphis-design-1-slide-1.jpeg",
+      "images/slider-items/graphis-design-1-slide-2.jpeg"
+    ],
     "content": "End-to-end branding for corporate events and summits.",
     "contactIds": [
       "krishna",

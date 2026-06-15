@@ -65,7 +65,7 @@ const TemplateVideo = ({ slide }) => {
 
           {/* Slider Overlay on right side of the video */}
           {galleryImages.length > 0 && (
-            <div className="absolute top-0 bottom-0 -right-[20px] lg:-right-[40px] z-20 w-[200px] lg:w-[260px] py-10 pointer-events-none flex items-center">
+            <div className="absolute top-0 bottom-0 right-0 lg:-right-[10px] z-20 w-[200px] lg:w-[260px] py-10 pointer-events-none flex items-center">
               <div className="w-full h-full lg:h-[80%] relative pointer-events-auto">
                 <Swiper
                   direction={'vertical'}
