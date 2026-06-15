@@ -30,20 +30,24 @@ const Navbar = ({ onMenuToggle, isScrolled = false, showHomeButton = false, hide
             <button
               onClick={onMenuToggle}
               aria-label="Open Menu"
-              className="flex flex-col gap-1.5 p-2 bg-transparent border-none cursor-pointer group"
+              className="p-2 bg-transparent border-none cursor-pointer group flex items-center justify-center"
             >
-              <div
-                className="w-7 h-[3px] transition-all duration-300"
-                style={{ backgroundColor: iconColor }}
-              />
-              <div
-                className="w-5 h-[3px] self-end transition-all duration-300"
-                style={{ backgroundColor: iconColor }}
-              />
-              <div
-                className="w-7 h-[3px] transition-all duration-300"
-                style={{ backgroundColor: iconColor }}
-              />
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                width="28" 
+                height="28" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                stroke={iconColor} 
+                strokeWidth="2" 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+                className="transition-all duration-300 group-hover:opacity-80"
+              >
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+              </svg>
             </button>
           )}
         </div>
