@@ -46,11 +46,22 @@ const TemplateGallery = ({ slide }) => {
         {/* Middle Content - Big Main Image - Col 2: Lowest z-index */}
         <div className="flex items-center justify-center w-full relative z-10">
           <div className="w-full aspect-[4/5] bg-white shadow-2xl overflow-hidden relative group">
-            <img
-              src={slide.image}
-              alt={`${slide.title} Main`}
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-            />
+            {slide.video ? (
+              <video
+                src={slide.video}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                autoPlay
+                muted
+                loop
+                playsInline
+              />
+            ) : (
+              <img
+                src={slide.image}
+                alt={`${slide.title} Main`}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+            )}
           </div>
         </div>
 
