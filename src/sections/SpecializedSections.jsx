@@ -178,7 +178,15 @@ export const SectionExploring = () => {
   const ringColors = ['#1E49E2', '#7213EA', '#00338D', '#FD349C', '#0C233C'];
 
   return (
-    <section style={{ position: 'relative', width: '100%', background: '#00B8F5', overflow: 'hidden', padding: '80px 0' }}>
+    <section style={{ 
+      position: 'relative', 
+      width: '100%', 
+      backgroundImage: 'url(images/exploring-background-image.jpeg)',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      overflow: 'hidden', 
+      padding: '80px 0' 
+    }}>
       <Swiper
         modules={[EffectFade]}
         effect="fade"
@@ -202,41 +210,33 @@ export const SectionExploring = () => {
               <div
                 className="force-round"
                 style={{
+                  boxSizing: 'border-box',
                   width: 'clamp(300px, 35vw, 450px)',
                   height: 'clamp(300px, 35vw, 450px)',
-                  backgroundColor: ringColors[i],
+                  border: `clamp(102px, 11.9vw, 153px) solid ${ringColors[i]}`,
                   position: 'relative',
                   zIndex: 5,
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  boxShadow: '0 0 60px rgba(0,0,0,0.15)'
+                  boxShadow: '0 0 60px rgba(0,0,0,0.15)',
+                  backgroundColor: 'transparent'
                 }}
               >
+                {/* WHITE DOT (Anchored to the content box which is the transparent hole) */}
                 <div
                   className="force-round"
                   style={{
-                    width: '32%', height: '32%',
-                    backgroundColor: '#00B8F5', // Section Background
-                    position: 'relative',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center'
+                    position: 'absolute',
+                    width: 'min(20px, 4vw)',
+                    height: 'min(20px, 4vw)',
+                    backgroundColor: '#fff',
+                    right: 'calc(-1 * min(10px, 2vw))',
+                    top: '50%',
+                    transform: 'translateY(-50%)',
+                    boxShadow: '0 0 10px rgba(255,255,255,0.5)'
                   }}
-                >
-                  {/* WHITE DOT */}
-                  <div
-                    className="force-round"
-                    style={{
-                      position: 'absolute',
-                      width: 'min(20px, 4vw)',
-                      height: 'min(20px, 4vw)',
-                      backgroundColor: '#fff',
-                      right: 'calc(-1 * min(10px, 2vw))',
-                      top: '50%',
-                      transform: 'translateY(-50%)',
-                      boxShadow: '0 0 10px rgba(255,255,255,0.5)'
-                    }}
-                  />
-                </div>
+                />
               </div>
 
               {/* LEFT TITLE — Overlapping Donut */}
