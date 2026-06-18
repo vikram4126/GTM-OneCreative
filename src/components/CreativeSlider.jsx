@@ -21,12 +21,35 @@ const CreativeSlider = ({
   const [activeTab, setActiveTab] = useState(fixedCategoryId !== undefined ? fixedCategoryId + 1 : 0);
   const [isFading, setIsFading] = useState(false);
 
+  const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 0 });
+  const tabsRef = React.useRef([]);
+
   // Sync activeTab if fixedCategoryId changes (e.g. navigating between services)
   React.useEffect(() => {
     if (fixedCategoryId !== undefined) {
       setActiveTab(fixedCategoryId + 1);
     }
   }, [fixedCategoryId]);
+
+  // Update indicator position
+  React.useEffect(() => {
+    const updateIndicator = () => {
+      const activeElement = tabsRef.current[activeTab];
+      if (activeElement) {
+        setIndicatorStyle({
+          left: activeElement.offsetLeft,
+          width: activeElement.offsetWidth,
+        });
+      }
+    };
+    
+    updateIndicator();
+    // Use a small timeout to ensure fonts/layout are rendered
+    setTimeout(updateIndicator, 100);
+    
+    window.addEventListener('resize', updateIndicator);
+    return () => window.removeEventListener('resize', updateIndicator);
+  }, [activeTab, showTabs]);
 
   const handleTabChange = (idx) => {
     if (idx === activeTab || isFading) return;
@@ -77,26 +100,36 @@ const CreativeSlider = ({
 
         {/* Tabs - Only show if showTabs is true */}
         {showTabs && (
-          <div
-            className="flex w-full mb-8 sm:mb-12 overflow-x-auto sm:flex-wrap sm:justify-center gap-0 items-center [&::-webkit-scrollbar]:hidden"
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-          >
-            {TABS.map((tab, idx) => (
-              <button
-                key={idx}
-                onClick={() => handleTabChange(idx)}
-                className={`flex-shrink-0 px-6 py-3 sm:px-8 sm:py-4 lg:px-16 lg:py-4 transition-all duration-300 relative bg-[#D1D5DB] text-[#00338d] text-sm sm:text-base lg:text-lg ${activeTab === idx
-                  ? 'font-body font-bold'
-                  : 'font-body hover:bg-[#E5E7EB]'
-                  }`}
+          <div className="relative w-full mb-8 sm:mb-12">
+            <div
+              className="flex w-full overflow-x-auto sm:flex-wrap sm:justify-center gap-0 items-center relative [&::-webkit-scrollbar]:hidden"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
+              {TABS.map((tab, idx) => (
+                <button
+                  key={idx}
+                  ref={(el) => (tabsRef.current[idx] = el)}
+                  onClick={() => handleTabChange(idx)}
+                  className={`flex-shrink-0 px-6 py-3 sm:px-8 sm:py-4 lg:px-16 lg:py-4 transition-all duration-300 relative bg-[#D1D5DB] text-[#00338d] text-sm sm:text-base lg:text-lg pb-[calc(1rem+4px)] sm:pb-[calc(1rem+4px)] ${activeTab === idx
+                    ? 'font-body font-bold'
+                    : 'font-body hover:bg-[#E5E7EB]'
+                    }`}
+                  style={{
+                    fontFamily: 'var(--font-heading)',
+                  }}
+                >
+                  {tab}
+                </button>
+              ))}
+              {/* Sliding Underline */}
+              <div
+                className="absolute bottom-0 h-1 bg-[#00338d] transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] z-10"
                 style={{
-                  fontFamily: 'var(--font-heading)',
-                  borderBottom: activeTab === idx ? '4px solid #00338d' : '4px solid transparent',
+                  left: indicatorStyle.left,
+                  width: indicatorStyle.width,
                 }}
-              >
-                {tab}
-              </button>
-            ))}
+              />
+            </div>
           </div>
         )}
 
