@@ -38,7 +38,7 @@ export const SectionVideoIntro = ({ onComplete }) => {
       ref={sectionRef}
       className="h-screen w-full relative overflow-hidden bg-[#0C233C]"
       onClick={toggleMute}
-      style={{ cursor: 'none' }}
+      style={{ cursor: isMuted ? 'pointer' : 'default' }}
     >
       <video
         ref={videoRef}
@@ -66,15 +66,7 @@ export const SectionVideoIntro = ({ onComplete }) => {
             gap: '8px',
           }}
         >
-          {/* Cursor dot */}
-          <div style={{
-            width: '10px',
-            height: '10px',
-            borderRadius: '50%',
-            backgroundColor: '#fff',
-            flexShrink: 0,
-            boxShadow: '0 0 8px rgba(255,255,255,0.6)',
-          }} />
+
           {/* Tooltip text */}
           <div style={{
             color: '#fff',
@@ -92,22 +84,7 @@ export const SectionVideoIntro = ({ onComplete }) => {
         </div>
       )}
 
-      {/* Custom cursor dot when unmuted */}
-      {!isMuted && showTooltip && (
-        <div style={{
-          position: 'absolute',
-          left: mousePos.x,
-          top: mousePos.y,
-          width: '12px',
-          height: '12px',
-          borderRadius: '50%',
-          backgroundColor: 'rgba(255,255,255,0.7)',
-          transform: 'translate(-50%, -50%)',
-          pointerEvents: 'none',
-          zIndex: 50,
-          transition: 'transform 0.1s ease',
-        }} />
-      )}
+
 
       {/* Mute toggle button — bottom left */}
       <button
