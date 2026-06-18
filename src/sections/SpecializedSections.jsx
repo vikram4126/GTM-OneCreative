@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectFade } from 'swiper/modules';
 import 'swiper/css';
@@ -166,6 +166,30 @@ export const SectionDesignStrategy = ({ customData, customBgColor }) => {
 export const SectionExploring = () => {
   const [active, setActive] = useState(0);
   const swiperRef = useRef(null);
+  const sectionRef = useRef(null);
+  const dotWrappersRef = useRef([]);
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      if (!sectionRef.current) return;
+      const rect = sectionRef.current.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      const deltaX = e.clientX - centerX;
+      const deltaY = e.clientY - centerY;
+      const angleRad = Math.atan2(deltaY, deltaX);
+      const angleDeg = angleRad * (180 / Math.PI);
+      
+      dotWrappersRef.current.forEach(wrapper => {
+        if (wrapper) {
+          wrapper.style.transform = `rotate(${angleDeg}deg)`;
+        }
+      });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
 
   const slides = [
     { lines: ['Exploring New', 'Possibilities'], app: 'Application 1', desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type." },
@@ -178,7 +202,9 @@ export const SectionExploring = () => {
   const ringColors = ['#1E49E2', '#7213EA', '#00338D', '#FD349C', '#0C233C'];
 
   return (
-    <section style={{ 
+    <section 
+      ref={sectionRef}
+      style={{ 
       position: 'relative', 
       width: '100%', 
       backgroundImage: 'url(images/exploring-background-image.jpeg)',
@@ -223,20 +249,32 @@ export const SectionExploring = () => {
                   backgroundColor: 'transparent'
                 }}
               >
-                {/* WHITE DOT (Anchored to the content box which is the transparent hole) */}
+                {/* WHITE DOT WRAPPER (Rotates) */}
                 <div
-                  className="force-round"
+                  ref={el => dotWrappersRef.current[i] = el}
                   style={{
                     position: 'absolute',
-                    width: 'min(20px, 4vw)',
-                    height: 'min(20px, 4vw)',
-                    backgroundColor: '#fff',
-                    right: 'calc(-1 * min(10px, 2vw))',
-                    top: '50%',
-                    transform: 'translateY(-50%)',
-                    boxShadow: '0 0 10px rgba(255,255,255,0.5)'
+                    width: '100%',
+                    height: '100%',
+                    transition: 'transform 0.15s cubic-bezier(0.2, 0.8, 0.2, 1)',
+                    zIndex: 20
                   }}
-                />
+                >
+                  {/* WHITE DOT */}
+                  <div
+                    className="force-round"
+                    style={{
+                      position: 'absolute',
+                      width: 'min(20px, 4vw)',
+                      height: 'min(20px, 4vw)',
+                      backgroundColor: '#fff',
+                      right: 'calc(-1 * min(10px, 2vw))',
+                      top: '50%',
+                      transform: 'translateY(-50%)',
+                      boxShadow: '0 0 10px rgba(255,255,255,0.5)'
+                    }}
+                  />
+                </div>
               </div>
 
               {/* LEFT TITLE — Overlapping Donut */}
