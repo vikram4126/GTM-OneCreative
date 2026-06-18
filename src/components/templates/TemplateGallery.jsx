@@ -1,10 +1,56 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
+import { gsap } from 'gsap';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
 const TemplateGallery = ({ slide }) => {
+  const containerRef = useRef(null);
+  const badgeRef = useRef(null);
+  const titleRef = useRef(null);
+  const descRef = useRef(null);
+  const mediaRef = useRef(null);
+  const galleryRef = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Timeline for left content
+      const tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
+
+      tl.fromTo(badgeRef.current, 
+        { scale: 0.8, opacity: 0 }, 
+        { scale: 1, opacity: 1, duration: 0.6 }
+      )
+      .fromTo(titleRef.current, 
+        { scale: 0.9, opacity: 0 }, 
+        { scale: 1, opacity: 1, duration: 0.6 }, 
+        '-=0.4'
+      )
+      .fromTo(descRef.current, 
+        { scale: 0.95, opacity: 0 }, 
+        { scale: 1, opacity: 1, duration: 0.6 }, 
+        '-=0.4'
+      );
+
+      // Media animation (Middle box)
+      gsap.fromTo(mediaRef.current,
+        { scale: 0.85, opacity: 0 },
+        { scale: 1, opacity: 1, duration: 0.8, ease: 'expo.out', delay: 0.1 }
+      );
+
+      // Gallery animation (Right side)
+      if (galleryRef.current) {
+        gsap.fromTo(galleryRef.current,
+          { scale: 0.9, opacity: 0, x: 20 },
+          { scale: 1, opacity: 1, x: 0, duration: 0.7, delay: 0.4, ease: 'power3.out' }
+        );
+      }
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, [slide]);
+
   // Map category ID to string label
   const categoryLabels = {
     0: 'Graphic Design',
@@ -17,6 +63,7 @@ const TemplateGallery = ({ slide }) => {
 
   return (
     <div
+      ref={containerRef}
       className="w-full min-h-[80vh] flex items-center justify-center py-20 relative"
       style={{
         backgroundImage: 'url(images/project-page-banner-background.jpeg)',
@@ -30,21 +77,21 @@ const TemplateGallery = ({ slide }) => {
 
         {/* Left Content (Text) - Col 1: Overlaps Right by 10px, high z-index */}
         <div className="flex flex-col justify-start items-start text-white py-10 pr-4 relative lg:-mr-[10px] z-20">
-          <div className="inline-block border border-white/60 px-4 py-1 mb-8">
+          <div ref={badgeRef} className="inline-block border border-white/60 px-4 py-1 mb-8">
             <span className="text-sm font-bold tracking-widest uppercase">{categoryLabels[slide.categoryId]}</span>
           </div>
 
-          <h1 className="text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-tight mb-8 pr-8 lg:pr-12" style={{ fontFamily: 'var(--font-heading)' }}>
+          <h1 ref={titleRef} className="text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-tight mb-8 pr-8 lg:pr-12" style={{ fontFamily: 'var(--font-heading)' }}>
             {slide.title}
           </h1>
 
-          <p className="text-lg font-medium opacity-90 leading-relaxed max-w-sm">
+          <p ref={descRef} className="text-lg font-medium opacity-90 leading-relaxed max-w-sm">
             {slide.content}
           </p>
         </div>
 
         {/* Middle Content - Big Main Image - Col 2: Lowest z-index */}
-        <div className="flex items-center justify-center w-full relative z-10">
+        <div ref={mediaRef} className="flex items-center justify-center w-full relative z-10">
           <div className="w-full aspect-[4/5] bg-white shadow-2xl overflow-hidden relative group">
             {slide.video ? (
               <video
@@ -66,7 +113,7 @@ const TemplateGallery = ({ slide }) => {
         </div>
 
         {/* Right Content - Vertical Mini Swiper - Col 3: Overlaps Left by 10px, high z-index */}
-        <div className="relative lg:-ml-[10px] z-20 h-[600px] lg:h-auto lg:py-[100px]">
+        <div ref={galleryRef} className="relative lg:-ml-[10px] z-20 h-[600px] lg:h-auto lg:py-[100px]">
           {/* Swiper Container - Using absolute on desktop to fill grid height perfectly minus padding */}
           <div className="w-full h-full lg:absolute lg:inset-x-0 lg:top-[100px] lg:bottom-[100px] lg:h-auto relative flex items-center justify-center">
             <Swiper

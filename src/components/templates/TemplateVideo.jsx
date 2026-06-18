@@ -1,10 +1,55 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
+import { gsap } from 'gsap';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
 const TemplateVideo = ({ slide }) => {
+  const containerRef = useRef(null);
+  const badgeRef = useRef(null);
+  const titleRef = useRef(null);
+  const descRef = useRef(null);
+  const mediaRef = useRef(null);
+  const overlayRef = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Timeline for left content
+      const tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
+
+      tl.fromTo(badgeRef.current, 
+        { scale: 0.8, opacity: 0 }, 
+        { scale: 1, opacity: 1, duration: 0.6 }
+      )
+      .fromTo(titleRef.current, 
+        { scale: 0.9, opacity: 0 }, 
+        { scale: 1, opacity: 1, duration: 0.6 }, 
+        '-=0.4'
+      )
+      .fromTo(descRef.current, 
+        { scale: 0.95, opacity: 0 }, 
+        { scale: 1, opacity: 1, duration: 0.6 }, 
+        '-=0.4'
+      );
+
+      // Media animation (right side) - Dynamic Zoom In
+      gsap.fromTo(mediaRef.current,
+        { scale: 0.85, opacity: 0 },
+        { scale: 1, opacity: 1, duration: 0.8, ease: 'expo.out', delay: 0.1 }
+      );
+
+      if (overlayRef.current) {
+        gsap.fromTo(overlayRef.current,
+          { scale: 0.9, opacity: 0, x: 20 },
+          { scale: 1, opacity: 1, x: 0, duration: 0.7, delay: 0.5, ease: 'power3.out' }
+        );
+      }
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, [slide]);
+
   // Map category ID to string label
   const categoryLabels = {
     0: 'Graphic Design',
@@ -17,6 +62,7 @@ const TemplateVideo = ({ slide }) => {
 
   return (
     <div
+      ref={containerRef}
       className="w-full min-h-[80vh] flex items-center justify-center py-20 relative overflow-hidden"
       style={{
         backgroundImage: 'url(images/project-page-banner-background.jpeg)',
@@ -29,21 +75,21 @@ const TemplateVideo = ({ slide }) => {
 
         {/* Content - 20% space */}
         <div className="flex flex-col items-start text-white">
-          <div className="inline-block border border-white px-4 py-1 mb-6 lg:mb-8">
+          <div ref={badgeRef} className="inline-block border border-white px-4 py-1 mb-6 lg:mb-8">
             <span className="text-sm font-bold tracking-widest uppercase">{categoryLabels[slide.categoryId]}</span>
           </div>
 
-          <h1 className="text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-tight mb-6 lg:mb-8" style={{ fontFamily: 'var(--font-heading)' }}>
+          <h1 ref={titleRef} className="text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-tight mb-6 lg:mb-8" style={{ fontFamily: 'var(--font-heading)' }}>
             {slide.title}
           </h1>
 
-          <p className="text-base lg:text-lg font-medium opacity-90 leading-relaxed">
+          <p ref={descRef} className="text-base lg:text-lg font-medium opacity-90 leading-relaxed">
             {slide.content}
           </p>
         </div>
 
         {/* Video Box - 80% space */}
-        <div className="w-full relative z-10 group">
+        <div ref={mediaRef} className="w-full relative z-10 group">
           <div className="w-full aspect-video bg-black shadow-2xl overflow-hidden relative border border-white/5">
             {slide.video ? (
               <video
@@ -65,7 +111,7 @@ const TemplateVideo = ({ slide }) => {
 
           {/* Slider Overlay on right side of the video */}
           {galleryImages.length > 0 && (
-            <div className="absolute top-0 bottom-0 right-0 lg:-right-[10px] z-20 w-[200px] lg:w-[260px] py-10 pointer-events-none flex items-center">
+            <div ref={overlayRef} className="absolute top-0 bottom-0 right-0 lg:-right-[10px] z-20 w-[200px] lg:w-[260px] py-10 pointer-events-none flex items-center">
               <div className="w-full h-full lg:h-[80%] relative pointer-events-auto">
                 <Swiper
                   direction={'vertical'}
