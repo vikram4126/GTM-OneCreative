@@ -177,12 +177,15 @@ export const SectionExploring = () => {
       const centerY = rect.top + rect.height / 2;
       const deltaX = e.clientX - centerX;
       const deltaY = e.clientY - centerY;
-      const angleRad = Math.atan2(deltaY, deltaX);
-      const angleDeg = angleRad * (180 / Math.PI);
-      
+      // Normalize direction and scale to max pupil travel radius (28px)
+      const dist = Math.sqrt(deltaX * deltaX + deltaY * deltaY) || 1;
+      const maxRadius = 28;
+      const tx = (deltaX / dist) * Math.min(dist * 0.08, maxRadius);
+      const ty = (deltaY / dist) * Math.min(dist * 0.08, maxRadius);
+
       dotWrappersRef.current.forEach(wrapper => {
         if (wrapper) {
-          wrapper.style.transform = `rotate(${angleDeg}deg)`;
+          wrapper.style.transform = `translate(calc(-50% + ${tx}px), calc(-50% + ${ty}px))`;
         }
       });
     };
@@ -249,32 +252,23 @@ export const SectionExploring = () => {
                   backgroundColor: 'transparent'
                 }}
               >
-                {/* WHITE DOT WRAPPER (Rotates) */}
+                {/* PUPIL DOT (Translates with mouse) */}
                 <div
                   ref={el => dotWrappersRef.current[i] = el}
+                  className="force-round"
                   style={{
                     position: 'absolute',
-                    width: '100%',
-                    height: '100%',
-                    transition: 'transform 0.15s cubic-bezier(0.2, 0.8, 0.2, 1)',
-                    zIndex: 20
+                    top: '50%',
+                    left: '50%',
+                    transform: 'translate(-50%, -50%)',
+                    width: 'clamp(28px, 3.5vw, 44px)',
+                    height: 'clamp(28px, 3.5vw, 44px)',
+                    backgroundColor: '#fff',
+                    transition: 'transform 0.12s cubic-bezier(0.2, 0.8, 0.2, 1)',
+                    zIndex: 20,
+                    boxShadow: '0 0 12px rgba(255,255,255,0.4)'
                   }}
-                >
-                  {/* WHITE DOT */}
-                  <div
-                    className="force-round"
-                    style={{
-                      position: 'absolute',
-                      width: 'min(20px, 4vw)',
-                      height: 'min(20px, 4vw)',
-                      backgroundColor: '#fff',
-                      right: 'calc(-1 * min(10px, 2vw))',
-                      top: '50%',
-                      transform: 'translateY(-50%)',
-                      boxShadow: '0 0 10px rgba(255,255,255,0.5)'
-                    }}
-                  />
-                </div>
+                />
               </div>
 
               {/* LEFT TITLE — Overlapping Donut */}
