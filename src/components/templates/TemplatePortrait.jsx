@@ -84,27 +84,28 @@ const TemplatePortrait = ({ slide }) => {
         backgroundColor: '#00338d' // fallback
       }}
     >
-      {/* Changed gap-6 to gap-0 */}
-      <div className="container mx-auto px-6 lg:px-12 w-full grid grid-cols-1 lg:grid-cols-[1.5fr_2fr_1.5fr] gap-0 items-stretch relative z-10">
+      <div className="container mx-auto px-6 lg:px-12 w-full grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-10 lg:gap-16 items-stretch relative z-10">
 
-        {/* Left Content (Text) - Col 1: Overlaps Right by 10px, high z-index */}
-        <div className="flex flex-col justify-start items-start text-white pt-0 pb-10 pr-4 relative lg:-mr-[10px] z-20">
-          <div ref={badgeRef} className="inline-block border border-white/60 px-4 py-1 mb-8">
+        {/* Left Content (Text) - Col 1 */}
+        <div className="flex flex-col items-start self-start text-white min-w-0">
+          <div ref={badgeRef} className="inline-block border border-white px-4 py-1 mb-6 lg:mb-8">
             <span className="text-sm font-bold tracking-widest uppercase">{categoryLabels[slide.categoryId]}</span>
           </div>
 
-          <h1 ref={titleRef} className="text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-tight mb-8 pr-8 lg:pr-12" style={{ fontFamily: 'var(--font-heading)' }}>
+          <h1 ref={titleRef} className="text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-tight mb-6 lg:mb-8 break-words w-full" style={{ fontFamily: 'var(--font-heading)' }}>
             {slide.title}
           </h1>
 
-          <p ref={descRef} className="text-lg font-medium opacity-90 leading-relaxed max-w-sm">
+          <p ref={descRef} className="text-base lg:text-lg font-medium opacity-90 leading-relaxed">
             {slide.content}
           </p>
         </div>
 
+        <div className="w-full grid grid-cols-1 lg:grid-cols-[2fr_1.5fr] gap-0 items-stretch h-full">
+
         {/* Middle Content - Big Main Image - Col 2: Lowest z-index */}
-        <div ref={mediaRef} className="flex items-center justify-center w-full relative z-10">
-          <div className="w-full aspect-[4/5] bg-white shadow-2xl overflow-hidden relative">
+        <div ref={mediaRef} className="flex items-center justify-end w-full relative z-10">
+          <div className="w-[92%] aspect-[4/5] bg-white shadow-2xl overflow-hidden relative">
             {currentMedia.type === 'video' ? (
               <video
                 key={currentMedia.src}
@@ -177,6 +178,8 @@ const TemplatePortrait = ({ slide }) => {
               })}
             </Swiper>
           </div>
+        </div>
+
         </div>
 
       </div>

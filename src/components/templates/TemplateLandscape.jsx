@@ -83,15 +83,15 @@ const TemplateLandscape = ({ slide }) => {
         backgroundColor: '#00338d' // fallback
       }}
     >
-      <div className="container mx-auto px-6 lg:px-12 w-full grid grid-cols-1 lg:grid-cols-[2fr_8fr] gap-10 lg:gap-16 items-center relative z-10">
+      <div className="container mx-auto px-6 lg:px-12 w-full grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-10 lg:gap-16 items-center relative z-10">
 
         {/* Content - 20% space */}
-        <div className="flex flex-col items-start self-start text-white">
+        <div className="flex flex-col items-start self-start text-white min-w-0">
           <div ref={badgeRef} className="inline-block border border-white px-4 py-1 mb-6 lg:mb-8">
             <span className="text-sm font-bold tracking-widest uppercase">{categoryLabels[slide.categoryId]}</span>
           </div>
 
-          <h1 ref={titleRef} className="text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-tight mb-6 lg:mb-8" style={{ fontFamily: 'var(--font-heading)' }}>
+          <h1 ref={titleRef} className="text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-tight mb-6 lg:mb-8 break-words w-full" style={{ fontFamily: 'var(--font-heading)' }}>
             {slide.title}
           </h1>
 
