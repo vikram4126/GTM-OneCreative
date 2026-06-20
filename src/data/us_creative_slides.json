@@ -5,7 +5,7 @@
     "title": "US Creative: Pitch Deck",
     "thumb": "images/slider-items/us-creative-project-1-thumb.png",
     "image": "images/slider-items/us-creative-project-1-full.png",
-    "template": "gallery",
+    "template": "portrait",
     "content": "High-stakes pitch decks for US startups.",
     "gallery": [
       "images/slider-items/us-creative-project-1-slide-1.png"
@@ -20,7 +20,7 @@
     "title": "US Creative: Sales Deck",
     "thumb": "images/slider-items/us-creative-project-2-thumb.png",
     "image": "images/slider-items/us-creative-project-2-full.png",
-    "template": "video",
+    "template": "landscape",
     "video": "feature-video.mp4",
     "content": "Scalable sales enablement tools."
   },
@@ -30,7 +30,7 @@
     "title": "US Creative: Corporate Overview",
     "thumb": "images/slider-items/us-creative-project-3-thumb.png",
     "image": "images/slider-items/us-creative-project-3-full.png",
-    "template": "gallery",
+    "template": "portrait",
     "content": "A comprehensive overview presentation for enterprise clients.",
     "gallery": [
       "images/slider-items/us-creative-project-3-slide-1.png"
@@ -46,7 +46,7 @@
     "title": "US Creative: Product Launch",
     "thumb": "images/slider-items/us-creative-project-4-thumb.png",
     "image": "images/slider-items/us-creative-project-4-full.png",
-    "template": "video",
+    "template": "landscape",
     "video": "feature-video.mp4",
     "content": "High-energy presentation for a major product launch.",
     "contactIds": [
@@ -60,7 +60,7 @@
     "title": "US Creative: Financial Review",
     "thumb": "images/slider-items/us-creative-project-5-thumb.png",
     "image": "images/slider-items/us-creative-project-5-full.png",
-    "template": "gallery",
+    "template": "portrait",
     "content": "Data-heavy presentation made easy to digest.",
     "gallery": [
       "images/slider-items/us-creative-project-5-slide-1.png"
@@ -75,7 +75,7 @@
     "title": "US Creative: Training Module",
     "thumb": "images/slider-items/us-creative-project-6-thumb.png",
     "image": "images/slider-items/us-creative-project-6-full.png",
-    "template": "video",
+    "template": "landscape",
     "video": "feature-video.mp4",
     "content": "Interactive and engaging training materials.",
     "contactIds": [

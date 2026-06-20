@@ -5,7 +5,7 @@
     "title": "US Advisory: Data Viz",
     "thumb": "images/slider-items/us-advisory-project-1-thumb.png",
     "image": "images/slider-items/us-advisory-project-1-full.png",
-    "template": "gallery",
+    "template": "portrait",
     "content": "Complex data visualization for advisory reports.",
     "gallery": [
       "images/slider-items/us-advisory-project-1-slide-1.png"
@@ -20,7 +20,7 @@
     "title": "US Advisory: ESG Report",
     "thumb": "images/slider-items/us-advisory-project-2-thumb.png",
     "image": "images/slider-items/us-advisory-project-2-full.png",
-    "template": "video",
+    "template": "landscape",
     "video": "feature-video.mp4",
     "content": "Visualizing sustainability impact."
   },
@@ -30,7 +30,7 @@
     "title": "US Advisory: Market Analysis",
     "thumb": "images/slider-items/us-advisory-project-3-thumb.png",
     "image": "images/slider-items/us-advisory-project-3-full.png",
-    "template": "gallery",
+    "template": "portrait",
     "content": "Deep dive into market trends with visual aids.",
     "gallery": [
       "images/slider-items/us-advisory-project-3-slide-1.png"
@@ -46,7 +46,7 @@
     "title": "US Advisory: Tech Strategy",
     "thumb": "images/slider-items/us-advisory-project-4-thumb.png",
     "image": "images/slider-items/us-advisory-project-4-full.png",
-    "template": "video",
+    "template": "landscape",
     "video": "feature-video.mp4",
     "content": "Strategic roadmap visualization for digital transformation.",
     "contactIds": [
@@ -59,7 +59,7 @@
     "title": "US Advisory: Mergers & Acq",
     "thumb": "images/slider-items/us-advisory-project-5-thumb.png",
     "image": "images/slider-items/us-advisory-project-5-full.png",
-    "template": "gallery",
+    "template": "portrait",
     "content": "M&A deal presentations and financial modeling.",
     "gallery": [
       "images/slider-items/us-advisory-project-5-slide-1.png"
@@ -75,7 +75,7 @@
     "title": "US Advisory: Risk Management",
     "thumb": "images/slider-items/us-advisory-project-6-thumb.png",
     "image": "images/slider-items/us-advisory-project-6-full.png",
-    "template": "video",
+    "template": "landscape",
     "video": "feature-video.mp4",
     "content": "Comprehensive risk assessment visual reports.",
     "contactIds": [

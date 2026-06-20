@@ -32,8 +32,8 @@ const ALL_SLIDES = [
 import Template1 from '../components/templates/Template1';
 import Template2 from '../components/templates/Template2';
 import Template3 from '../components/templates/Template3';
-import TemplateVideo from '../components/templates/TemplateVideo';
-import TemplateGallery from '../components/templates/TemplateGallery';
+import TemplateLandscape from '../components/templates/TemplateLandscape';
+import TemplatePortrait from '../components/templates/TemplatePortrait';
 import TemplateDefault from '../components/templates/TemplateDefault';
 import CreativeSlider from '../components/CreativeSlider';
 import Navbar from '../components/Navbar';
@@ -45,8 +45,8 @@ const templateMap = {
   template1: Template1,
   template2: Template2,
   template3: Template3,
-  video: TemplateVideo,
-  gallery: TemplateGallery,
+  landscape: TemplateLandscape,
+  portrait: TemplatePortrait,
 };
 
 const ProjectDetailPage = () => {

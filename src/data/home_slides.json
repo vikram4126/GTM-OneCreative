@@ -5,7 +5,7 @@
     "title": "Home: Walmart Collateral",
     "thumb": "images/slider-items/graphis-design-1-thumb.png",
     "image": "images/slider-items/graphis-design-1-full.png",
-    "template": "gallery",
+    "template": "portrait",
     "video": "images/slider-items/graphis-design-3-full.mp4",
     "content": "Home specific content.",
     "gallery": [
@@ -22,7 +22,7 @@
     "title": "Home: Annual Report Design",
     "thumb": "images/slider-items/graphis-design-2-thumb.png",
     "image": "images/slider-items/graphis-design-2-full.png",
-    "template": "gallery",
+    "template": "portrait",
     "content": "Comprehensive financial report design with rich infographics.",
     "gallery": [
       "images/slider-items/graphis-design-2-slide-1.png"
@@ -37,7 +37,7 @@
     "title": "Home: Event Branding",
     "thumb": "images/slider-items/graphis-design-3-thumb.png",
     "image": "images/slider-items/graphis-design-3-full.png",
-    "template": "video",
+    "template": "landscape",
     "video": "images/slider-items/graphis-design-3-full.mp4",
     "gallery": [
       "images/slider-items/graphis-design-1-slide-1.jpeg",
@@ -55,7 +55,7 @@
     "title": "Home: PPT Deck 1",
     "thumb": "images/slider-items/ppt-1-thumb.png",
     "image": "images/slider-items/ppt-1-full.png",
-    "template": "video",
+    "template": "landscape",
     "video": "images/slider-items/ppt-1-full.mp4",
     "content": "Home specific content.",
     "contactIds": [
@@ -68,7 +68,7 @@
     "title": "Home: Investor Pitch Deck",
     "thumb": "images/slider-items/ppt-2-thumb.png",
     "image": "images/slider-items/ppt-2-full.png",
-    "template": "gallery",
+    "template": "portrait",
     "content": "High-impact presentation design for startup funding.",
     "gallery": [
       "images/slider-items/ppt-2-slide-1.png",
@@ -84,7 +84,7 @@
     "title": "Home: Quarterly Review",
     "thumb": "images/slider-items/ppt-home-3-thumb.png",
     "image": "images/slider-items/ppt-home-3-full.png",
-    "template": "video",
+    "template": "landscape",
     "video": "images/slider-items/ppt-3-full.mp4",
     "content": "Clean, data-driven slides for executive summaries.",
     "contactIds": [
@@ -97,7 +97,7 @@
     "title": "Home: Motion Story",
     "thumb": "images/slider-items/motion-1-thumb.png",
     "image": "images/slider-items/motion-1-full.png",
-    "template": "video",
+    "template": "landscape",
     "video": "feature-video.mp4",
     "content": "Home specific motion graphics content.",
     "contactIds": [
@@ -110,7 +110,7 @@
     "title": "Home: Explainer Video",
     "thumb": "images/slider-items/motion-2-thumb.png",
     "image": "images/slider-items/motion-2-full.png",
-    "template": "gallery",
+    "template": "portrait",
     "content": "Engaging animated explainer for a new SaaS product.",
     "gallery": [
       "images/slider-items/motion-2-slide-1.png"
@@ -126,7 +126,7 @@
     "title": "Home: Logo Reveal",
     "thumb": "images/slider-items/motion-3-thumb.png",
     "image": "images/slider-items/motion-3-full.png",
-    "template": "video",
+    "template": "landscape",
     "video": "feature-video.mp4",
     "content": "Dynamic and sleek motion graphics logo reveal.",
     "contactIds": [
@@ -139,7 +139,7 @@
     "title": "Home: Product Packaging",
     "thumb": "images/slider-items/others-2-thumb.png",
     "image": "images/slider-items/others-2-full.png",
-    "template": "video",
+    "template": "landscape",
     "video": "feature-video.mp4",
     "content": "Innovative packaging design for retail consumer goods.",
     "contactIds": [
@@ -152,7 +152,7 @@
     "title": "Home: Wayfinding System",
     "thumb": "images/slider-items/others-3-thumb.png",
     "image": "images/slider-items/others-3-full.png",
-    "template": "gallery",
+    "template": "portrait",
     "content": "Spatial design and signage for a large corporate campus.",
     "gallery": [
       "images/slider-items/others-3-slide-1.png"

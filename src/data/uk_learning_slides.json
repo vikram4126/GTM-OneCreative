@@ -5,7 +5,7 @@
     "title": "UK Learning: E-Module",
     "thumb": "images/slider-items/uk-learning-project-1-thumb.png",
     "image": "images/slider-items/uk-learning-project-1-full.png",
-    "template": "gallery",
+    "template": "portrait",
     "content": "Interactive learning modules for corporate training.",
     "gallery": [
       "images/slider-items/uk-learning-project-1-slide-1.png"
@@ -20,7 +20,7 @@
     "title": "UK Learning: Simulator",
     "thumb": "images/slider-items/uk-learning-project-2-thumb.png",
     "image": "images/slider-items/uk-learning-project-2-full.png",
-    "template": "video",
+    "template": "landscape",
     "video": "feature-video.mp4",
     "content": "High-fidelity training simulators."
   },
@@ -30,7 +30,7 @@
     "title": "UK Learning: Compliance Training",
     "thumb": "images/slider-items/uk-learning-project-3-thumb.png",
     "image": "images/slider-items/uk-learning-project-3-full.png",
-    "template": "gallery",
+    "template": "portrait",
     "content": "Engaging and mandatory compliance learning tracks.",
     "gallery": [
       "images/slider-items/uk-learning-project-3-slide-1.png"
@@ -45,7 +45,7 @@
     "title": "UK Learning: Leadership Program",
     "thumb": "images/slider-items/uk-learning-project-4-thumb.png",
     "image": "images/slider-items/uk-learning-project-4-full.png",
-    "template": "video",
+    "template": "landscape",
     "video": "feature-video.mp4",
     "content": "Advanced curriculum for emerging corporate leaders.",
     "contactIds": [
@@ -59,7 +59,7 @@
     "title": "UK Learning: Gamified LMS",
     "thumb": "images/slider-items/uk-learning-project-5-thumb.png",
     "image": "images/slider-items/uk-learning-project-5-full.png",
-    "template": "gallery",
+    "template": "portrait",
     "content": "Learning management systems with gamification built-in.",
     "gallery": [
       "images/slider-items/uk-learning-project-5-slide-1.png"
@@ -75,7 +75,7 @@
     "title": "UK Learning: Microlearning Apps",
     "thumb": "images/slider-items/uk-learning-project-6-thumb.png",
     "image": "images/slider-items/uk-learning-project-6-full.png",
-    "template": "video",
+    "template": "landscape",
     "video": "feature-video.mp4",
     "content": "Bite-sized learning content designed for mobile devices.",
     "contactIds": [

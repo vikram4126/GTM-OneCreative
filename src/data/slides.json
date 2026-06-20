@@ -5,7 +5,7 @@
     "title": "Walmart Collateral Brochure",
     "thumb": "images/slider-items/graphis-design-1-thumb.png",
     "image": "images/slider-items/graphis-design-1-full.png",
-    "template": "gallery",
+    "template": "portrait",
     "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     "gallery": [
       "images/slider-items/graphis-design-1-slide-1.png",
@@ -23,7 +23,7 @@
     "title": "Partnering for SUCCESS 2025",
     "thumb": "images/slider-items/graphis-design-2-thumb.png",
     "image": "images/slider-items/graphis-design-2-full.png",
-    "template": "gallery",
+    "template": "portrait",
     "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     "gallery": [
       "images/slider-items/graphis-design-2-slide-1.png",
@@ -40,7 +40,7 @@
     "title": "Graphic Design 3",
     "thumb": "images/slider-items/graphis-design-3-thumb.png",
     "image": "images/slider-items/graphis-design-3-full.png",
-    "template": "video",
+    "template": "landscape",
     "video": "images/slider-items/graphis-design-3-full.mp4",
     "content": "Modern digital art and illustrations.",
     "contactIds": [
@@ -54,7 +54,7 @@
     "title": "Graphic Design 4",
     "thumb": "images/slider-items/graphis-design-4-thumb.png",
     "image": "images/slider-items/graphis-design-4-full.png",
-    "template": "gallery",
+    "template": "portrait",
     "content": "Creative concepts translated into pixel-perfect designs.",
     "gallery": [
       "images/slider-items/graphis-design-4-slide-1.png",
@@ -71,7 +71,7 @@
     "title": "Graphic Design 5",
     "thumb": "images/slider-items/graphis-design-5-thumb.png",
     "image": "images/slider-items/graphis-design-5-full.png",
-    "template": "video",
+    "template": "landscape",
     "video": "images/slider-items/graphis-design-5-full.mp4",
     "content": "Typography and color theory at work.",
     "contactIds": [
@@ -85,7 +85,7 @@
     "title": "Graphic Design 16",
     "thumb": "images/slider-items/graphis-design-16-thumb.png",
     "image": "images/slider-items/graphis-design-16-full.png",
-    "template": "gallery",
+    "template": "portrait",
     "content": "Pushing the boundaries of conventional design.",
     "gallery": [
       "images/slider-items/graphis-design-16-slide-1.png",
@@ -102,7 +102,7 @@
     "title": "PPT Deck 1",
     "thumb": "images/slider-items/ppt-1-thumb.png",
     "image": "images/slider-items/ppt-1-full.png",
-    "template": "video",
+    "template": "landscape",
     "video": "images/slider-items/ppt-1-full.mp4",
     "content": "Professional presentation decks for corporate clients.",
     "contactIds": [
@@ -116,7 +116,7 @@
     "title": "PPT Deck 2",
     "thumb": "images/slider-items/ppt-2-thumb.png",
     "image": "images/slider-items/ppt-2-full.png",
-    "template": "gallery",
+    "template": "portrait",
     "content": "Engaging pitch decks that win investors.",
     "gallery": [
       "images/slider-items/ppt-2-slide-1.png",
@@ -133,7 +133,7 @@
     "title": "PPT Deck 3",
     "thumb": "images/slider-items/ppt-3-thumb.png",
     "image": "images/slider-items/ppt-3-full.png",
-    "template": "video",
+    "template": "landscape",
     "video": "images/slider-items/ppt-3-full.mp4",
     "content": "Clean and minimal slide layouts.",
     "contactIds": [
@@ -147,7 +147,7 @@
     "title": "PPT Deck 4",
     "thumb": "images/slider-items/ppt-4-thumb.png",
     "image": "images/slider-items/ppt-4-full.png",
-    "template": "gallery",
+    "template": "portrait",
     "content": "Data visualization and infographics.",
     "gallery": [
       "images/slider-items/ppt-4-slide-1.png",
@@ -164,7 +164,7 @@
     "title": "Motion Graphics 1",
     "thumb": "images/slider-items/motion-1-thumb.png",
     "image": "images/slider-items/motion-1-full.png",
-    "template": "video",
+    "template": "landscape",
     "video": "feature-video.mp4",
     "content": "Dynamic motion graphics that bring brands to life.",
     "contactIds": [
@@ -178,7 +178,7 @@
     "title": "Motion Graphics 2",
     "thumb": "images/slider-items/motion-2-thumb.png",
     "image": "images/slider-items/motion-2-full.png",
-    "template": "gallery",
+    "template": "portrait",
     "content": "Smooth animations and transitions.",
     "gallery": [
       "images/slider-items/motion-2-slide-1.png",
@@ -195,7 +195,7 @@
     "title": "Motion Graphics 3",
     "thumb": "images/slider-items/motion-3-thumb.png",
     "image": "images/slider-items/motion-3-full.png",
-    "template": "video",
+    "template": "landscape",
     "video": "feature-video.mp4",
     "content": "Explainer videos and product demos.",
     "contactIds": [
@@ -209,7 +209,7 @@
     "title": "Motion Graphics 4",
     "thumb": "images/slider-items/motion-4-thumb.png",
     "image": "images/slider-items/motion-4-full.png",
-    "template": "gallery",
+    "template": "portrait",
     "content": "Micro-interactions and UI animations.",
     "gallery": [
       "images/slider-items/motion-4-slide-1.png",
@@ -226,7 +226,7 @@
     "title": "Motion Graphics 5",
     "thumb": "images/slider-items/motion-5-thumb.png",
     "image": "images/slider-items/motion-5-full.png",
-    "template": "video",
+    "template": "landscape",
     "video": "feature-video.mp4",
     "content": "Engaging visual storytelling.",
     "contactIds": [
@@ -240,7 +240,7 @@
     "title": "Other Design 1",
     "thumb": "images/slider-items/others-1-thumb.png",
     "image": "images/slider-items/others-1-full.png",
-    "template": "video",
+    "template": "landscape",
     "video": "feature-video.mp4",
     "content": "Miscellaneous design works and experiments.",
     "contactIds": [
@@ -254,7 +254,7 @@
     "title": "Other Design 2",
     "thumb": "images/slider-items/others-2-thumb.png",
     "image": "images/slider-items/others-2-full.png",
-    "template": "gallery",
+    "template": "portrait",
     "content": "Creative explorations.",
     "gallery": [
       "images/slider-items/others-2-slide-1.png",
@@ -271,7 +271,7 @@
     "title": "Other Design 3",
     "thumb": "images/slider-items/others-3-thumb.png",
     "image": "images/slider-items/others-3-full.png",
-    "template": "video",
+    "template": "landscape",
     "video": "feature-video.mp4",
     "content": "UI/UX concepts.",
     "contactIds": [
@@ -285,7 +285,7 @@
     "title": "Other Design 4",
     "thumb": "images/slider-items/others-4-thumb.png",
     "image": "images/slider-items/others-4-full.png",
-    "template": "gallery",
+    "template": "portrait",
     "content": "Packaging design.",
     "gallery": [
       "images/slider-items/others-4-slide-1.png",
@@ -302,7 +302,7 @@
     "title": "Other Design 5",
     "thumb": "images/slider-items/others-5-thumb.png",
     "image": "images/slider-items/others-5-full.png",
-    "template": "video",
+    "template": "landscape",
     "video": "feature-video.mp4",
     "content": "Print media.",
     "contactIds": [
@@ -316,7 +316,7 @@
     "title": "Other Design 6",
     "thumb": "images/slider-items/others-6-thumb.png",
     "image": "images/slider-items/others-6-full.png",
-    "template": "gallery",
+    "template": "portrait",
     "content": "3D modeling and rendering.",
     "gallery": [
       "images/slider-items/others-6-slide-1.png",
