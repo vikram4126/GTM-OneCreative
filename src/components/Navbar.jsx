@@ -9,7 +9,7 @@ const Navbar = ({ onMenuToggle, isScrolled = false, showHomeButton = false, hide
     <nav
       className="fixed top-0 left-0 w-full z-[100] transition-all duration-300 pointer-events-none bg-white border-b border-gray-200 shadow-sm"
     >
-      <div className="container mx-auto py-5 flex justify-between items-center pointer-events-auto px-6 lg:px-12">
+      <div className="container mx-auto py-4 flex justify-between items-center pointer-events-auto px-6 lg:px-12">
 
         {/* KPMG SVG Logo */}
         <Link to="/" className="h-10 w-auto flex items-center" style={{ textDecoration: 'none' }}>
@@ -32,16 +32,16 @@ const Navbar = ({ onMenuToggle, isScrolled = false, showHomeButton = false, hide
               aria-label="Open Menu"
               className="p-2 bg-transparent border-none cursor-pointer group flex items-center justify-center"
             >
-              <svg 
-                xmlns="http://www.w3.org/2000/svg" 
-                width="28" 
-                height="28" 
-                viewBox="0 0 24 24" 
-                fill="none" 
-                stroke={iconColor} 
-                strokeWidth="2" 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke={iconColor}
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 className="transition-all duration-300 group-hover:opacity-80"
               >
                 <line x1="3" y1="12" x2="21" y2="12"></line>

@@ -369,3 +369,18 @@ section {
 .pillar-cta-button:active {
   transform: scale(0.95);
 }
+
+/* ─── Project / Section Banner ───────────────────── */
+/* 
+  Accounts for fixed navbar (68px) so content is never hidden behind it.
+  Templates themselves should NOT add any py padding — this class owns that.
+*/
+.project-banner {
+  padding-top: 68px; /* exact navbar height */
+}
+
+@media (max-width: 768px) {
+  .project-banner {
+    padding-top: 68px; /* navbar is same height on mobile */
+  }
+}

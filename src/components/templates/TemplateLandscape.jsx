@@ -30,26 +30,26 @@ const TemplateLandscape = ({ slide }) => {
       // Timeline for left content
       const tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
 
-      tl.fromTo(badgeRef.current, 
-        { x: -50, opacity: 0 }, 
+      tl.fromTo(badgeRef.current,
+        { x: -50, opacity: 0 },
         { x: 0, opacity: 1, duration: 0.6 }
       )
-      .fromTo(titleRef.current, 
-        { x: -50, opacity: 0 }, 
-        { x: 0, opacity: 1, duration: 0.6 }, 
-        '-=0.4'
-      )
-      .fromTo(descRef.current, 
-        { x: -50, opacity: 0 }, 
-        { x: 0, opacity: 1, duration: 0.6 }, 
-        '-=0.4'
-      )
-      // Media animation (Middle box)
-      .fromTo(mediaRef.current,
-        { x: -100, opacity: 0 },
-        { x: 0, opacity: 1, duration: 0.8 },
-        '-=0.3'
-      );
+        .fromTo(titleRef.current,
+          { x: -50, opacity: 0 },
+          { x: 0, opacity: 1, duration: 0.6 },
+          '-=0.4'
+        )
+        .fromTo(descRef.current,
+          { x: -50, opacity: 0 },
+          { x: 0, opacity: 1, duration: 0.6 },
+          '-=0.4'
+        )
+        // Media animation (Middle box)
+        .fromTo(mediaRef.current,
+          { x: -100, opacity: 0 },
+          { x: 0, opacity: 1, duration: 0.8 },
+          '-=0.3'
+        );
 
       // Gallery animation (Right side overlay)
       if (overlayRef.current) {
@@ -77,7 +77,7 @@ const TemplateLandscape = ({ slide }) => {
   return (
     <div
       ref={containerRef}
-      className="w-full min-h-[80vh] flex items-center justify-center py-20 relative overflow-hidden"
+      className="w-full min-h-[calc(100vh-68px)] flex items-center justify-center py-20 relative overflow-hidden"
       style={{
         backgroundImage: 'url(images/project-page-banner-background.jpeg)',
         backgroundSize: 'cover',
@@ -85,7 +85,7 @@ const TemplateLandscape = ({ slide }) => {
         backgroundColor: '#00338d' // fallback
       }}
     >
-      <div className="container mx-auto px-6 lg:px-12 w-full grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-10 lg:gap-16 items-center relative z-10">
+      <div className="container mx-auto px-6 lg:px-12 w-full grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-4 lg:gap-8 items-center relative z-10">
 
         {/* Content - 20% space */}
         <div className="flex flex-col items-start self-start text-white min-w-0">
@@ -103,7 +103,7 @@ const TemplateLandscape = ({ slide }) => {
         </div>
 
         {/* Video Box - 80% space */}
-        <div ref={mediaRef} className="w-full lg:w-[calc(100%-170px)] relative z-10">
+        <div ref={mediaRef} className="w-full lg:w-[calc(100%-140px)] relative z-10">
           <div className="w-full aspect-video bg-black shadow-2xl overflow-hidden relative border border-white/5">
             {currentMedia.type === 'video' ? (
               <video
@@ -130,7 +130,7 @@ const TemplateLandscape = ({ slide }) => {
 
           {/* Slider Overlay on right side of the video */}
           {galleryImages.length > 0 && (
-            <div ref={overlayRef} className="absolute top-0 bottom-0 right-0 lg:-right-[220px] z-20 w-[200px] lg:w-[320px] py-10 pointer-events-none flex items-center">
+            <div ref={overlayRef} className="absolute top-0 bottom-0 right-0 lg:-right-[190px] z-20 w-[200px] lg:w-[280px] py-10 pointer-events-none flex items-center">
               <div className="w-full h-full lg:h-[80%] relative pointer-events-auto">
                 <Swiper
                   direction={'vertical'}
@@ -152,8 +152,8 @@ const TemplateLandscape = ({ slide }) => {
                     const isVid = mediaUrl.endsWith('.mp4') || mediaUrl.endsWith('.webm');
                     return (
                       <SwiperSlide key={idx} className="w-full" style={{ height: 'calc((100% - 20px) / 2)' }}>
-                        <div 
-                          className="w-full h-full bg-transparent shadow-xl overflow-hidden relative group border-2 border-white/20 aspect-video p-[10px] cursor-pointer"
+                        <div
+                          className="w-full h-full bg-transparent shadow-xl overflow-hidden relative group border-2 border-white/20 p-[10px] cursor-pointer"
                           onClick={() => setCurrentMedia({ type: isVid ? 'video' : 'image', src: mediaUrl })}
                         >
                           {isVid ? (

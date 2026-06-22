@@ -77,7 +77,7 @@ const TemplatePortrait = ({ slide }) => {
   return (
     <div
       ref={containerRef}
-      className="w-full min-h-[80vh] flex items-center justify-center py-20 relative"
+      className="w-full min-h-[calc(100vh-68px)] flex items-center justify-center py-20 relative overflow-hidden"
       style={{
         backgroundImage: 'url(images/project-page-banner-background.jpeg)',
         backgroundSize: 'cover',
@@ -85,7 +85,7 @@ const TemplatePortrait = ({ slide }) => {
         backgroundColor: '#00338d' // fallback
       }}
     >
-      <div className="container mx-auto px-6 lg:px-12 w-full grid grid-cols-1 lg:grid-cols-[400px_1fr] gap-10 lg:gap-16 items-stretch relative z-10">
+      <div className="container mx-auto px-6 lg:px-12 w-full grid grid-cols-1 lg:grid-cols-[400px_1fr] gap-8 lg:gap-16 items-start relative z-10">
 
         {/* Left Content (Text) - Col 1 */}
         <div className="flex flex-col items-start self-start text-white min-w-0">
@@ -102,16 +102,16 @@ const TemplatePortrait = ({ slide }) => {
           </p>
         </div>
 
-        <div className="w-full grid grid-cols-1 lg:grid-cols-[2fr_1.5fr] gap-8 lg:gap-12 items-stretch h-full">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-[2fr_1.5fr] gap-6 lg:gap-10 items-stretch">
 
           {/* Middle Content - Big Main Image - Col 2 */}
-          <div ref={mediaRef} className="flex items-stretch justify-center w-full relative z-10 h-[700px] lg:h-full">
-            <div className="w-full h-[700px] bg-white shadow-2xl overflow-hidden relative">
+          <div ref={mediaRef} className="w-full relative z-10">
+            <div className="w-full aspect-[3/4] bg-white shadow-2xl overflow-hidden relative">
               {currentMedia.type === 'video' ? (
                 <video
                   key={currentMedia.src}
                   src={currentMedia.src}
-                  className="w-full h-full object-cover"
+                  className="absolute inset-0 w-full h-full object-cover"
                   controls
                   muted
                   loop
@@ -123,7 +123,7 @@ const TemplatePortrait = ({ slide }) => {
                   key={currentMedia.src}
                   src={currentMedia.src}
                   alt={`${slide.title} Main`}
-                  className="w-full h-full object-cover cursor-pointer"
+                  className="absolute inset-0 w-full h-full object-cover cursor-pointer"
                   onClick={() => window.open(currentMedia.src, '_blank')}
                   title="Click to view full image"
                 />
@@ -132,9 +132,9 @@ const TemplatePortrait = ({ slide }) => {
           </div>
 
           {/* Right Content - Vertical Mini Swiper - Col 3 */}
-          <div ref={galleryRef} className="relative z-20 h-[700px] lg:h-full flex items-start">
-            {/* Swiper Container */}
-            <div className="w-full h-[700px] relative flex items-start justify-start py-[20px]">
+          <div ref={galleryRef} className="relative z-20 w-full overflow-hidden min-h-0">
+            {/* Swiper Container: Use absolute positioning instead of h-full. 10px top/bottom makes it exactly 20px shorter than the middle image. */}
+            <div className="absolute top-[10px] bottom-[10px] left-0 right-0 w-full flex items-center justify-start">
               <Swiper
                 direction={'vertical'}
                 slidesPerView={2}
@@ -148,15 +148,14 @@ const TemplatePortrait = ({ slide }) => {
                     return `<span class="${className} custom-bullet-square"></span>`;
                   },
                 }}
-                style={{ height: '100%' }}
-                className="w-full max-w-[320px] h-full gallery-custom-swiper"
+                className="w-full max-w-[320px] gallery-custom-swiper absolute inset-0"
               >
                 {galleryImages.map((mediaUrl, idx) => {
                   const isVid = mediaUrl.endsWith('.mp4') || mediaUrl.endsWith('.webm');
                   return (
                     <SwiperSlide key={idx} className="w-full" style={{ height: 'calc((100% - 20px) / 2)' }}>
                       <div
-                        className="w-full h-full bg-transparent  overflow-hidden relative group border-2 border-white/20 aspect-[4/5] p-[10px] cursor-pointer"
+                        className="w-full h-full bg-transparent overflow-hidden relative group border-2 border-white/20 p-[10px] cursor-pointer"
                         onClick={() => setCurrentMedia({ type: isVid ? 'video' : 'image', src: mediaUrl })}
                       >
                         {isVid ? (

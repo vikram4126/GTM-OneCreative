@@ -10,6 +10,8 @@
     "content": "Home specific content.",
     "gallery": [
       "images/slider-items/graphis-design-1-slide-1.jpeg",
+      "images/slider-items/graphis-design-1-slide-1.jpeg",
+      "images/slider-items/graphis-design-1-slide-1.jpeg",
       "images/slider-items/graphis-design-1-slide-2.jpeg"
     ],
     "contactIds": [
@@ -25,6 +27,9 @@
     "template": "portrait",
     "content": "Comprehensive financial report design with rich infographics.",
     "gallery": [
+      "images/slider-items/graphis-design-2-slide-1.png",
+      "images/slider-items/graphis-design-2-slide-1.png",
+      "images/slider-items/graphis-design-2-slide-1.png",
       "images/slider-items/graphis-design-2-slide-1.png"
     ],
     "contactIds": [
@@ -34,12 +39,14 @@
   {
     "id": "graphis-design-3",
     "categoryId": 0,
-    "title": "Home: Event Branding",
+    "title": "Home",
     "thumb": "images/slider-items/graphis-design-3-thumb.png",
     "image": "images/slider-items/graphis-design-3-full.png",
     "template": "landscape",
     "video": "images/slider-items/graphis-design-3-full.mp4",
     "gallery": [
+      "images/slider-items/graphis-design-1-slide-1.jpeg",
+      "images/slider-items/graphis-design-1-slide-1.jpeg",
       "images/slider-items/graphis-design-1-slide-1.jpeg",
       "images/slider-items/graphis-design-1-slide-2.jpeg"
     ],

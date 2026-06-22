@@ -96,7 +96,7 @@ const ProjectDetailPage = () => {
       <SidebarMenu isOpen={isMenuOpen} onToggle={toggleMenu} menuType="services" />
 
       {/* Dynamic Template Banner */}
-      <div className="pt-20">
+      <div className="project-banner">
         <TemplateComponent slide={slide} />
       </div>
 
