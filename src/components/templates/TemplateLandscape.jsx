@@ -31,30 +31,32 @@ const TemplateLandscape = ({ slide }) => {
       const tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
 
       tl.fromTo(badgeRef.current, 
-        { scale: 0.8, opacity: 0 }, 
-        { scale: 1, opacity: 1, duration: 0.6 }
+        { x: -50, opacity: 0 }, 
+        { x: 0, opacity: 1, duration: 0.6 }
       )
       .fromTo(titleRef.current, 
-        { scale: 0.9, opacity: 0 }, 
-        { scale: 1, opacity: 1, duration: 0.6 }, 
+        { x: -50, opacity: 0 }, 
+        { x: 0, opacity: 1, duration: 0.6 }, 
         '-=0.4'
       )
       .fromTo(descRef.current, 
-        { scale: 0.95, opacity: 0 }, 
-        { scale: 1, opacity: 1, duration: 0.6 }, 
+        { x: -50, opacity: 0 }, 
+        { x: 0, opacity: 1, duration: 0.6 }, 
         '-=0.4'
+      )
+      // Media animation (Middle box)
+      .fromTo(mediaRef.current,
+        { x: -100, opacity: 0 },
+        { x: 0, opacity: 1, duration: 0.8 },
+        '-=0.3'
       );
 
-      // Media animation (right side) - Dynamic Zoom In
-      gsap.fromTo(mediaRef.current,
-        { scale: 0.85, opacity: 0 },
-        { scale: 1, opacity: 1, duration: 0.8, ease: 'expo.out', delay: 0.1 }
-      );
-
+      // Gallery animation (Right side overlay)
       if (overlayRef.current) {
-        gsap.fromTo(overlayRef.current,
-          { scale: 0.9, opacity: 0, x: 20 },
-          { scale: 1, opacity: 1, x: 0, duration: 0.7, delay: 0.5, ease: 'power3.out' }
+        tl.fromTo(overlayRef.current,
+          { x: -100, opacity: 0 },
+          { x: 0, opacity: 1, duration: 0.8 },
+          '-=0.5'
         );
       }
     }, containerRef);
@@ -83,7 +85,7 @@ const TemplateLandscape = ({ slide }) => {
         backgroundColor: '#00338d' // fallback
       }}
     >
-      <div className="container mx-auto px-6 lg:px-12 w-full grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-10 lg:gap-16 items-center relative z-10">
+      <div className="container mx-auto px-6 lg:px-12 w-full grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-10 lg:gap-16 items-center relative z-10">
 
         {/* Content - 20% space */}
         <div className="flex flex-col items-start self-start text-white min-w-0">
@@ -101,7 +103,7 @@ const TemplateLandscape = ({ slide }) => {
         </div>
 
         {/* Video Box - 80% space */}
-        <div ref={mediaRef} className="w-full relative z-10">
+        <div ref={mediaRef} className="w-full lg:w-[calc(100%-170px)] relative z-10">
           <div className="w-full aspect-video bg-black shadow-2xl overflow-hidden relative border border-white/5">
             {currentMedia.type === 'video' ? (
               <video
@@ -112,6 +114,7 @@ const TemplateLandscape = ({ slide }) => {
                 muted
                 loop
                 playsInline
+                poster={slide.image || slide.thumb}
               />
             ) : (
               <img
@@ -127,7 +130,7 @@ const TemplateLandscape = ({ slide }) => {
 
           {/* Slider Overlay on right side of the video */}
           {galleryImages.length > 0 && (
-            <div ref={overlayRef} className="absolute top-0 bottom-0 right-0 lg:-right-[10px] z-20 w-[200px] lg:w-[260px] py-10 pointer-events-none flex items-center">
+            <div ref={overlayRef} className="absolute top-0 bottom-0 right-0 lg:-right-[220px] z-20 w-[200px] lg:w-[320px] py-10 pointer-events-none flex items-center">
               <div className="w-full h-full lg:h-[80%] relative pointer-events-auto">
                 <Swiper
                   direction={'vertical'}

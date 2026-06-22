@@ -30,32 +30,33 @@ const TemplatePortrait = ({ slide }) => {
       // Timeline for left content
       const tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
 
-      tl.fromTo(badgeRef.current, 
-        { scale: 0.8, opacity: 0 }, 
-        { scale: 1, opacity: 1, duration: 0.6 }
+      tl.fromTo(badgeRef.current,
+        { x: -50, opacity: 0 },
+        { x: 0, opacity: 1, duration: 0.6 }
       )
-      .fromTo(titleRef.current, 
-        { scale: 0.9, opacity: 0 }, 
-        { scale: 1, opacity: 1, duration: 0.6 }, 
-        '-=0.4'
-      )
-      .fromTo(descRef.current, 
-        { scale: 0.95, opacity: 0 }, 
-        { scale: 1, opacity: 1, duration: 0.6 }, 
-        '-=0.4'
-      );
-
-      // Media animation (Middle box)
-      gsap.fromTo(mediaRef.current,
-        { scale: 0.85, opacity: 0 },
-        { scale: 1, opacity: 1, duration: 0.8, ease: 'expo.out', delay: 0.1 }
-      );
+        .fromTo(titleRef.current,
+          { x: -50, opacity: 0 },
+          { x: 0, opacity: 1, duration: 0.6 },
+          '-=0.4'
+        )
+        .fromTo(descRef.current,
+          { x: -50, opacity: 0 },
+          { x: 0, opacity: 1, duration: 0.6 },
+          '-=0.4'
+        )
+        // Media animation (Middle box)
+        .fromTo(mediaRef.current,
+          { x: -100, opacity: 0 },
+          { x: 0, opacity: 1, duration: 0.8 },
+          '-=0.3'
+        );
 
       // Gallery animation (Right side)
       if (galleryRef.current) {
-        gsap.fromTo(galleryRef.current,
-          { scale: 0.9, opacity: 0, x: 20 },
-          { scale: 1, opacity: 1, x: 0, duration: 0.7, delay: 0.4, ease: 'power3.out' }
+        tl.fromTo(galleryRef.current,
+          { x: -100, opacity: 0 },
+          { x: 0, opacity: 1, duration: 0.8 },
+          '-=0.5'
         );
       }
     }, containerRef);
@@ -84,7 +85,7 @@ const TemplatePortrait = ({ slide }) => {
         backgroundColor: '#00338d' // fallback
       }}
     >
-      <div className="container mx-auto px-6 lg:px-12 w-full grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-10 lg:gap-16 items-stretch relative z-10">
+      <div className="container mx-auto px-6 lg:px-12 w-full grid grid-cols-1 lg:grid-cols-[400px_1fr] gap-10 lg:gap-16 items-stretch relative z-10">
 
         {/* Left Content (Text) - Col 1 */}
         <div className="flex flex-col items-start self-start text-white min-w-0">
@@ -103,82 +104,83 @@ const TemplatePortrait = ({ slide }) => {
 
         <div className="w-full grid grid-cols-1 lg:grid-cols-[2fr_1.5fr] gap-8 lg:gap-12 items-stretch h-full">
 
-        {/* Middle Content - Big Main Image - Col 2 */}
-        <div ref={mediaRef} className="flex items-center justify-center w-full relative z-10">
-          <div className="w-full lg:w-[90%] aspect-[4/5] bg-white shadow-2xl overflow-hidden relative">
-            {currentMedia.type === 'video' ? (
-              <video
-                key={currentMedia.src}
-                src={currentMedia.src}
-                className="w-full h-full object-cover"
-                controls
-                muted
-                loop
-                playsInline
-              />
-            ) : (
-              <img
-                key={currentMedia.src}
-                src={currentMedia.src}
-                alt={`${slide.title} Main`}
-                className="w-full h-full object-cover cursor-pointer"
-                onClick={() => window.open(currentMedia.src, '_blank')}
-                title="Click to view full image"
-              />
-            )}
+          {/* Middle Content - Big Main Image - Col 2 */}
+          <div ref={mediaRef} className="flex items-stretch justify-center w-full relative z-10 h-[700px] lg:h-full">
+            <div className="w-full h-[700px] bg-white shadow-2xl overflow-hidden relative">
+              {currentMedia.type === 'video' ? (
+                <video
+                  key={currentMedia.src}
+                  src={currentMedia.src}
+                  className="w-full h-full object-cover"
+                  controls
+                  muted
+                  loop
+                  playsInline
+                  poster={slide.image || slide.thumb}
+                />
+              ) : (
+                <img
+                  key={currentMedia.src}
+                  src={currentMedia.src}
+                  alt={`${slide.title} Main`}
+                  className="w-full h-full object-cover cursor-pointer"
+                  onClick={() => window.open(currentMedia.src, '_blank')}
+                  title="Click to view full image"
+                />
+              )}
+            </div>
           </div>
-        </div>
 
-        {/* Right Content - Vertical Mini Swiper - Col 3 */}
-        <div ref={galleryRef} className="relative z-20 h-[600px] lg:h-full flex items-center">
-          {/* Swiper Container */}
-          <div className="w-full h-[500px] relative flex items-center justify-start">
-            <Swiper
-              direction={'vertical'}
-              slidesPerView={2}
-              spaceBetween={24}
-              modules={[Pagination]}
-              observer={true}
-              observeParents={true}
-              pagination={{
-                clickable: true,
-                renderBullet: function (index, className) {
-                  return `<span class="${className} custom-bullet-square"></span>`;
-                },
-              }}
-              style={{ height: '100%' }}
-              className="w-full max-w-[220px] h-full gallery-custom-swiper"
-            >
-              {galleryImages.map((mediaUrl, idx) => {
-                const isVid = mediaUrl.endsWith('.mp4') || mediaUrl.endsWith('.webm');
-                return (
-                  <SwiperSlide key={idx} className="w-full" style={{ height: 'calc((100% - 20px) / 2)' }}>
-                    <div 
-                      className="w-full h-full bg-transparent shadow-xl overflow-hidden relative group border-2 border-white/20 aspect-[4/5] p-[10px] cursor-pointer"
-                      onClick={() => setCurrentMedia({ type: isVid ? 'video' : 'image', src: mediaUrl })}
-                    >
-                      {isVid ? (
-                        <video
-                          src={mediaUrl}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                          muted
-                          playsInline
-                          loop
-                        />
-                      ) : (
-                        <img
-                          src={mediaUrl}
-                          alt={`Gallery ${idx + 1}`}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                        />
-                      )}
-                    </div>
-                  </SwiperSlide>
-                );
-              })}
-            </Swiper>
+          {/* Right Content - Vertical Mini Swiper - Col 3 */}
+          <div ref={galleryRef} className="relative z-20 h-[700px] lg:h-full flex items-start">
+            {/* Swiper Container */}
+            <div className="w-full h-[700px] relative flex items-start justify-start py-[20px]">
+              <Swiper
+                direction={'vertical'}
+                slidesPerView={2}
+                spaceBetween={10}
+                modules={[Pagination]}
+                observer={true}
+                observeParents={true}
+                pagination={{
+                  clickable: true,
+                  renderBullet: function (index, className) {
+                    return `<span class="${className} custom-bullet-square"></span>`;
+                  },
+                }}
+                style={{ height: '100%' }}
+                className="w-full max-w-[320px] h-full gallery-custom-swiper"
+              >
+                {galleryImages.map((mediaUrl, idx) => {
+                  const isVid = mediaUrl.endsWith('.mp4') || mediaUrl.endsWith('.webm');
+                  return (
+                    <SwiperSlide key={idx} className="w-full" style={{ height: 'calc((100% - 20px) / 2)' }}>
+                      <div
+                        className="w-full h-full bg-transparent  overflow-hidden relative group border-2 border-white/20 aspect-[4/5] p-[10px] cursor-pointer"
+                        onClick={() => setCurrentMedia({ type: isVid ? 'video' : 'image', src: mediaUrl })}
+                      >
+                        {isVid ? (
+                          <video
+                            src={mediaUrl}
+                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                            muted
+                            playsInline
+                            loop
+                          />
+                        ) : (
+                          <img
+                            src={mediaUrl}
+                            alt={`Gallery ${idx + 1}`}
+                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                          />
+                        )}
+                      </div>
+                    </SwiperSlide>
+                  );
+                })}
+              </Swiper>
+            </div>
           </div>
-        </div>
 
         </div>
 
