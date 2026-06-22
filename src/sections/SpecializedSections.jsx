@@ -13,7 +13,7 @@ const pillarsBg = 'images/pillars-bg.jpg';
 
 /* ─── Responsive clickable dot pagination ── */
 const SidebarDots = ({ total, active, swiperRef }) => (
-  <div 
+  <div
     className="absolute z-50 flex gap-3 
                bottom-8 left-1/2 -translate-x-1/2 flex-row
                md:bottom-auto md:left-auto md:translate-x-0
@@ -60,7 +60,7 @@ export const SectionDesignStrategy = ({ customData, customBgColor }) => {
       style={{
         position: 'relative',
         width: '100%',
-        ...(customBgColor 
+        ...(customBgColor
           ? { backgroundColor: customBgColor }
           : { backgroundImage: `url(${pillarsBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }
         ),
@@ -170,28 +170,85 @@ export const SectionExploring = () => {
   const dotWrappersRef = useRef([]);
 
   useEffect(() => {
+    let animationFrameId;
+    let mouseX = null;
+    let mouseY = null;
+
     const handleMouseMove = (e) => {
-      if (!sectionRef.current) return;
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    };
+
+    const animate = () => {
+      if (!sectionRef.current) {
+        animationFrameId = requestAnimationFrame(animate);
+        return;
+      }
+      
       const rect = sectionRef.current.getBoundingClientRect();
       const centerX = rect.left + rect.width / 2;
       const centerY = rect.top + rect.height / 2;
-      const deltaX = e.clientX - centerX;
-      const deltaY = e.clientY - centerY;
-      // Normalize direction and scale to max pupil travel radius (28px)
-      const dist = Math.sqrt(deltaX * deltaX + deltaY * deltaY) || 1;
-      const maxRadius = 28;
-      const tx = (deltaX / dist) * Math.min(dist * 0.08, maxRadius);
-      const ty = (deltaY / dist) * Math.min(dist * 0.08, maxRadius);
+      
+      const time = Date.now() * 0.0025; // Faster time multiplier
+      
+      // Perfectly smooth pseudo-random motion using combined sine/cosine waves
+      // Increased amplitudes significantly for an even larger auto-movement area
+      const currentIdleX = 
+        Math.sin(time * 0.8) * 90 + 
+        Math.sin(time * 1.3) * 60 + 
+        Math.sin(time * 2.1) * 30 +
+        Math.sin(time * 0.4) * 40;
+
+      const currentIdleY = 
+        Math.cos(time * 0.9) * 90 + 
+        Math.cos(time * 1.4) * 60 + 
+        Math.sin(time * 1.9) * 30 +
+        Math.cos(time * 0.5) * 40;
+
+      let tx = currentIdleX;
+      let ty = currentIdleY;
+
+      if (mouseX !== null && mouseY !== null) {
+        const deltaX = mouseX - centerX;
+        const deltaY = mouseY - centerY;
+        const dist = Math.sqrt(deltaX * deltaX + deltaY * deltaY) || 1;
+        const maxRadius = 90;
+        
+        const mouseTx = (deltaX / dist) * Math.min(dist * 0.15, maxRadius);
+        const mouseTy = (deltaY / dist) * Math.min(dist * 0.15, maxRadius);
+
+        // Blend random motion with mouse motion
+        tx = mouseTx + currentIdleX * 0.4;
+        ty = mouseTy + currentIdleY * 0.4;
+      }
 
       dotWrappersRef.current.forEach(wrapper => {
         if (wrapper) {
           wrapper.style.transform = `translate(calc(-50% + ${tx}px), calc(-50% + ${ty}px))`;
         }
       });
+
+      animationFrameId = requestAnimationFrame(animate);
+    };
+
+    const handleMouseLeave = () => {
+      mouseX = null;
+      mouseY = null;
     };
 
     window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    if (sectionRef.current) {
+      sectionRef.current.addEventListener('mouseleave', handleMouseLeave);
+    }
+    animate();
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      if (sectionRef.current) {
+        sectionRef.current.removeEventListener('mouseleave', handleMouseLeave);
+      }
+      cancelAnimationFrame(animationFrameId);
+    };
   }, []);
 
   const slides = [
@@ -205,17 +262,17 @@ export const SectionExploring = () => {
   const ringColors = ['#1E49E2', '#7213EA', '#00338D', '#FD349C', '#0C233C'];
 
   return (
-    <section 
+    <section
       ref={sectionRef}
-      style={{ 
-      position: 'relative', 
-      width: '100%', 
-      backgroundImage: 'url(images/exploring-background-image.jpeg)',
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      overflow: 'hidden', 
-      padding: '80px 0' 
-    }}>
+      style={{
+        position: 'relative',
+        width: '100%',
+        backgroundImage: 'url(images/exploring-background-image.jpeg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        overflow: 'hidden',
+        padding: '80px 0'
+      }}>
       <Swiper
         modules={[EffectFade]}
         effect="fade"
@@ -248,7 +305,6 @@ export const SectionExploring = () => {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  boxShadow: '0 0 60px rgba(0,0,0,0.15)',
                   backgroundColor: 'transparent'
                 }}
               >
@@ -264,7 +320,6 @@ export const SectionExploring = () => {
                     width: 'clamp(28px, 3.5vw, 44px)',
                     height: 'clamp(28px, 3.5vw, 44px)',
                     backgroundColor: '#fff',
-                    transition: 'transform 0.12s cubic-bezier(0.2, 0.8, 0.2, 1)',
                     zIndex: 20,
                     boxShadow: '0 0 12px rgba(255,255,255,0.4)'
                   }}

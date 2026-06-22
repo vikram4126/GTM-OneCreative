@@ -101,11 +101,11 @@ const TemplatePortrait = ({ slide }) => {
           </p>
         </div>
 
-        <div className="w-full grid grid-cols-1 lg:grid-cols-[2fr_1.5fr] gap-0 items-stretch h-full">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-[2fr_1.5fr] gap-8 lg:gap-12 items-stretch h-full">
 
-        {/* Middle Content - Big Main Image - Col 2: Lowest z-index */}
-        <div ref={mediaRef} className="flex items-center justify-end w-full relative z-10">
-          <div className="w-[92%] aspect-[4/5] bg-white shadow-2xl overflow-hidden relative">
+        {/* Middle Content - Big Main Image - Col 2 */}
+        <div ref={mediaRef} className="flex items-center justify-center w-full relative z-10">
+          <div className="w-full lg:w-[90%] aspect-[4/5] bg-white shadow-2xl overflow-hidden relative">
             {currentMedia.type === 'video' ? (
               <video
                 key={currentMedia.src}
@@ -129,14 +129,14 @@ const TemplatePortrait = ({ slide }) => {
           </div>
         </div>
 
-        {/* Right Content - Vertical Mini Swiper - Col 3: Overlaps Left by 10px, high z-index */}
-        <div ref={galleryRef} className="relative lg:-ml-[15px] z-20 h-[600px] lg:h-auto lg:py-[80px]">
-          {/* Swiper Container - Using absolute on desktop to fill grid height perfectly minus padding */}
-          <div className="w-full h-full lg:absolute lg:inset-x-0 lg:top-[80px] lg:bottom-[80px] lg:h-auto relative flex items-center justify-start">
+        {/* Right Content - Vertical Mini Swiper - Col 3 */}
+        <div ref={galleryRef} className="relative z-20 h-[600px] lg:h-full flex items-center">
+          {/* Swiper Container */}
+          <div className="w-full h-[500px] relative flex items-center justify-start">
             <Swiper
               direction={'vertical'}
               slidesPerView={2}
-              spaceBetween={20}
+              spaceBetween={24}
               modules={[Pagination]}
               observer={true}
               observeParents={true}
