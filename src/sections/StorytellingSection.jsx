@@ -40,6 +40,7 @@ export default function StorytellingSection() {
   const card3 = useRef(null);
   const headingRef = useRef(null);
   const contentRef = useRef(null);
+  const motifRef = useRef(null);
   const hasPlayed = useRef(false);
 
   useEffect(() => {
@@ -86,6 +87,7 @@ export default function StorytellingSection() {
       tl.to([card0.current, card1.current, card3.current], { opacity: 0, duration: 0.3 }, '-=0.2');
 
       // STEP 4 — Survivor scales to big box ─────────────────────────
+      tl.addLabel('scaleUp', '+=0.05');
       tl.to(card2.current, {
         scaleX: SCALE_X,
         scaleY: SCALE_Y,
@@ -95,7 +97,12 @@ export default function StorytellingSection() {
         boxShadow: '0 32px 80px rgba(0, 184, 245, 0.35), 0 8px 24px rgba(0, 51, 141, 0.15)',
         duration: 0.85,
         ease: 'expo.inOut',
-      }, '+=0.05');
+      }, 'scaleUp');
+
+      // Fade in the motif GIF simultaneously with the scale up
+      if (motifRef.current) {
+        tl.to(motifRef.current, { opacity: 1, duration: 0.85, ease: 'expo.inOut' }, 'scaleUp');
+      }
 
       // STEP 5 — Slide inward to 0,0
       tl.to(headingRef.current, { opacity: 1, x: 0, y: 0, duration: 0.9, ease: 'power3.out' }, '+=0.1');
@@ -180,7 +187,22 @@ export default function StorytellingSection() {
                 transformOrigin: 'center center',
                 flexShrink: 0,
               }}
-            />
+            >
+              {i === 2 && (
+                <img
+                  ref={motifRef}
+                  src="images/Home-page-intro-motif.gif"
+                  alt="OneCreative Motif"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    opacity: 0,
+                    display: 'block'
+                  }}
+                />
+              )}
+            </div>
           ))}
         </div>
 
