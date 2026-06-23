@@ -62,6 +62,14 @@ export const SectionServices = () => {
         onStart: () => {
           console.log('Services Animation Sequence Started');
           playedRef.current = true;
+        },
+        onComplete: () => {
+          // Enable transform transition for hover effects only AFTER entrance animation completes
+          cardRefs.current.forEach(card => {
+            if (card) {
+              card.style.transition = 'background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease, transform 0.3s ease';
+            }
+          });
         }
       });
       tlRef.current = tl;
@@ -194,8 +202,10 @@ export const SectionServices = () => {
                   willChange: 'transform, opacity',
                   textDecoration: 'none',
                   cursor: 'pointer',
+                  // CSS transition explicitly avoids transform and opacity to prevent fighting GSAP during initial load
+                  transition: 'background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease',
                 }}
-                className="group bg-white border border-[#00B8F5]/30 hover:bg-[#00B8F5] transition-all duration-300 hover:scale-[1.02] shadow-[0_10px_30px_rgba(0,184,245,0.05)] hover:shadow-[0_15px_40px_rgba(0,184,245,0.25)]"
+                className="group bg-white border border-[#00B8F5]/30 hover:bg-[#00B8F5] hover:scale-[1.02] shadow-[0_10px_30px_rgba(0,184,245,0.05)] hover:shadow-[0_15px_40px_rgba(0,184,245,0.25)]"
               >
                 {/* Content Wrapper for independent reveal */}
                 <div
