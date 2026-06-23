@@ -9,26 +9,22 @@ export const CARDS = [
   {
     id: 'uk-create',
     title: ['UK', 'Create'],
-    iconTop: 'images/icons/scissors.png',
-    iconBottom: 'images/icons/magic-wand.png'
-  },
-  {
-    id: 'us-creative-services',
-    title: ['US Creative', 'Services'],
-    iconTop: 'images/icons/globe.png',
-    iconBottom: 'images/icons/group.png'
-  },
-  {
-    id: 'us-advisory-creative',
-    title: ['US Advisory', 'Creative'],
-    iconTop: 'images/icons/chart.png',
-    iconBottom: 'images/icons/write.png'
+    icon: 'images/icons/create.png'
   },
   {
     id: 'uk-learning-design',
     title: ['UK Learning', 'Design'],
-    iconTop: 'images/icons/star.png',
-    iconBottom: 'images/icons/create.png'
+    icon: 'images/icons/star.png'
+  },
+  {
+    id: 'us-advisory-creative',
+    title: ['US Advisory', 'Creative'],
+    icon: 'images/icons/globe.png'
+  },
+  {
+    id: 'us-creative-services',
+    title: ['US Creative', 'Services'],
+    icon: 'images/icons/write.png'
   },
 ];
 
@@ -188,62 +184,47 @@ export const SectionServices = () => {
                   width: '100%',
                   maxWidth: '350px',
                   height: 'clamp(450px, 55vh, 600px)', // Increased height
-                  backgroundColor: '#00B8F5',
                   borderRadius: '0',
                   display: 'flex',
                   flexDirection: 'column',
-                  justifyContent: 'space-between',
+                  justifyContent: 'center',
                   padding: 24,
                   position: 'relative',
                   justifySelf: 'center',
                   willChange: 'transform, opacity',
-                  boxShadow: '0 10px 30px rgba(0, 184, 245, 0.15)',
                   textDecoration: 'none',
                   cursor: 'pointer',
-                  transition: 'box-shadow 0.3s ease',
-                  '&:hover': {
-                    boxShadow: '0 15px 40px rgba(0, 184, 245, 0.25)',
-                  }
                 }}
-                className="hover:scale-[1.02] transition-transform duration-300"
+                className="group bg-white border border-[#00B8F5]/30 hover:bg-[#00B8F5] transition-all duration-300 hover:scale-[1.02] shadow-[0_10px_30px_rgba(0,184,245,0.05)] hover:shadow-[0_15px_40px_rgba(0,184,245,0.25)]"
               >
                 {/* Content Wrapper for independent reveal */}
                 <div
                   ref={el => (contentRefs.current[i] = el)}
-                  style={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}
+                  className="flex flex-col items-center justify-center w-full h-full gap-8"
                 >
-                  {/* Top-left icon */}
-                  <div style={{ opacity: 0.8 }}>
-                    <img src={card.iconTop} alt={`${card.id}-top`} style={{ width: '28px', height: '28px' }} />
+                  {/* Main icon */}
+                  <div className="flex-1 flex items-end justify-center pb-4">
+                    <img 
+                      src={card.icon} 
+                      alt={`${card.id}-icon`} 
+                      className="w-24 h-24 object-contain transition-all duration-500 group-hover:brightness-0 group-hover:invert group-hover:scale-110" 
+                    />
                   </div>
 
                   {/* Center text */}
-                  <div
-                    style={{
-                      display: 'flex',
-                      flexDirection: 'column',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      flex: 1,
-                    }}
-                  >
+                  <div className="flex-1 flex items-start justify-center pt-4">
                     <h2
-                      className="section-heading half"
+                      className="section-heading half text-[#00508F] group-hover:text-white transition-colors duration-500"
                       style={{
                         textAlign: 'center',
-                        color: '#FFFFFF',
                         textTransform: 'none',
+                        margin: 0
                       }}
                     >
                       {card.title.map((line, j) => (
-                        <span key={j} style={{ display: 'block', color: '#FFFFFF' }}>{line}</span>
+                        <span key={j} className="block text-[#00508F] group-hover:text-white transition-colors duration-500">{line}</span>
                       ))}
                     </h2>
-                  </div>
-
-                  {/* Bottom-right icon */}
-                  <div style={{ alignSelf: 'flex-end', opacity: 0.8 }}>
-                    <img src={card.iconBottom} alt={`${card.id}-bottom`} style={{ width: '28px', height: '28px' }} />
                   </div>
                 </div>
               </Link>
@@ -254,3 +235,4 @@ export const SectionServices = () => {
     </section>
   );
 };
+
