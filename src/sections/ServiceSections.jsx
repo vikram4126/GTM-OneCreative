@@ -44,14 +44,13 @@ const SidebarDots = ({ total, active, swiperRef }) => (
 );
 
 /* ── Section 1: Service Banner ── */
-export const ServiceBanner = ({ title = [], description = "", iconTop, iconBottom, bannerBg }) => {
+export const ServiceBanner = ({ title = [], description = "", icon, bannerBg }) => {
   const sectionRef = useRef(null);
   const leftRef = useRef(null);
   const centerRef = useRef(null);
   const rightRef = useRef(null);
 
-  const iconTopRef = useRef(null);
-  const iconBottomRef = useRef(null);
+  const iconRef = useRef(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -72,7 +71,7 @@ export const ServiceBanner = ({ title = [], description = "", iconTop, iconBotto
         opacity: 0
       });
       gsap.set([leftRef.current, rightRef.current], { opacity: 0, y: 50 });
-      gsap.set([iconTopRef.current, iconBottomRef.current], { scale: 0, opacity: 0 });
+      gsap.set(iconRef.current, { scale: 0, opacity: 0 });
 
       // Step 1: Center Box Entry
       tl.to(centerRef.current, {
@@ -93,25 +92,17 @@ export const ServiceBanner = ({ title = [], description = "", iconTop, iconBotto
         ease: 'power3.out'
       }, '-=0.6');
 
-      // Step 3: Icons Pop In
-      tl.to([iconTopRef.current, iconBottomRef.current], {
+      // Step 3: Icon Pop In
+      tl.to(iconRef.current, {
         scale: 1,
-        opacity: 0.8,
-        duration: 0.5,
-        stagger: 0.1,
-        ease: 'back.out(1.7)'
+        opacity: 1,
+        duration: 0.6,
+        ease: 'back.out(1.5)'
       }, '-=0.3');
 
-      // Micro-animations: Floating icons
-      gsap.to(iconTopRef.current, {
-        y: -10,
-        duration: 2,
-        repeat: -1,
-        yoyo: true,
-        ease: 'sine.inOut'
-      });
-      gsap.to(iconBottomRef.current, {
-        y: 10,
+      // Micro-animation: Gentle floating for the big icon
+      gsap.to(iconRef.current, {
+        y: -15,
         duration: 2.5,
         repeat: -1,
         yoyo: true,
@@ -175,22 +166,19 @@ export const ServiceBanner = ({ title = [], description = "", iconTop, iconBotto
 
           <div
             ref={centerRef}
-            className="w-full max-w-[350px] bg-[var(--color-blue-navy)] shrink-0 origin-center box-border relative z-[1] shadow-[0_40px_80px_rgba(0,0,0,0.4)] flex flex-col justify-between p-6"
+            className="w-full max-w-[350px] shrink-0 origin-center box-border relative z-[1] shadow-[0_40px_80px_rgba(0,0,0,0.4)] flex flex-col items-center justify-center p-6"
             style={{
               height: 'clamp(350px, 50vh, 600px)',
             }}
           >
-            {/* Top icon */}
-            {iconTop && (
-              <div ref={iconTopRef} style={{ opacity: 0.8 }}>
-                <img src={iconTop} alt="top-icon" style={{ width: '28px', height: '28px' }} />
-              </div>
-            )}
-
-            {/* Bottom icon */}
-            {iconBottom && (
-              <div ref={iconBottomRef} style={{ alignSelf: 'flex-end', opacity: 0.8 }}>
-                <img src={iconBottom} alt="bottom-icon" style={{ width: '28px', height: '28px' }} />
+            {/* Center large icon */}
+            {icon && (
+              <div ref={iconRef} className="flex items-center justify-center w-full h-full">
+                <img 
+                  src={icon} 
+                  alt="service-icon" 
+                  className="w-32 h-32 md:w-40 md:h-40 object-contain filter brightness-0 invert" 
+                />
               </div>
             )}
           </div>

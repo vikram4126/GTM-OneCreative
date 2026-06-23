@@ -2,8 +2,7 @@
   {
     "id": "uk-create",
     "title": "UK Create",
-    "iconTop": "images/icons/scissors.png",
-    "iconBottom": "images/icons/magic-wand.png",
+    "icon": "images/icons/create.png",
     "banner": {
       "title": [
         "UK",
@@ -224,8 +223,7 @@
   {
     "id": "us-creative-services",
     "title": "US Creative Services",
-    "iconTop": "images/icons/globe.png",
-    "iconBottom": "images/icons/group.png",
+    "icon": "images/icons/write.png",
     "banner": {
       "title": [
         "US Creative",
@@ -446,8 +444,7 @@
   {
     "id": "us-advisory-creative",
     "title": "US Advisory Creative",
-    "iconTop": "images/icons/chart.png",
-    "iconBottom": "images/icons/write.png",
+    "icon": "images/icons/globe.png",
     "banner": {
       "title": [
         "US Advisory",
@@ -668,8 +665,7 @@
   {
     "id": "uk-learning-design",
     "title": "UK Learning Design",
-    "iconTop": "images/icons/star.png",
-    "iconBottom": "images/icons/create.png",
+    "icon": "images/icons/star.png",
     "banner": {
       "title": [
         "UK Learning",

@@ -66,8 +66,7 @@ const ServiceDetailPage = () => {
         <ServiceBanner 
           title={service.banner.title} 
           description={service.banner.description}
-          iconTop={serviceIcons.iconTop}
-          iconBottom={serviceIcons.iconBottom}
+          icon={serviceIcons.icon}
           bannerBg={service.bannerBg}
         />
 
