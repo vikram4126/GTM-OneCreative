@@ -176,6 +176,12 @@ section {
   /* Exactly matches navbar height to prevent previous section bleed-through */
 }
 
+/* ─── Scroll Pillars: override overflow so GSAP pin:true works ─── */
+#scroll-pillars {
+  overflow: visible !important;
+  min-height: unset;
+}
+
 /* ─── Swiper fill ────────────────────────────────── */
 .swiper {
   width: 100% !important;
@@ -382,5 +388,18 @@ section {
 @media (max-width: 768px) {
   .project-banner {
     padding-top: 68px; /* navbar is same height on mobile */
+  }
+}
+/* ─── Scroll Pillars Services List ───────────────────── */
+.sp-services-list {
+  display: grid;
+  grid-template-columns: 1fr; /* 1x4 default */
+  gap: 0.4rem;
+}
+
+@media (max-height: 800px) {
+  .sp-services-list {
+    grid-template-columns: 1fr 1fr; /* 2x2 on small height screens */
+    gap: 0.2rem 1rem;
   }
 }

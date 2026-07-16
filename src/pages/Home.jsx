@@ -11,6 +11,7 @@ import {
   SectionInspiration,
 } from '../sections/SpecializedSections';
 import { SectionCreativeShowcase } from '../sections/SectionCreativeShowcase';
+import { SectionScrollPillars } from '../sections/SectionScrollPillars';
 import homeSlidesData from '../data/home_slides.json';
 import { SectionServices } from '../sections/SectionServices';
 import { SectionCreativity } from '../sections/SectionCreativity';
@@ -111,7 +112,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="relative overflow-x-hidden">
+    <div className="relative" style={{ overflowX: 'clip' }}>
       {isVideoFinished && (
         <>
           <Navbar onMenuToggle={toggleMenu} isScrolled={isNavbarDark} />
@@ -142,10 +143,15 @@ const Home = () => {
           </section>
         </div>
 
-        {/* 3. Design Strategy */}
-        <section id="pillars" className="snap-section">
-          <SectionDesignStrategy />
-        </section>
+        {/* 3. Design Strategy (HIDDEN) */}
+        <div style={{ display: 'none' }}>
+          <section id="pillars" className="snap-section">
+            <SectionDesignStrategy />
+          </section>
+        </div>
+
+        {/* New Scroll Pillars */}
+        <SectionScrollPillars />
 
         {/* 4. Services Cards */}
         <section id="services-wrapper" className="snap-section">
