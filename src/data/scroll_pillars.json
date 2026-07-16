@@ -1,0 +1,122 @@
+[
+  {
+    "id": "design",
+    "title": "Design",
+    "leftDesc": "Explore our design philosophy where creativity meets functionality to build stunning visual identities.",
+    "intro": "Creating visually compelling assets that simplify complex messages and capture audience attention.",
+    "services": [
+      "Brand Identity",
+      "UI/UX Design",
+      "Motion Graphics",
+      "Print & Collateral"
+    ],
+    "mainHighlight": {
+      "number": "450+",
+      "label": "Assets\nCreated"
+    },
+    "subHighlights": [
+      {
+        "number": "200+",
+        "label": "Brands\nDesigned"
+      },
+      {
+        "number": "1500+",
+        "label": "Creatives\nProduced"
+      },
+      {
+        "number": "98%",
+        "label": "Client\nSatisfaction"
+      }
+    ]
+  },
+  {
+    "id": "digital",
+    "title": "Digital",
+    "leftDesc": "Leverage data-driven digital strategies to connect with your target audience and amplify your reach.",
+    "intro": "Developing interactive digital experiences that engage users and drive measurable results.",
+    "services": [
+      "Social Media",
+      "Digital Campaigns",
+      "SEO & Analytics",
+      "Email Marketing"
+    ],
+    "mainHighlight": {
+      "number": "300+",
+      "label": "Websites\nLaunched"
+    },
+    "subHighlights": [
+      {
+        "number": "200+",
+        "label": "Apps\nDeveloped"
+      },
+      {
+        "number": "150+",
+        "label": "Campaigns\nRun"
+      },
+      {
+        "number": "100+",
+        "label": "Brands\nElevated"
+      }
+    ]
+  },
+  {
+    "id": "development",
+    "title": "Development",
+    "leftDesc": "Build scalable and secure technological foundations that power seamless user experiences.",
+    "intro": "Building robust web and mobile applications with cutting-edge technologies.",
+    "services": [
+      "Web Development",
+      "Mobile Apps",
+      "CMS & Portals",
+      "API Integration"
+    ],
+    "mainHighlight": {
+      "number": "500+",
+      "label": "Modules\nBuilt"
+    },
+    "subHighlights": [
+      {
+        "number": "100+",
+        "label": "Systems\nIntegrated"
+      },
+      {
+        "number": "50+",
+        "label": "Patents\nFiled"
+      },
+      {
+        "number": "25+",
+        "label": "Awards\nWon"
+      }
+    ]
+  },
+  {
+    "id": "learning",
+    "title": "Learning",
+    "leftDesc": "Empower your team with comprehensive educational modules designed for effective knowledge retention.",
+    "intro": "Designing educational modules that enhance skill development and knowledge retention.",
+    "services": [
+      "E-Learning Modules",
+      "LMS Development",
+      "Video Production",
+      "Training Content"
+    ],
+    "mainHighlight": {
+      "number": "200+",
+      "label": "Courses\nDesigned"
+    },
+    "subHighlights": [
+      {
+        "number": "100k+",
+        "label": "Learners\nReached"
+      },
+      {
+        "number": "95%",
+        "label": "Completion\nRate"
+      },
+      {
+        "number": "50+",
+        "label": "Corporate\nPartners"
+      }
+    ]
+  }
+]
