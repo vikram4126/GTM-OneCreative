@@ -11,6 +11,7 @@ import {
   SectionInspiration,
 } from '../sections/SpecializedSections';
 import { SectionCreativeShowcase } from '../sections/SectionCreativeShowcase';
+import SectionExploringNew from '../sections/SectionExploringNew';
 import { SectionScrollPillars } from '../sections/SectionScrollPillars';
 import homeSlidesData from '../data/home_slides.json';
 import { SectionServices } from '../sections/SectionServices';
@@ -51,7 +52,7 @@ const Home = () => {
 
   // Update active section based on scroll position
   useEffect(() => {
-    const sectionIds = ['intro-start', 'intro-end', 'pillars', 'services', 'creative-showcase', 'exploring', 'inspiration', 'footer'];
+    const sectionIds = ['intro-start', 'intro-end', 'pillars', 'services', 'creative-showcase', 'exploring-possibilities-new', 'exploring', 'inspiration', 'footer'];
     const handleScroll = () => {
       const scrollPos = window.scrollY + 100; // Account for 80px navbar + 20px buffer
       let current = activeSection;
@@ -162,6 +163,9 @@ const Home = () => {
         <section id="creative-showcase" className="snap-section">
           <SectionCreativeShowcase slidesDataCustom={homeSlidesData} customHeading="Creative Showcase" />
         </section>
+
+        {/* 5b. Exploring Possibilities New */}
+        <SectionExploringNew />
 
         {/* 6. Exploring New Possibilities */}
         <section id="exploring" className="snap-section">
