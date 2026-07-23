@@ -12,6 +12,30 @@ export const SectionExploringNew = ({ customData }) => {
 
   const slidesData = customData || exploringDataJson;
 
+  const handleVideoPlay = () => {
+    if (swiperRef.current && swiperRef.current.autoplay) {
+      swiperRef.current.autoplay.stop();
+    }
+  };
+
+  const handleVideoPauseOrEnded = () => {
+    if (swiperRef.current && swiperRef.current.autoplay) {
+      swiperRef.current.autoplay.start();
+    }
+  };
+
+  const handleSlideChange = (s) => {
+    setActiveIndex(s.activeIndex);
+    // Pause all videos across slides when slide changes and resume autoplay
+    const videos = document.querySelectorAll('#exploring-possibilities-new video');
+    videos.forEach((vid) => {
+      vid.pause();
+    });
+    if (s.autoplay && !s.autoplay.running) {
+      s.autoplay.start();
+    }
+  };
+
   return (
     <section
       id="exploring-possibilities-new"
@@ -47,7 +71,7 @@ export const SectionExploringNew = ({ customData }) => {
           }}
           speed={700}
           onSwiper={(s) => (swiperRef.current = s)}
-          onSlideChange={(s) => setActiveIndex(s.activeIndex)}
+          onSlideChange={handleSlideChange}
           className="w-full"
         >
           {slidesData.map((item, index) => (
@@ -91,10 +115,11 @@ export const SectionExploringNew = ({ customData }) => {
                         key={item.videoSrc + index}
                         src={item.videoSrc}
                         poster={item.poster}
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
+                        controls
+                        preload="metadata"
+                        onPlay={handleVideoPlay}
+                        onPause={handleVideoPauseOrEnded}
+                        onEnded={handleVideoPauseOrEnded}
                         className="w-full h-full object-cover"
                       />
                     </div>
