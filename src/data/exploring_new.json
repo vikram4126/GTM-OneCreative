@@ -6,8 +6,8 @@
       "The KPMG Creative team is actively leveraging Generative AI to enhance creative quality, speed, and consistency while maintaining strong brand governance.",
       "The team actively contributes to GenAI learning programs, showcases, and innovation forums, embedding responsible AI usage into day-to-day creative workflows and driving measurable efficiency and quality outcomes across Capability Hubs."
     ],
-    "videoSrc": "images/slider-items/graphis-design-3-full.mp4",
-    "poster": "images/slider-items/graphis-design-1-full.png"
+    "image": "images/slider-items/graphis-design-1-full.png",
+    "link": "https://example.com/gen-ai"
   },
   {
     "agentName": "Agent 2",
@@ -16,8 +16,8 @@
       "Automating complex multi-step creative production using intelligent agent pipelines to rapidly transform raw concepts into multi-channel brand assets.",
       "Ensuring seamless integration across platforms while adhering strictly to Enterprise design guidelines and brand standards."
     ],
-    "videoSrc": "feature-video.mp4",
-    "poster": "images/slider-items/graphis-design-2-full.png"
+    "image": "images/slider-items/graphis-design-2-full.png",
+    "link": "https://example.com/agentic-workflows"
   },
   {
     "agentName": "Agent 3",
@@ -26,8 +26,8 @@
       "Dynamic typography and responsive layout engine powered by custom trained AI models tailored for KPMG brand asset creation.",
       "Accelerating slide deck production, publication layouts, and digital banners with intelligent context-aware composition."
     ],
-    "videoSrc": "images/slider-items/ppt-1-full.mp4",
-    "poster": "images/slider-items/ppt-1-thumb.png"
+    "image": "images/slider-items/ppt-1-full.png",
+    "link": "https://example.com/smart-layouts"
   },
   {
     "agentName": "Agent 4",
@@ -36,8 +36,8 @@
       "From static images to fully editable vector and digital content effortlessly with custom neural vision models.",
       "Streamlining asset localization and format conversion across diverse global marketing campaigns."
     ],
-    "videoSrc": "images/slider-items/ppt-3-full.mp4",
-    "poster": "images/slider-items/ppt-3-thumb.png"
+    "image": "images/slider-items/ppt-3-full.png",
+    "link": "https://example.com/asset-transformation"
   },
   {
     "agentName": "Agent 5",
@@ -46,8 +46,8 @@
       "Automated real-time brand compliance checking for all creative collateral before final distribution.",
       "Mitigating risks while enabling teams to innovate with confidence within corporate guardrails."
     ],
-    "videoSrc": "images/slider-items/graphis-design-3-full.mp4",
-    "poster": "images/slider-items/graphis-design-1-full.png"
+    "image": "images/slider-items/graphis-design-1-full.png",
+    "link": "https://example.com/brand-governance"
   },
   {
     "agentName": "Agent 6",
@@ -56,7 +56,7 @@
       "Data-driven design insights optimizing content engagement, accessibility, and visual performance across audience touchpoints.",
       "Empowering design strategists with continuous performance feedback for iterative visual optimization."
     ],
-    "videoSrc": "feature-video.mp4",
-    "poster": "images/slider-items/graphis-design-2-full.png"
+    "image": "images/slider-items/graphis-design-2-full.png",
+    "link": "https://example.com/creative-analytics"
   }
 ]
