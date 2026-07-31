@@ -17,6 +17,18 @@
     ]
   },
   {
+    "id": "uk-create-project-1a",
+    "categoryId": 0,
+    "title": "UK Create: Typography 1",
+    "thumb": "images/slider-items/graphis-design-1-slide-thumb.png",
+    "image": "images/slider-items/graphis-design-1-slide-1.jpeg",
+    "template": "landscape",
+    "content": "Specialized brand identity for UK markets.",
+    "contactIds": [
+      "krishna"
+    ]
+  },
+  {
     "id": "uk-create-project-2",
     "categoryId": 0,
     "title": "UK Create: Typography 2",
@@ -30,6 +42,34 @@
       "images/slider-items/video-1.mp4"
     ],
     "contactIds": [
+      "shantanu"
+    ]
+  },
+  {
+    "id": "uk-create-project-31",
+    "categoryId": 0,
+    "title": "UK Create: Social Campaign",
+    "thumb": "images/slider-items/uk-create-project-7-thumb.png",
+    "image": "images/slider-items/uk-create-project-7-full.png",
+    "template": "landscape",
+    "video": "feature-video.mp4",
+    "content": "Engaging social media assets.",
+    "contactIds": [
+      "krishna",
+      "shantanu"
+    ]
+  },
+  {
+    "id": "uk-create-project-41",
+    "categoryId": 0,
+    "title": "UK Create: Social Campaign",
+    "thumb": "images/slider-items/uk-create-project-7-thumb.png",
+    "image": "images/slider-items/uk-create-project-7-full.png",
+    "template": "portrait",
+    "video": "feature-video.mp4",
+    "content": "Engaging social media assets.",
+    "contactIds": [
+      "krishna",
       "shantanu"
     ]
   },

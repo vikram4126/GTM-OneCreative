@@ -13,22 +13,19 @@ const TemplateLandscape = ({ slide }) => {
   const mediaRef = useRef(null);
   const overlayRef = useRef(null);
 
-  const [currentMedia, setCurrentMedia] = useState({
-    type: 'image',
-    src: slide.image || slide.thumb
+  const [currentMedia, setCurrentMedia] = useState(() => {
+    if (slide.videoUrl) return { type: 'external_video', src: slide.videoUrl, poster: slide.image || slide.thumb };
+    if (slide.video) return { type: 'video', src: slide.video, poster: slide.image || slide.thumb };
+    return { type: 'image', src: slide.image || slide.thumb, poster: null };
   });
 
   useEffect(() => {
-    setCurrentMedia({
-      type: 'image',
-      src: slide.image || slide.thumb
-    });
+    if (slide.videoUrl) setCurrentMedia({ type: 'external_video', src: slide.videoUrl, poster: slide.image || slide.thumb });
+    else if (slide.video) setCurrentMedia({ type: 'video', src: slide.video, poster: slide.image || slide.thumb });
+    else setCurrentMedia({ type: 'image', src: slide.image || slide.thumb, poster: null });
   }, [slide]);
 
-  const handleVideoClick = () => {
-    const url = slide.videoUrl || slide.video;
-    if (url) window.open(url, '_blank', 'noopener,noreferrer');
-  };
+
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -110,36 +107,39 @@ const TemplateLandscape = ({ slide }) => {
         {/* Video Box - 80% space */}
         <div ref={mediaRef} className="w-full lg:w-[calc(100%-140px)] relative z-10">
           <div className="w-full aspect-video bg-black shadow-2xl overflow-hidden relative border border-white/5 group">
-            <img
-              key={currentMedia.src}
-              src={currentMedia.src}
-              alt={slide.title}
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
+            {currentMedia.type === 'video' ? (
+              <video
+                key={currentMedia.src}
+                src={currentMedia.src}
+                className="absolute inset-0 w-full h-full object-cover"
+                muted
+                playsInline
+                poster={currentMedia.poster}
+              />
+            ) : (
+              <img
+                key={currentMedia.src}
+                src={currentMedia.type === 'external_video' ? currentMedia.poster : currentMedia.src}
+                alt={slide.title}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            )}
             {/* Dark overlay on hover */}
             <div 
               className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300 cursor-pointer z-0" 
-              onClick={() => {
-                if (!slide.videoUrl && !slide.video) {
-                  window.open(currentMedia.src, '_blank', 'noopener,noreferrer');
-                }
-              }}
-              title={!slide.videoUrl && !slide.video ? "Click to view full image" : ""}
+              onClick={() => window.open(currentMedia.src, '_blank', 'noopener,noreferrer')}
+              title={currentMedia.type === 'image' ? "Click to view full image" : "Watch video"}
             />
-            {/* Play button — only show if videoUrl or video exists */}
-            {(slide.videoUrl || slide.video) && (
-              <button
-                onClick={handleVideoClick}
-                className="absolute inset-0 flex flex-col items-center justify-center gap-3 cursor-pointer z-10"
-                aria-label="Watch video"
-              >
-                <div className="w-20 h-20 rounded-full bg-white/20 backdrop-blur-sm border-2 border-white flex items-center justify-center hover:bg-white/30 hover:scale-110 transition-all duration-300 shadow-2xl">
+            {/* Play button — only show if type is video or external_video */}
+            {(currentMedia.type === 'video' || currentMedia.type === 'external_video') && (
+              <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 pointer-events-none z-10">
+                <div className="w-20 h-20 rounded-full bg-white/20 backdrop-blur-sm border-2 border-white flex items-center justify-center group-hover:bg-white/30 group-hover:scale-110 transition-all duration-300 shadow-2xl">
                   <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M8 5v14l11-7z"/>
                   </svg>
                 </div>
                 <span className="text-white text-sm font-semibold tracking-widest uppercase opacity-90">Watch Video</span>
-              </button>
+              </div>
             )}
           </div>
 
@@ -169,13 +169,24 @@ const TemplateLandscape = ({ slide }) => {
                       <SwiperSlide key={idx} className="w-full" style={{ height: 'calc((100% - 20px) / 2)' }}>
                         <div
                           className="w-full h-full bg-transparent shadow-xl overflow-hidden relative group border-2 border-white/20 p-[10px] cursor-pointer"
-                          onClick={() => setCurrentMedia({ type: 'image', src: isVid ? (slide.image || slide.thumb) : mediaUrl })}
+                          onClick={() => setCurrentMedia({ type: isVid ? 'video' : 'image', src: mediaUrl, poster: null })}
                         >
-                          <img
-                            src={isVid ? (slide.image || slide.thumb) : mediaUrl}
-                            alt={`Gallery ${idx + 1}`}
-                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                          />
+                          {isVid ? (
+                            <video
+                              src={mediaUrl}
+                              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                              muted
+                              playsInline
+                              loop
+                              autoPlay
+                            />
+                          ) : (
+                            <img
+                              src={mediaUrl}
+                              alt={`Gallery ${idx + 1}`}
+                              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                            />
+                          )}
                         </div>
                       </SwiperSlide>
                     );
