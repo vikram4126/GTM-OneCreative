@@ -117,7 +117,15 @@ const TemplateLandscape = ({ slide }) => {
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
             {/* Dark overlay on hover */}
-            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300" />
+            <div 
+              className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300 cursor-pointer z-0" 
+              onClick={() => {
+                if (!slide.videoUrl && !slide.video) {
+                  window.open(currentMedia.src, '_blank', 'noopener,noreferrer');
+                }
+              }}
+              title={!slide.videoUrl && !slide.video ? "Click to view full image" : ""}
+            />
             {/* Play button — only show if videoUrl or video exists */}
             {(slide.videoUrl || slide.video) && (
               <button
