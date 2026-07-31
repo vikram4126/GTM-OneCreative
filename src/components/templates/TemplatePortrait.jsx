@@ -13,19 +13,17 @@ const TemplatePortrait = ({ slide }) => {
   const mediaRef = useRef(null);
   const galleryRef = useRef(null);
 
-  const [currentMedia, setCurrentMedia] = useState(() => {
-    if (slide.videoUrl) return { type: 'external_video', src: slide.videoUrl, poster: slide.image || slide.thumb };
-    if (slide.video) return { type: 'video', src: slide.video, poster: slide.image || slide.thumb };
-    return { type: 'image', src: slide.image || slide.thumb, poster: null };
+  const [currentMedia, setCurrentMedia] = useState({
+    type: slide.video ? 'video' : 'image',
+    src: slide.video || slide.image
   });
 
   useEffect(() => {
-    if (slide.videoUrl) setCurrentMedia({ type: 'external_video', src: slide.videoUrl, poster: slide.image || slide.thumb });
-    else if (slide.video) setCurrentMedia({ type: 'video', src: slide.video, poster: slide.image || slide.thumb });
-    else setCurrentMedia({ type: 'image', src: slide.image || slide.thumb, poster: null });
+    setCurrentMedia({
+      type: slide.video ? 'video' : 'image',
+      src: slide.video || slide.image
+    });
   }, [slide]);
-
-
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -108,41 +106,29 @@ const TemplatePortrait = ({ slide }) => {
 
           {/* Middle Content - Big Main Image - Col 2 */}
           <div ref={mediaRef} className="w-full relative z-10">
-              <div className="w-full aspect-[3/4] bg-white shadow-2xl overflow-hidden relative group">
-            {currentMedia.type === 'video' ? (
-              <video
-                key={currentMedia.src}
-                src={currentMedia.src}
-                className="absolute inset-0 w-full h-full object-cover"
-                muted
-                playsInline
-                poster={currentMedia.poster}
-              />
-            ) : (
-              <img
-                key={currentMedia.src}
-                src={currentMedia.type === 'external_video' ? currentMedia.poster : currentMedia.src}
-                alt={`${slide.title} Main`}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-            )}
-            {/* Dark overlay on hover */}
-            <div 
-              className="absolute inset-0 bg-black/10 group-hover:bg-black/35 transition-colors duration-300 cursor-pointer z-0"
-              onClick={() => window.open(currentMedia.src, '_blank', 'noopener,noreferrer')}
-              title={currentMedia.type === 'image' ? "Click to view full image" : "Watch video"}
-            />
-            {/* Play button — only show if type is video or external_video */}
-            {(currentMedia.type === 'video' || currentMedia.type === 'external_video') && (
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 pointer-events-none z-10">
-                <div className="w-20 h-20 rounded-full bg-white/20 backdrop-blur-sm border-2 border-white flex items-center justify-center group-hover:bg-white/30 group-hover:scale-110 transition-all duration-300 shadow-2xl">
-                  <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z"/>
-                  </svg>
+            <div className="w-full aspect-[3/4] bg-white shadow-2xl overflow-hidden relative">
+              {currentMedia.type === 'video' ? (
+                <div className="absolute inset-0 flex flex-col items-center justify-center bg-gray-900 p-8 text-center border border-white/10">
+                  <span className="text-white/50 mb-4 uppercase tracking-widest text-sm font-bold">Video Link</span>
+                  <a
+                    href={currentMedia.src}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white text-lg md:text-xl lg:text-2xl hover:text-blue-400 underline break-all transition-colors duration-300"
+                  >
+                    {currentMedia.src}
+                  </a>
                 </div>
-                <span className="text-white text-sm font-semibold tracking-widest uppercase opacity-90">Watch Video</span>
-              </div>
-            )}
+              ) : (
+                <img
+                  key={currentMedia.src}
+                  src={currentMedia.src}
+                  alt={`${slide.title} Main`}
+                  className="absolute inset-0 w-full h-full object-cover cursor-pointer"
+                  onClick={() => window.open(currentMedia.src, '_blank')}
+                  title="Click to view full image"
+                />
+              )}
             </div>
           </div>
 
@@ -166,22 +152,21 @@ const TemplatePortrait = ({ slide }) => {
                 className="w-full max-w-[320px] gallery-custom-swiper absolute inset-0"
               >
                 {galleryImages.map((mediaUrl, idx) => {
-                  const isVid = mediaUrl.endsWith('.mp4') || mediaUrl.endsWith('.webm');
+                  const isVid = !mediaUrl.match(/\.(jpeg|jpg|gif|png|webp|svg)(\?.*)?$/i);
                   return (
                     <SwiperSlide key={idx} className="w-full" style={{ height: 'calc((100% - 20px) / 2)' }}>
                       <div
                         className="w-full h-full bg-transparent overflow-hidden relative group border-2 border-white/20 p-[10px] cursor-pointer"
-                        onClick={() => setCurrentMedia({ type: isVid ? 'video' : 'image', src: mediaUrl, poster: null })}
+                        onClick={() => setCurrentMedia({ type: isVid ? 'video' : 'image', src: mediaUrl })}
                       >
                         {isVid ? (
-                          <video
-                            src={mediaUrl}
-                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                            muted
-                            playsInline
-                            loop
-                            autoPlay
-                          />
+                          <div className="w-full h-full flex flex-col items-center justify-center bg-gray-800 p-2 group-hover:bg-gray-700 transition-colors duration-500">
+                            <svg className="w-8 h-8 text-white/50 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span className="text-white/70 text-xs font-medium uppercase tracking-wider">Video</span>
+                          </div>
                         ) : (
                           <img
                             src={mediaUrl}
