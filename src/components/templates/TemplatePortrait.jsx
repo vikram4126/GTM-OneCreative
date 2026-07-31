@@ -15,13 +15,13 @@ const TemplatePortrait = ({ slide }) => {
 
   const [currentMedia, setCurrentMedia] = useState({
     type: 'image',
-    src: slide.image
+    src: slide.image || slide.thumb
   });
 
   useEffect(() => {
     setCurrentMedia({
       type: 'image',
-      src: slide.image
+      src: slide.image || slide.thumb
     });
   }, [slide]);
 
