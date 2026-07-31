@@ -105,19 +105,27 @@ const TemplateLandscape = ({ slide }) => {
         {/* Video Box - 80% space */}
         <div ref={mediaRef} className="w-full lg:w-[calc(100%-140px)] relative z-10">
           <div className="w-full aspect-video bg-black shadow-2xl overflow-hidden relative border border-white/5">
-              {currentMedia.type === 'video' ? (
-                <div className="absolute inset-0 flex flex-col items-center justify-center bg-gray-900 p-8 text-center border border-white/10">
-                  <span className="text-white/50 mb-4 uppercase tracking-widest text-sm font-bold">Video Link</span>
-                  <a
-                    href={currentMedia.src}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white text-lg md:text-xl lg:text-2xl hover:text-blue-400 underline break-all transition-colors duration-300"
-                  >
-                    {currentMedia.src}
-                  </a>
+            {currentMedia.type === 'video' ? (
+              <a
+                href={currentMedia.src}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative w-full h-full block cursor-pointer"
+              >
+                <img
+                  src={slide.image || slide.thumb}
+                  alt={slide.title}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
+                  <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-black/60 group-hover:bg-black/80 backdrop-blur-sm border border-white/30 text-white flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-all duration-300 pl-1">
+                    <svg className="w-8 h-8 md:w-10 md:h-10 fill-current text-white" viewBox="0 0 24 24">
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </div>
                 </div>
-              ) : (
+              </a>
+            ) : (
               <img
                 key={currentMedia.src}
                 src={currentMedia.src}
